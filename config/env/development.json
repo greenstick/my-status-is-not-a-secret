@@ -1,0 +1,6 @@
+{
+    "db": "mongodb://localhost/mean-dev",
+    "app": {
+        "name": "AIDS Life Cycle Website - AIDS Life Cycle 'My Status...' Website by Column Five Media, Inc. - Development"
+    }
+}
