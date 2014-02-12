@@ -1,7 +1,0 @@
-{
-    "db": "mongodb://localhost/mean-test",
-    "port": 3001,
-    "app": {
-        "name": "AIDS Life Cycle Website - AIDS Life Cycle 'My Status...' Website by Column Five Media, Inc. - Test"
-    }
-}

@@ -1,8 +1,12 @@
-var async = require('async');
+module.exports = function(app){
 
-module.exports = function(app) {
-
-    //Home route
-    var index = require('../app/controllers/index');
-    app.get('/', index.render);
+	//home route
+	var home = require('../app/controllers/home');
+	app.get('/', home.index);
+	//is route
+	var is = require('../app/controllers/is');
+	app.get('/is', is.is);
+	// // isnot route
+	var isnot = require('../app/controllers/isnot');
+	app.get('/isnot', isnot.isnot);
 };
