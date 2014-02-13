@@ -1,0 +1,75 @@
+ .head {
+ 	position: relative;
+ 	height: 109px;
+ 	border-bottom: 1px solid rgba(230, 60, 46, 1);
+ }
+ .head .headLeft {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 400px;
+ 	height: 110px;
+ 	padding: 0 0 10px 0;
+ 	font-weight: normal;
+ 	display: inline-block;
+ }
+ .head .headLeft .homeLogo {
+ 	position: relative;
+ 	width: 140px;
+ 	margin: 6px 0 0 0;
+ 	padding: 0 12px 0 0;
+ 	border-right: 1px solid rgba(230, 60, 46, 1);
+ 	display: inline-block;
+ }
+ .head .headLeft .statement {
+ 	position: relative;
+ 	top: -8px;
+ 	width: 237px;
+ 	padding: 16px 0 0 6px;
+ 	font-size: 12px;
+ 	line-height: 20px;
+ 	letter-spacing: 2px;
+ 	color: rgba(102, 102, 102, 1);
+ 	display: inline-block;
+ }
+ .head .headRight {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 400px;
+ 	width: 540px;
+ 	height: 110px;
+ 	padding: 0 0 10px 0;
+ 	font-weight: normal;
+ 	display: inline-block;
+ }
+ .head .headRight .share {
+ 	position: relative;
+ 	width: 148px;
+ 	height: 72px;
+ 	padding: 8px 0 0 408px;
+ 	display: inline-block;
+ }
+ .head .headRight .share .icon {
+ 	width: 40px;
+ 	height: 32px;
+ 	padding: 0 5px 0 0;
+ 	border-right: 1px solid rgba(230, 60, 46, 1);
+ 	display: inline-block;
+ }
+ .head .headRight .share .icon:last-child {
+ 	border: none;
+ }
+ .head .headRight .share .icon img {
+ 	position: relative;
+ 	top: -5px;
+ 	cursor: pointer;
+ }
+ .head .headRight .nav {
+ 	width: inherit;
+ 	height: 20px;
+ 	padding: 0 0 8px 0;
+ 	display: inline-block;
+ }
+ .head .headRight .nav a{
+ 	margin: 0 0 0 54px;
+ }

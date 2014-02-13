@@ -1,0 +1,470 @@
+/** 
+ *	General Styles
+ **/
+
+html {
+	background-color: rgba(26, 26, 26, 1);
+	color: #FFFFFF;
+}
+#wrapper {
+	width: 940px;
+	margin: 0 auto;
+}
+.hText {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+}
+.cText {
+	font-family: 'PT Sans', sans-serif;
+}
+.r1, .r2, .r3, .r4, .r5, .r6, .r7, .r8, .r9 {
+	width: 940px;
+	height: auto;
+	margin: 0 auto;
+}
+a:link, a:visited, a:active {
+	color: inherit;
+	text-decoration: none;
+}
+a:hover {
+	color: rgba(230, 60, 46, 1);
+	text-decoration: none;
+}
+.darkgrey {
+	color: ;
+}
+.lightgrey {
+	color: rgba(102, 102, 102, 1);
+}
+.red {
+	color: rgba(230, 60, 46, 1);
+}
+
+/**
+ *	Splash Page Styles
+ **/
+
+.splash {
+	margin: auto auto;
+	text-align: center;
+}
+/* Row 1 */
+.splash .r1 {
+	width: 612px;
+	font-size: 102px;
+	line-height: 112px;
+}
+/* Row 2 */
+.splash .r2 {
+	width: 612px;
+	height: 125px;
+	font-size: 102px;
+}
+.splash .r2 .flip {
+	position: relative;
+	height: 125px;
+	margin: 0 0 0 0;
+	text-align: center;
+	display: inline-block;
+	-webkit-perspective: 800;
+	-moz-perspective: 800;
+	-ms-perspective: 800;
+	-o-perspective: 800;
+	perspective: 800;
+}
+.fade {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 125px;
+	font-size: 102px;
+	opacity: .1;
+}
+#enterIs, #enterIs .enterButton .face.back .fade {
+	width: 150px;
+}
+#enterNot, #enterNot .enterButton .face.back .fade {
+ 	width: 420px;
+}
+#enterIs .enterButton .back {
+	padding: 20px 0 0 0;
+	height: 105px;
+}
+#enterNot .enterButton .back {
+	padding: 48px 0 0 0;
+	height: 77px;
+}
+.splash .r2 .flip .enterButton {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: inherit;
+	height: inherit;
+	background-color: rgba(230, 60, 46, 1);
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: 0.5s;
+	-webkit-backface-visibility: hidden;
+	-moz-transform-style: preserve-3d;
+	-moz-transition: 0.5s;
+	-moz-backface-visibility: hidden;
+	-ms-transform-style: preserve-3d;
+	-ms-transition: 0.5s;
+	-ms-backface-visibility: hidden;
+	-o-transform-style: preserve-3d;
+	-o-transition: 0.5s;
+	-o-backface-visibility: hidden;
+	transform-style: preserve-3d;
+	transition: 0.5s;
+	backface-visibility: hidden;
+}
+.splash .r2 .flip:hover .enterButton, .splash .r2 .flip.hover .enterButton {
+	-webkit-transform: rotatey(-180deg);
+	-moz-transform: rotatey(-180deg);
+	-ms-transform: rotatey(-180deg);
+	-o-transform: rotatey(-180deg);
+	transform: rotatey(-180deg);
+}
+.splash .r2 .flip .enterButton .face.front {
+	position: absolute;
+	width: inherit;
+	color: #FFFFFF;
+	background-color: rgba(230, 60, 46, 1);
+	cursor: pointer;
+	z-index: 100;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.splash .r2 .flip .enterButton .face.back {
+	position: absolute;
+	width: inherit;
+	color: rgba(230, 60, 46, 1);
+	background-color: #FFFFFF;
+	cursor: pointer;
+	z-index: 1;
+	font-size: 24px;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: rotatey(180deg);
+	-moz-backface-visibility: hidden;
+	-moz-transform: rotatey(180deg);
+	-ms-backface-visibility: hidden;
+	-ms-transform: rotatey(180deg);
+	-o-backface-visibility: hidden;
+	-o-transform: rotatey(180deg);
+	backface-visibility: hidden;
+	transform: rotatey(180deg);
+}
+/* Row 3 */
+.splash .r3 {
+	width: 612px;
+	font-size: 102px;
+	letter-spacing: 10px;
+	line-height: 112px
+}
+/* Row 4 */
+.splash .r4 {
+	width: 612px;
+	height: 64px;
+	text-align: left;
+	font-size: 13px;
+}
+/* Row 5 */
+.splash .r5 {
+	width: 612px;
+}
+.splash .r5 .box {
+	height: 42px;
+	padding: 8px 0 0 0;
+	font-size: 14px;
+	font-weight: normal;
+	border: 2px solid rgba(230, 60, 46, 1);
+	color: rgba(230, 60, 46, 1);
+	margin: 0 0 8px 0;
+}
+/* Row 6 */
+.splash .r6 {
+	width: 612px;
+	text-align: left;
+	font-size: 11px;
+	padding: 3px 0 0 0;
+}
+
+/**
+ *	Head Styles
+ **/
+
+ .head {
+ 	position: relative;
+ 	height: 109px;
+ 	border-bottom: 1px solid rgba(230, 60, 46, 1);
+ }
+ .head .headLeft {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 400px;
+ 	height: 110px;
+ 	padding: 0 0 10px 0;
+ 	font-weight: normal;
+ 	display: inline-block;
+ }
+ .head .headLeft .homeLogo {
+ 	position: relative;
+ 	width: 140px;
+ 	margin: 6px 0 0 0;
+ 	padding: 0 12px 0 0;
+ 	border-right: 1px solid rgba(230, 60, 46, 1);
+ 	display: inline-block;
+ }
+ .head .headLeft .statement {
+ 	position: relative;
+ 	top: -8px;
+ 	width: 237px;
+ 	padding: 16px 0 0 6px;
+ 	font-size: 12px;
+ 	line-height: 20px;
+ 	letter-spacing: 2px;
+ 	color: rgba(102, 102, 102, 1);
+ 	display: inline-block;
+ }
+ .head .headRight {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 400px;
+ 	width: 540px;
+ 	height: 110px;
+ 	padding: 0 0 10px 0;
+ 	font-weight: normal;
+ 	display: inline-block;
+ }
+ .head .headRight .share {
+ 	position: relative;
+ 	width: 148px;
+ 	height: 72px;
+ 	padding: 8px 0 0 408px;
+ 	display: inline-block;
+ }
+ .head .headRight .share .icon {
+ 	width: 40px;
+ 	height: 32px;
+ 	padding: 0 5px 0 0;
+ 	border-right: 1px solid rgba(230, 60, 46, 1);
+ 	display: inline-block;
+ }
+ .head .headRight .share .icon:last-child {
+ 	border: none;
+ }
+ .head .headRight .share .icon img {
+ 	position: relative;
+ 	top: -5px;
+ 	cursor: pointer;
+ }
+ .head .headRight .nav {
+ 	width: inherit;
+ 	height: 20px;
+ 	padding: 0 0 8px 0;
+ 	display: inline-block;
+ }
+ .head .headRight .nav a {
+ 	margin: 0 0 0 54px;
+ }
+ .body {
+
+ }
+
+ /**
+  *	Home Page Styles
+  **/
+
+ .home .r1 {
+ 	position: relative;
+ 	height: 470px;
+ 	margin: 30px 0 30px 0;
+ }
+ .home .r1 .col1 {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 620px;
+ 	height: inherit;
+ 	background-color: rgba(51, 51, 51, 1);
+ }
+ .home .r1 .col2 {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 640px;
+ 	width: 300px;
+ 	height: inherit;
+ 	background-color: rgba(51, 51, 51, 1);
+ }
+ .home .r2 {
+ 	position: relative;
+ 	height: 170px;
+ 	border-top: 1px solid rgba(230, 60, 46, 1);
+ }
+ .home .r2 .col1 {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 470px;
+ 	height: 170px;
+ }
+ .home .r2 .col2 {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 470px;
+ 	width: 470px;
+ 	height: 170px;
+ }
+ .home .r3 {
+  	position: relative;
+ 	height: 60px;
+ 	border-top: 1px solid rgba(230, 60, 46, 1);
+ }
+ .home .r3 .col1 {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 460px;
+ 	height: 30px;
+ 	margin: 30px 0 0 0;
+ 	background-color: rgba(102, 102, 102, 1);
+ }
+ .home .r3 .col2 {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 480px;
+ 	width: 460px;
+ 	height: 30px;
+ 	margin: 30px 0 0 0;
+ 	background-color: rgba(102, 102, 102, 1);
+ }
+ .home .r4 {
+ 	position: relative;
+ 	height: 140px;
+ }
+ .home .r4 .col1 {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 460px;
+ 	height: 140px;
+ }
+ .home .r4 .col2 {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 480px;
+ 	width: 460px;
+ 	height: 140px;
+ }
+ .home .r5 {
+  	position: relative;
+ 	height: 60px;
+ }
+ .home .r5 .col1 {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 460px;
+ 	height: 30px;
+ 	margin: 30px 0 0 0;
+ 	background-color: rgba(102, 102, 102, 1);
+ }
+ .home .r5 .col2 {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 480px;
+ 	width: 460px;
+ 	height: 30px;
+ 	margin: 30px 0 0 0;
+ 	background-color: rgba(102, 102, 102, 1);
+ }
+ .home .r6 {
+ 	position: relative;
+ 	height: 140px;
+ }
+ .home .r6 .col1 {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 460px;
+ 	height: 140px;
+ }
+ .home .r6 .col2 {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 480px;
+ 	width: 460px;
+ 	height: 140px;
+ }
+ .home .r7 {
+ 	position: relative;
+ 	height: 90px;
+ 	margin-top: 20px;
+ }
+ .home .r7 .col1 {
+ 	position: relative;
+ 	height: 42px;
+ 	width: 560px;
+	padding: 8px 0 0 0;
+	font-size: 14px;
+	font-weight: normal;
+	border: 2px solid rgba(230, 60, 46, 1);
+	color: rgba(230, 60, 46, 1);
+	margin: 0 auto;
+	text-align: center;
+ }
+ .home .r8 {
+ 	position: relative;
+ 	height: 110px;
+ 	margin-bottom: 80px;
+ }
+ .home .r8 .col1 {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 460px;
+ 	height: 110px;
+ }
+ .home .r8 .col2 {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 480px;
+ 	width: 460px;
+ 	height: 110px;
+ }
+
+ /**
+  *	About Page Styles
+  **/
+
+.about .r1 {
+
+}
+
+ /**
+  *	Why Share? Page Styles
+  **/
+
+.whyshare .r1 {
+
+}
+
+ /**
+  *	Give Page Styles
+  **/
+
+.give .r1 {
+
+}
+
+ /**
+  *	Resources Page Styles
+  **/
+
+ .resources .r1 {
+
+ }
+

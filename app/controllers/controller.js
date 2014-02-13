@@ -1,112 +1,67 @@
-var mongoose = require('mongoose'),
-	Article = mongoose.model('Article');
+var mongoose = require('mongoose');
 
 	exports.index = function(req, res){
-		Article.find(function(err, articles){
-			if(err) throw new Error(err);
-			res.render('home/index', {
-		    	title: 'Generator-Express MVC',
-		    	articles: articles
-	  		});
-		});
+		res.render('home/index', {
+	    	title: 'Welcome'
+			});
 	};
 
 	exports.is = function(req, res){
-		Article.find(function(err, articles){
-	    	if(err) throw new Error(err);
-	    	res.render('is/home', {
-	    		title: 'Generator-Express MVC',
-	    		articles: articles
-	    	});
-	  	});
+		res.render('is/home', {
+			title: 'Home'
+		});
 	};
 
 	exports.isnot = function(req, res){
-		Article.find(function(err, articles){
-		if(err) throw new Error(err);
-			res.render('isnot/home', {
-				title: 'Generator-Express MVC',
-				articles: articles
-			});
+		res.render('isnot/home', {
+			title: 'Home'
 		});
 	};
 
 	exports.isAbout = function(req, res){
-		Article.find(function(err, articles){
-			if(err) throw new Error(err);
-			res.render('is/about', {
-				title: 'Generator-Express MVC',
-				articles: articles
-			});
+		res.render('is/about', {
+			title: 'About'
 		});
 	};
 
 	exports.isnotAbout = function(req, res){
-		Article.find(function(err, articles){
-			if(err) throw new Error(err);
-			res.render('isnot/about', {
-				title: 'Generator-Express MVC',
-				articles: articles
-			});
+		res.render('isnot/about', {
+			title: 'About'
 		});
 	};
 
 	exports.isWhyShare = function(req, res){
-		Article.find(function(err, articles){
-			if(err) throw new Error(err);
-			res.render('is/whyshare', {
-				title: 'Generator-Express MVC',
-				articles: articles
-			});
+		res.render('is/whyshare', {
+			title: 'Why Share?'
 		});
 	};
 
 	exports.isnotWhyShare = function(req, res){
-		Article.find(function(err, articles){
-			if(err) throw new Error(err);
-			res.render('isnot/whyshare', {
-				title: 'Generator-Express MVC',
-				articles: articles
-			});
+		res.render('isnot/whyshare', {
+			title: 'Why Share?'
 		});
 	};
 
 	exports.isGive = function(req, res){
-		Article.find(function(err, articles){
-			if(err) throw new Error(err);
-			res.render('is/give', {
-				title: 'Generator-Express MVC',
-				articles: articles
-			});
+		res.render('is/give', {
+			title: 'Give'
 		});
 	};
 
 	exports.isnotGive = function(req, res){
-		Article.find(function(err, articles){
-			if(err) throw new Error(err);
-			res.render('isnot/give', {
-				title: 'Generator-Express MVC',
-				articles: articles
-			});
+		res.render('isnot/give', {
+			title: 'Give'
 		});
 	};
 
 	exports.isResources = function(req, res){
-		Article.find(function(err, articles){
-			if(err) throw new Error(err);
-			res.render('is/resources', {
-				title: 'Generator-Express MVC',
-				articles: articles
-			});
+		res.render('is/resources', {
+			title: 'Resources'
 		});
 	};
 
 	exports.isnotResources = function(req, res){
-		Article.find(function(err, articles){
-			if(err) throw new Error(err);
-			res.render('isnot/resources', {
-				title: 'Generator-Express MVC',
-				articles: articles
-			});
+		res.render('isnot/resources', {
+			title: 'Resources'
 		});
 	};
