@@ -5,6 +5,7 @@
 html {
 	background-color: rgba(26, 26, 26, 1);
 	color: #FFFFFF;
+	font-weight: normal;
 }
 #wrapper {
 	width: 940px;
@@ -12,10 +13,20 @@ html {
 }
 .hText {
 	font-family: 'Montserrat', sans-serif;
-	font-weight: bold;
 }
 .cText {
 	font-family: 'PT Sans', sans-serif;
+}
+.button {
+	cursor: pointer;
+	background-color: rgba(230, 60, 46, 1);
+}
+.button:hover {
+	background-color: #FFFFFF;
+	color: rgba(230, 60, 46, 1);
+}
+.superscript {
+	vertical-align: super;
 }
 .r1, .r2, .r3, .r4, .r5, .r6, .r7, .r8, .r9 {
 	width: 940px;
@@ -40,6 +51,7 @@ a:hover {
 	color: rgba(230, 60, 46, 1);
 }
 
+
 /**
  *	Splash Page Styles
  **/
@@ -47,6 +59,7 @@ a:hover {
 .splash {
 	margin: auto auto;
 	text-align: center;
+	font-weight: bold;
 }
 /* Row 1 */
 .splash .r1 {
@@ -169,6 +182,7 @@ a:hover {
 	height: 64px;
 	text-align: left;
 	font-size: 13px;
+	font-weight: normal;
 }
 /* Row 5 */
 .splash .r5 {
@@ -178,7 +192,6 @@ a:hover {
 	height: 42px;
 	padding: 8px 0 0 0;
 	font-size: 14px;
-	font-weight: normal;
 	border: 2px solid rgba(230, 60, 46, 1);
 	color: rgba(230, 60, 46, 1);
 	margin: 0 0 8px 0;
@@ -189,6 +202,7 @@ a:hover {
 	text-align: left;
 	font-size: 11px;
 	padding: 3px 0 0 0;
+	font-weight: normal;
 }
 
 /**
@@ -207,7 +221,6 @@ a:hover {
  	width: 400px;
  	height: 110px;
  	padding: 0 0 10px 0;
- 	font-weight: normal;
  	display: inline-block;
  }
  .head .headLeft .homeLogo {
@@ -236,7 +249,6 @@ a:hover {
  	width: 540px;
  	height: 110px;
  	padding: 0 0 10px 0;
- 	font-weight: normal;
  	display: inline-block;
  }
  .head .headRight .share {
@@ -274,16 +286,24 @@ a:hover {
 
  }
 
- /**
-  *	Home Page Styles
-  **/
+/**
+ *	Home Page Styles
+ **/
 
- .home .r1 {
+.homes .r1 {
+
+}
+
+/**
+ *	Why Share? Page Styles
+ **/
+
+ .whyshare .r1 {
  	position: relative;
  	height: 470px;
  	margin: 30px 0 30px 0;
  }
- .home .r1 .col1 {
+ .whyshare .r1 .col1 {
  	position: absolute;
  	top: 0px;
  	left: 0px;
@@ -291,7 +311,93 @@ a:hover {
  	height: inherit;
  	background-color: rgba(51, 51, 51, 1);
  }
- .home .r1 .col2 {
+ .whyshare .r1 .col1 .header {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 580px;
+ 	height: 18px;
+ 	margin: 20px 20px 12px 20px;
+ }
+ .whyshare .r1 .col1 .info {
+ 	position: absolute;
+ 	top: 50px;
+ 	left: 0px;
+ 	height: 79px;
+ 	width: 580px;
+ 	margin: 0 20px 0 20px;
+ 	font-size: 14px;
+ 	border-bottom: 1px solid rgba(230, 60, 46, 1);
+ }
+ .whyshare .r1 .col1 .content {
+ 	position: absolute;
+ 	top: 130px;
+ 	left: 0px;
+ 	width: 580px;
+ 	height: 310px;
+ 	margin: 20px 20px 10px 20px;
+ }
+ .whyshare .r1 .col1 .content .leader {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 580px;
+ 	height: 20px;
+ 	margin: 0px 0px 20px 0px;
+ }
+  .whyshare .r1 .col1 .content .stat {
+  	position: absolute;
+  	top: 40px;
+ 	width: 193px;
+ 	height: 250px;
+ 	margin: 0 0 20px 0;
+ }
+  .whyshare .r1 .col1 .content .stat .img {
+  	height: 134px;
+ 	text-align: center;
+ }
+ .whyshare .r1 .col1 .content .stat:nth-child(2) {
+ 	position: absolute;
+ 	left: 0px;
+ 	border-right: 1px solid rgba(230, 60, 46, 1);
+ }
+ .whyshare .r1 .col1 .content .stat:nth-child(3) {
+ 	position: absolute;
+ 	left: 194px;
+ 	border-right: 1px solid rgba(230, 60, 46, 1);
+ }
+ .whyshare .r1 .col1 .content .stat:nth-child(4) {
+ 	position: absolute;
+ 	left: 387px;
+ }
+ .whyshare .r1 .col1 .content .stat .text {
+ 	position: absolute;
+ 	top: 134px;
+ 	left: 0px;
+ 	width: 173px;
+ 	height: 116px;
+ 	margin: 0 0 0 20px;
+ }
+ .whyshare .r1 .col1 .content .stat .text .lead {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	height: 40px;
+ 	width: 173px;
+ }
+ .whyshare .r1 .col1 .content .stat .text .body {
+ 	position: absolute;
+ 	top: 40px;
+ 	left: 0px;
+ 	height: 76px;
+ 	width: 173px;
+ 	font-size: 14px;
+ }
+ .whyshare .r1 .col1 .content .stat:nth-child(2) .text .lead {
+ 	font-size: 48px;
+ 	line-height: 40px;
+ }
+ .whyshare .r1 .col2 {
  	position: absolute;
  	top: 0px;
  	left: 640px;
@@ -299,141 +405,253 @@ a:hover {
  	height: inherit;
  	background-color: rgba(51, 51, 51, 1);
  }
- .home .r2 {
+ .whyshare .r1 .col2 .header {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 260px;
+ 	height: 70px;
+ 	margin: 20px 20px 0 20px;
+ }
+ .whyshare .r1 .col2 .content {
+ 	position: absolute;
+ 	top: 90px;
+ 	left: 0px;
+ 	width: 260px;
+ 	height: 150px;
+ 	margin: 0 20px 0 20px;
+ }
+ .whyshare .r1 .col2 .info {
+ 	position: absolute;
+ 	top: 240px;
+ 	left: 0px;
+ 	width: 260px;
+ 	height: 110px;
+ 	margin: 30px 20px 30px 20px;
+ 	font-size: 13px;
+ }	
+ .whyshare .r1 .col2 .button {
+ 	position: absolute;
+ 	top: 410px;
+ 	width: 300px;
+ 	height: 42px;
+ 	padding: 18px 0 0 0;
+ 	font-size: 20px;
+ 	text-align: center;
+ }
+
+ .whyshare .r2 {
  	position: relative;
  	height: 170px;
  	border-top: 1px solid rgba(230, 60, 46, 1);
  }
- .home .r2 .col1 {
+ .whyshare .r2 .col1 {
  	position: absolute;
  	top: 0px;
  	left: 0px;
  	width: 470px;
  	height: 170px;
  }
- .home .r2 .col2 {
+ .whyshare .r2 .col2 {
  	position: absolute;
  	top: 0px;
  	left: 470px;
  	width: 470px;
  	height: 170px;
  }
- .home .r3 {
+ .whyshare .r2 .col1 .button {
+ 	position: relative;
+ 	top: 0px;
+ 	width: 260px;
+ 	height: 44px;
+ 	padding: 6px 0 0 ;
+ 	font-size: 16px;
+ 	text-align: center;
+ 	margin: 60px auto;
+ }
+  .whyshare .r2 .col2 .button {
+  	position: relative;
+ 	top: 0px;
+ 	width: 180px;
+ 	height: 24px;
+ 	padding: 6px 0 0 0;
+ 	font-size: 16px;
+ 	text-align: center;
+ 	margin: 70px auto;
+ }
+ .whyshare .r3 {
   	position: relative;
  	height: 60px;
  	border-top: 1px solid rgba(230, 60, 46, 1);
  }
- .home .r3 .col1 {
+ .whyshare .r3 .col1 {
  	position: absolute;
  	top: 0px;
  	left: 0px;
- 	width: 460px;
- 	height: 30px;
+ 	width: 448px;
+ 	height: 24px;
+ 	padding: 6px 0px 0px 12px;
  	margin: 30px 0 0 0;
  	background-color: rgba(102, 102, 102, 1);
+ 	letter-spacing: 4px;
  }
- .home .r3 .col2 {
+ .whyshare .r3 .col2 {
  	position: absolute;
  	top: 0px;
  	left: 480px;
- 	width: 460px;
- 	height: 30px;
+ 	width: 448px;
+ 	height: 24px;
+ 	padding: 6px 0px 0px 12px;
  	margin: 30px 0 0 0;
  	background-color: rgba(102, 102, 102, 1);
+ 	letter-spacing: 4px;
  }
- .home .r4 {
+ .whyshare .r4 {
  	position: relative;
  	height: 140px;
  }
- .home .r4 .col1 {
+ .whyshare .r4 .col1 {
  	position: absolute;
  	top: 0px;
  	left: 0px;
  	width: 460px;
  	height: 140px;
  }
- .home .r4 .col2 {
+ .whyshare .r4 .col1 .left, .whyshare .r4 .col2 .left {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 120px;
+ 	height: 140px;
+ }
+ .whyshare .r4 .col1 .right, .whyshare .r4 .col2 .right {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 120px;
+ 	width: 340px;
+ 	height: 110px;
+ 	margin: 30px 0 0 0;
+ 	font-size: 13px;
+ }
+ .whyshare .r4 .col2 {
  	position: absolute;
  	top: 0px;
  	left: 480px;
  	width: 460px;
  	height: 140px;
  }
- .home .r5 {
+ .whyshare .r5 {
   	position: relative;
- 	height: 60px;
+ 	height: 30px;
  }
- .home .r5 .col1 {
+ .whyshare .r5 .col1 {
  	position: absolute;
  	top: 0px;
  	left: 0px;
- 	width: 460px;
- 	height: 30px;
- 	margin: 30px 0 0 0;
+ 	width: 448px;
+ 	height: 24px;
+ 	padding: 6px 0px 0px 12px;
  	background-color: rgba(102, 102, 102, 1);
+ 	letter-spacing: 4px;
  }
- .home .r5 .col2 {
+ .whyshare .r5 .col2 {
  	position: absolute;
  	top: 0px;
  	left: 480px;
- 	width: 460px;
- 	height: 30px;
- 	margin: 30px 0 0 0;
+ 	width: 448px;
+ 	height: 24px;
+ 	padding: 6px 0px 0px 12px;
  	background-color: rgba(102, 102, 102, 1);
+ 	letter-spacing: 4px;
  }
- .home .r6 {
+ .whyshare .r6 {
  	position: relative;
  	height: 140px;
  }
- .home .r6 .col1 {
+ .whyshare .r6 .col1 {
  	position: absolute;
  	top: 0px;
  	left: 0px;
  	width: 460px;
  	height: 140px;
  }
- .home .r6 .col2 {
+ .whyshare .r6 .col2 {
  	position: absolute;
  	top: 0px;
  	left: 480px;
  	width: 460px;
  	height: 140px;
  }
- .home .r7 {
+  .whyshare .r6 .col1 .left, .whyshare .r6 .col2 .left {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 120px;
+ 	height: 140px;
+ }
+ .whyshare .r6 .col1 .right, .whyshare .r6 .col2 .right {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 120px;
+ 	width: 340px;
+ 	height: 110px;
+ 	margin: 30px 0 0 0;
+ 	font-size: 13px;
+ }
+ .whyshare .r7 {
  	position: relative;
  	height: 90px;
  	margin-top: 20px;
  }
- .home .r7 .col1 {
+ .whyshare .r7 .col1 {
  	position: relative;
  	height: 42px;
  	width: 560px;
 	padding: 8px 0 0 0;
 	font-size: 14px;
-	font-weight: normal;
 	border: 2px solid rgba(230, 60, 46, 1);
 	color: rgba(230, 60, 46, 1);
 	margin: 0 auto;
 	text-align: center;
  }
- .home .r8 {
+ .whyshare .r8 {
  	position: relative;
  	height: 110px;
  	margin-bottom: 80px;
  }
- .home .r8 .col1 {
+ .whyshare .r8 .col1 {
  	position: absolute;
  	top: 0px;
  	left: 0px;
  	width: 460px;
  	height: 110px;
  }
- .home .r8 .col2 {
+ .whyshare .r8 .col2 {
  	position: absolute;
  	top: 0px;
  	left: 480px;
  	width: 460px;
  	height: 110px;
+ }
+ .whyshare .r8 .col1 .button {
+ 	position: relative;
+ 	top: 0px;
+ 	width: 260px;
+ 	height: 44px;
+ 	padding: 6px 0 0 ;
+ 	font-size: 16px;
+ 	text-align: center;
+ 	margin: 60px auto;
+ }
+  .whyshare .r8 .col2 .button {
+  	position: relative;
+ 	top: 0px;
+ 	width: 200px;
+ 	height: 24px;
+ 	padding: 6px 0 0 0;
+ 	font-size: 16px;
+ 	text-align: center;
+ 	margin: 70px auto;
  }
 
  /**
@@ -445,19 +663,145 @@ a:hover {
 }
 
  /**
-  *	Why Share? Page Styles
-  **/
-
-.whyshare .r1 {
-
-}
-
- /**
   *	Give Page Styles
   **/
 
 .give .r1 {
-
+	position: relative;
+	width: 940px;
+	height: 480px;
+	margin: 30px auto 0 auto;
+	background-color: #000000;
+}
+.give .r1 .col1 {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 460px;
+	height: 480px;
+}
+.give .r1 .col1 .top {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 460px;
+	height: 200px;
+}
+.give .r1 .col1 .top .header {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 440px;
+	height: 30px;
+	margin: 30px 0 20px 20px;
+	font-size: 28px
+}
+.give .r1 .col1 .top .content {
+	position: absolute;
+	top: 80px;
+	left: 0px;
+	width: 440px;
+	height: 100px;
+	margin: 0 0 20px 20px;
+	font-size: 12px;
+}
+.give .r1 .col1 .bottom {
+	position: absolute;
+	top: 200px;
+	left: 0px;
+	width: 460px;
+	height: 280px;
+}
+.give .r1 .col1 .bottom .content{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 460px;
+	height: 280px;
+}
+.give .r1 .col1 .bottom .info {
+	position: absolute;
+	top: 190px;
+	left: 0px;
+	width: 460px;
+	height: 90px;
+	background-color: rgba(102, 102, 102, .5);
+}
+.give .r1 .col1 .bottom .info .price {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 160px;
+	height: 64px;
+	margin: 13px 0 13px 20px;
+	border-right: 1px solid #FFFFFF;
+	font-size: 56px;
+	font-weight: bold;
+	line-height: 44px;
+}
+.give .r1 .col1 .bottom .info .price .superscript {
+	font-size: 28px;
+}
+.give .r1 .col1 .bottom .info .donate {
+	position: absolute;
+	left: 180px;
+	top: 0px;
+	width: 270px;
+	height: 64px;
+	margin: 13px 0 13px 10px;
+}
+.give .r1 .col1 .bottom .info .donate {
+	font-size: 14px;
+}
+.give .r1 .col1 .bottom .info .donate .cText {
+	font-size: 12px;
+}
+.give .r1 .col2 {
+	position: absolute;
+	top: 0px;
+	left: 480px;
+	width: 460px;
+	height: 480px;
+}
+.give .r1 .col2 .top {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 460px;
+	height: 230px;
+}
+.give .r1 .col2 .top .button {
+  	position: relative;
+ 	top: 0px;
+ 	width: 220px;
+ 	height: 24px;
+ 	padding: 6px 0 0 0;
+ 	font-size: 16px;
+ 	text-align: center;
+ 	margin: 110px auto;
+}
+.give .r1 .col2 .bottom {
+	position: absolute;
+	top: 250px;
+	left: 0px;
+	width: 460px;
+	height: 230px;
+}
+.give .r1 .col2 .bottom .button {
+	position: relative;
+ 	top: 0px;
+ 	width: 280px;
+ 	height: 44px;
+ 	padding: 6px 0 0 ;
+ 	font-size: 16px;
+ 	text-align: center;
+ 	margin: 90px auto;
+}
+.give .r2 {
+	position: relative;
+	width: 940px;
+	margin: 30px auto 0 auto;
+	border-top: 1px solid rgba(230, 60, 46, 1);
 }
 
  /**
@@ -465,6 +809,171 @@ a:hover {
   **/
 
  .resources .r1 {
-
+ 	position: relative;
+ 	height: 48px;
+ 	padding: 22px 0 0 0;
+ 	font-size: 20px
  }
-
+ .resources .r2 {
+ 	position: relative;
+ 	height: 410px;
+ }
+ .resources .r2 .col1 {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 300px;
+ 	height: 410px;
+ 	background-color: #000000;
+ }
+ .resources .r2 .col1 .header {
+ 	position: relative;
+ 	width: 240px;
+ 	height: 24px;
+ 	background-color: rgba(230, 60, 46, 1);
+ 	padding: 6px 0 0 0;
+ 	margin: 20px auto 30px auto;
+ 	text-align: center;
+ }
+ .resources .r2 .col1 .content {
+ 	position: relative;
+ 	width: 280px;
+ 	height: 100px;
+ 	margin: 0 auto 10px auto;
+ 	background-color: #FFFFFF;
+ }
+ .resources .r2 .col1 .content .left {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 90px;
+ 	font-size: 12px;
+ 	background-color: rgba(102, 102, 102, 1);
+ }
+ .resources .r2 .col1 .content .left.p1 {
+ 	height: 70px;
+ 	padding: 30px 0 0 10px;
+ }
+ .resources .r2 .col1 .content .left.p2 {
+  	height: 80px;
+ 	padding: 20px 0 0 10px;	
+ }
+ .resources .r2 .col1 .content .left.p3 {
+ 	height: 60px;
+ 	padding: 40px 0 0 10px;
+ }
+ .resources .r2 .col1 .content .right {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 100px;
+ 	width: 180px;
+ 	height: 100px;
+ }
+ .resources .r2 .col2 {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 320px;
+ 	width: 300px;
+ 	height: 410px;
+ 	background-color: #000000;
+ }
+ .resources .r2 .col2 .header {
+ 	position: relative;
+ 	width: 240px;
+ 	height: 24px;
+ 	background-color: rgba(230, 60, 46, 1);
+ 	padding: 6px 0 0 0;
+ 	margin: 20px auto 30px auto;
+ 	text-align: center;
+ }
+ .resources .r2 .col2 .content {
+ 	position: relative;
+ 	width: 280px;
+ 	height: 100px;
+ 	margin: 0 auto 10px auto;
+ 	background-color: #FFFFFF;
+ }
+ .resources .r2 .col2 .content .left {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 90px;
+ 	font-size: 12px;
+ 	background-color: rgba(102, 102, 102, 1);
+ }
+ .resources .r2 .col2 .content .left.p1 {
+ 	height: 64px;
+ 	padding: 36px 0 0 10px;
+ }
+ .resources .r2 .col2 .content .left.p2 {
+  	height: 80px;
+ 	padding: 20px 0 0 10px;	
+ }
+ .resources .r2 .col2 .content .left.p3 {
+ 	height: 60px;
+ 	padding: 40px 0 0 10px;
+ }
+ .resources .r2 .col2 .content .right {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 100px;
+ 	width: 180px;
+ 	height: 100px;
+ }
+ .resources .r2 .col3 {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 640px;
+ 	width: 300px;
+ 	height: 410px;
+ 	background-color: #000000;
+ }
+ .resources .r2 .col3 .header {
+ 	position: relative;
+ 	width: 240px;
+ 	height: 24px;
+ 	background-color: rgba(230, 60, 46, 1);
+ 	padding: 6px 0 0 0;
+ 	margin: 20px auto 30px auto;
+ 	text-align: center;
+ }
+ .resources .r2 .col3 .content {
+ 	position: relative;
+ 	width: 280px;
+ 	height: 100px;
+ 	margin: 0 auto 10px auto;
+ 	background-color: #FFFFFF;
+ }
+ .resources .r2 .col3 .content .left {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 90px;
+ 	font-size: 12px;
+ 	background-color: rgba(102, 102, 102, 1);
+ }
+ .resources .r2 .col3 .content .left.p1 {
+ 	height: 64px;
+ 	padding: 36px 0 0 10px;
+ }
+ .resources .r2 .col3 .content .left.p2 {
+  	height: 64px;
+ 	padding: 36px 0 0 10px;	
+ }
+ .resources .r2 .col3 .content .left.p3 {
+ 	height: 64px;
+ 	padding: 36px 0 0 10px;
+ }
+ .resources .r2 .col3 .content .right {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 100px;
+ 	width: 180px;
+ 	height: 100px;
+ }
+ .resources .r3 {
+	position: relative;
+	width: 940px;
+	margin: 30px auto 0 auto;
+	border-top: 1px solid rgba(230, 60, 46, 1);
+}
