@@ -24,5 +24,8 @@ module.exports = function(app){
 		app.get('/I/resources', controller.isResources);
 		// isnot - about route
 		app.get('/l/resources', controller.isnotResources);
-
+		// is - shared route
+		app.get('/I/shared', controller.isShared);
+		//isnot - shared route
+		app.get('/l/shared', controller.isnotShared);
 };

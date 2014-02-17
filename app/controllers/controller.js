@@ -65,3 +65,15 @@ var mongoose = require('mongoose');
 			title: 'Resources'
 		});
 	};
+
+	exports.isShared = function (req, res){
+		res.render('is/shared', {
+			title: 'Shared'
+		});
+	};
+	
+	exports.isnotShared = function (req, res){
+		res.render('isnot/shared', {
+			title: 'Shared'
+		});
+	};
