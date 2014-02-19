@@ -71,9 +71,15 @@ var mongoose = require('mongoose');
 			title: 'Shared'
 		});
 	};
-	
+
 	exports.isnotShared = function (req, res){
 		res.render('isnot/shared', {
 			title: 'Shared'
+		});
+	};
+
+	exports.notfound = function(req, res){
+		res.render('404', {
+			title: 'Page Not Found'
 		});
 	};

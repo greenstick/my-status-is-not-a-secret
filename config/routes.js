@@ -2,11 +2,11 @@ module.exports = function(app){
 
 	//Controller
 	var controller = require('../app/controllers/controller');
-		//home route
+		//index route
 		app.get('/', controller.index);
-		//is route
+		//is - home route
 		app.get('/I/home', controller.is);
-		// isnot route
+		// isnot - home route
 		app.get('/l/home', controller.isnot);
 		// is - about route
 		app.get('/I/about', controller.isAbout);
@@ -28,4 +28,6 @@ module.exports = function(app){
 		app.get('/I/shared', controller.isShared);
 		//isnot - shared route
 		app.get('/l/shared', controller.isnotShared);
+		//404 
+		app.get('**', controller.notfound);
 };

@@ -53,6 +53,33 @@ a:hover {
 .red {
 	color: rgba(230, 60, 46, 1);
 }
+.mask {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	background-color: rgba(51, 51, 51, .6);
+}
+.email {
+	background: url('../img/icons.png') 0px -14px;
+}
+.facebook {
+	background: url('../img/icons.png') -50px -14px;
+}
+.twitter {
+	background: url('../img/icons.png') -100px -14px;
+}
+.email:hover {
+	background: url('../img/icons.png') 0px -55px;
+}
+.facebook:hover {
+	background: url('../img/icons.png') -50px -55px;
+}
+.twitter:hover {
+	background: url('../img/icons.png') -100px -55px;
+}
 
 
 /**
@@ -186,6 +213,7 @@ a:hover {
 	text-align: left;
 	font-size: 13px;
 	font-weight: normal;
+	letter-spacing: .5px;
 }
 /* Row 5 */
 .splash .r5 {
@@ -267,14 +295,10 @@ a:hover {
  	padding: 0 5px 0 0;
  	border-right: 1px solid rgba(230, 60, 46, 1);
  	display: inline-block;
+ 	cursor: pointer;
  }
  .head .headRight .share .icon:last-child {
  	border: none;
- }
- .head .headRight .share .icon img {
- 	position: relative;
- 	top: -5px;
- 	cursor: pointer;
  }
  .head .headRight .nav {
  	width: inherit;
@@ -424,15 +448,15 @@ a:hover {
  	position: absolute;
  	top: 0px;
  	left: 0px;
- 	width: 470px;
+ 	width: 460px;
  	height: 110px;
  	margin: 30px auto;
  }
  .home .r2 .col2 {
  	position: absolute;
  	top: 0px;
- 	left: 470px;
- 	width: 470px;
+ 	left: 480px;
+ 	width: 460px;
  	height: 110px;
  	margin: 30px auto;
  }
@@ -791,15 +815,15 @@ a:hover {
  	position: absolute;
  	top: 0px;
  	left: 0px;
- 	width: 470px;
+ 	width: 460px;
  	height: 110px;
  	margin: 30px auto;
  }
  .whyshare .r2 .col2 {
  	position: absolute;
  	top: 0px;
- 	left: 470px;
- 	width: 470px;
+ 	left: 480px;
+ 	width: 460px;
  	height: 110px;
  	margin: 30px auto;
  }
