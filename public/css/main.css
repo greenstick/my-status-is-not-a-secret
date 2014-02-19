@@ -87,9 +87,11 @@ a:hover {
  **/
 
 .splash {
-	margin: auto auto;
+	position: relative;
 	text-align: center;
 	font-weight: bold;
+	padding: 60px 0 0 0;
+
 }
 /* Row 1 */
 .splash .r1 {
