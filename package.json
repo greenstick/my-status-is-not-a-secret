@@ -1,14 +1,17 @@
 {
   "name": "aids-life-cycle",
   "version": "0.0.1",
-  "author": "Ben Cordier",
+  "description": "My Status Is Not A Secret website for Impulse Group AIDS Life Cycle by Column Five Media, Inc.",
+  "main": "app.js",
   "private": true,
   "scripts": {
     "start": "app.js"
   },
+  "author": "Ben Cordier",
+  "license": "MIT",
   "respository": {
     "type": "git",
-    "https://bcordier@bitbucket.org/columnfive/aids-life-cycle.git"
+    "url": "https://bcordier@bitbucket.org/columnfive/aids-life-cycle.git"
   },
   "dependencies": {
     "express": "~3.3.4",
@@ -26,6 +29,6 @@
     "load-grunt-tasks": "~0.2.0"
   },
   "engines": {
-    "node": "0.10.22"
+    "node": "0.10.x"
   }
 }
