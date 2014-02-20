@@ -28,6 +28,8 @@ module.exports = function(app){
 		app.get('/I/shared', controller.isShared);
 		//isnot - shared route
 		app.get('/l/shared', controller.isnotShared);
+		//DB Test
+		app.get('/test/db-test', controller.dbTest);
 		//404 
 		app.get('**', controller.notfound);
 };

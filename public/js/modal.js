@@ -1,3 +1,1 @@
-var modal = (function() {
-	
-})();
+console.log("modal.js loaded");

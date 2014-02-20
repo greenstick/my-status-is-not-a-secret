@@ -83,3 +83,9 @@ var mongoose = require('mongoose');
 			title: 'Page Not Found'
 		});
 	};
+	
+	exports.dbTest = function (req, res){
+		res.render('test/db-test', {
+			title: 'DB Test'
+		});
+	};
