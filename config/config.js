@@ -26,7 +26,7 @@ var config = {
     app: {
       name: 'aids-life-cycle'
     },
-    port: 3000,
+    port: 5000,
     db: 'mongodb://' + process.env.MONGO_USERNAME + ':' + process.env.MONGO_PASSWORD + '@ds033429.mongolab.com:33429/heroku_app22368295'
   }
 };
