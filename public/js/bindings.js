@@ -15,6 +15,11 @@
 		$('#mask').stop().fadeOut(400);
 	});
 	//Submit Story
-	$('.submit').on("click", function () {
+	$('.submitModal').on("click", function () {
 
 	});
+	//Image Highlighting
+	$('.image').on("click", function () {
+		$('.image').removeClass('selected')
+		$(this).addClass('selected');
+	})

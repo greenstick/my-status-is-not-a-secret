@@ -44,6 +44,24 @@ a:hover {
 	color: rgba(230, 60, 46, 1);
 	text-decoration: none;
 }
+input {
+	border: none;
+	opacity: .9;
+	padding-left: 4px;
+}
+textarea, input {
+	resize: none;
+	border: 1px solid rgba(51, 51, 51, 1);
+}
+input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
+    outline: none;
+    border: 1px solid rgba(230, 60, 46, 1);
+    -webkit-box-shadow: 0px 0px 1px 0px rgba(230, 60, 46, 1);
+    -moz-box-shadow: 0px 0px 1px 0px rgba(230, 60, 46, 1);
+    -ms-box-shadow: 0px 0px 1px 0px rgba(230, 60, 46, 1);
+    -o-box-shadow: 0px 0px 1px 0px rgba(230, 60, 46, 1);
+    box-shadow: 0px 0px 1px 0px rgba(230, 60, 46, 1);
+}
 .darkgrey {
 	color: rgba(51, 51, 51, 1);
 }
@@ -107,7 +125,9 @@ a:hover {
 }
 #modal .content .col1 {
 	position: absolute;
-	width: 330px;
+	top: 0px;
+	left: 0px;
+	width: 329px;
 	height: 270px;
 	margin: 20px 0px 20px 20px;
 	padding: 0 9px 0 0;
@@ -117,17 +137,121 @@ a:hover {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 330px;
+	width: 329px;
 	height: 20px;
 	font-size: 14px;
 }
+#modal .content .col1 .storyInput {
+	position: absolute;
+	top: 20px;
+	left: 0px;
+	width: 320px;
+	height: 172px;
+	text-align: left;
+}
+#modal .content .col1 .subheader {
+	position: absolute;
+	top: 200px;
+	left: 0px;
+	height: 16px;
+	padding: 4px 0 0 0;
+	font-size: 12px;
+}
+#modal .content .col1 .optionalInputs {
+	position: absolute;
+	top: 220px;
+	left: 0px;
+	height: 20px;
+	width: 330px;
+}
+#modal .content .col1 .optionalInputs .name-input {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 146px;
+	height: 20px;
+}
+#modal .content .col1 .optionalInputs .country-input {
+	position: absolute;
+	top: 0px;
+	left: 160px;
+	width: 72px;
+	height: 20px;
+}
+#modal .content .col1 .optionalInputs .state-input {
+	position: relative;
+	top: 0px;
+	left: 246px;
+	width: 72px;
+	height: 20px;
+}
+#modal .content .col1 .submitModal {
+	position: absolute;
+ 	top: 250px;
+ 	left: 0px;
+ 	width: 326px;
+ 	height: 18px;
+ 	padding: 2px 0 0 0;
+ 	font-size: 16px;
+ 	text-align: center;
+ 	color: #FFFFFF;
+ 	cursor: pointer;
+	background-color: rgba(230, 60, 46, 1);
+}
+#modal .content .col1 .submitModal:hover {
+	background-color: #FFFFFF;
+	color: rgba(230, 60, 46, 1);
+}
 #modal .content .col2 {
 	position: absolute;
+	top: 0px;
+	left: 360px;
 	width: 170px;
 	height: 270px;
 	margin: 20px 20px 20px 10px;
 }
-
+#modal .content .col2 .header {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 170px;
+	height: 20px;
+	font-size: 14px;
+	text-align: center;
+}
+#modal .content .col2 .images {
+	position: absolute;
+	top: 20px;
+	left: 0px;
+	width: 170px;
+	height: 270px;
+}
+#modal .content .col2 .images .image {
+	position: absolute;
+	cursor: pointer;
+}
+#modal .content .col2 .images .image.selected {
+	-webkit-box-shadow: 0px 0px 4px 0px rgba(230, 60, 46, 1);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(230, 60, 46, 1);
+    -ms-box-shadow: 0px 0px 4px 0px rgba(230, 60, 46, 1);
+    -o-box-shadow: 0px 0px 4px 0px rgba(230, 60, 46, 1);
+    box-shadow: 0px 0px 4px 0px rgba(230, 60, 46, 1);
+}
+#modal .content .col2 .images .image:nth-child(odd) {
+	left: 0px;
+}
+#modal .content .col2 .images .image:nth-child(even) {
+	left: 90px;
+}
+#modal .content .col2 .images .image:nth-child(1), #modal .content .col2 .images .image:nth-child(2) {
+	top: 0px;
+}
+#modal .content .col2 .images .image:nth-child(3), #modal .content .col2 .images .image:nth-child(4) {
+	top: 85px;
+}
+#modal .content .col2 .images .image:nth-child(5), #modal .content .col2 .images .image:nth-child(6) {
+	top: 170px;
+}
 #modal .exitModal {
 	position: absolute;
 	top: 0px;
@@ -1507,5 +1631,3 @@ a:hover {
  	text-align: center;
  	background-color: rgba(230, 60, 46, 1);
  }
-
-
