@@ -17,6 +17,13 @@ module.exports = function (grunt) {
         file: 'app.js'
       }
     },
+    bower: {
+      install: {
+        options: {
+          targetDir: './public/lib'
+        }
+      }
+    },
     watch: {
       options: {
         nospawn: true,
@@ -54,6 +61,6 @@ module.exports = function (grunt) {
         });
     }, 500);
   });
-
+  grunt.loadNpmTasks('grunt-bower-task');
   grunt.registerTask('default', ['develop', 'watch']);
 };

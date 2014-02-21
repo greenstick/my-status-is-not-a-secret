@@ -1,4 +1,4 @@
-module.exports = function(app){
+module.exports = function (app) {
 
 	//Controller
 	var controller = require('../app/controllers/controller');
@@ -31,5 +31,6 @@ module.exports = function(app){
 		//DB Test
 		app.get('/test/db-test', controller.dbTest);
 		//404 
-		app.get('**', controller.notfound);
+		app.get('*', controller.notfound);
+		app.get('*/*', controller.notfound);
 };

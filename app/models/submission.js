@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
-var SubmissionSchema = new Schema({
+var SubmissionSchema = new Schema ({
 	id: Number,
 	date: Date,
 	order: Number,
@@ -59,6 +59,10 @@ SubmissionSchema.methods.getSubmission = function () {
 			url: url
 		}
 	}
+};
+
+SubmissionSchema.methods.postSubmission = function () {
+	
 }
 
 var Submission = mongoose.model('Submission', SubmissionSchema);

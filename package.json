@@ -26,7 +26,8 @@
     "grunt-contrib-compass": "~0.6.0",
     "request": "~2.27.0",
     "time-grunt": "~0.1.1",
-    "load-grunt-tasks": "~0.2.0"
+    "load-grunt-tasks": "~0.2.0",
+    "grunt-bower-task": "~0.3.4"
   },
   "engines": {
     "node": "0.10.x"
