@@ -78,12 +78,6 @@ var mongoose = require('mongoose');
 		});
 	};
 
-	exports.notfound = function(req, res){
-		res.render('404', {
-			title: 'Page Not Found'
-		});
-	};
-	
 	exports.dbTest = function (req, res){
 		res.render('test/db-test', {
 			title: 'DB Test'

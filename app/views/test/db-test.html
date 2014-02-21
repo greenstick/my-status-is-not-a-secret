@@ -37,23 +37,21 @@
 	</div>
 	<div id="mask"></div>
 	<div id="modal">
-		<form class="content">
+		<form id="shareForm" class="content" method="post" accept-charset="utf-8">
 			<div class="col1">
 				<div class="header hText">
 					MY STATUS <span class="red">IS NOT</span> A SECRET BECAUSE....
 				</div>
-				<textarea class="storyInput" type="text"></textarea>
+				<textarea class="storyInput" type="text" name="story"></textarea>
 				<div class="subheader cText">
 					Below fields are optional:
 				</div>
 				<div class="optionalInputs">
-					<input class="name-input" placeholder="Name"/>
-					<input class="country-input" placeholder="Country"/>
-					<input class="state-input" placeholder="State"/>
+					<input class="name-input" placeholder="Name" name="name" />
+					<input class="country-input" placeholder="Country" name="country" />
+					<input class="state-input" placeholder="State" name="state" />
 				</div>
-				<div class="hText submitModal">
-					SHARE
-				</div>
+				<input class="hText submitModal" type="submit" value="SHARE" />
 			</div>
 			<div class="col2">
 				<div class="header cText">

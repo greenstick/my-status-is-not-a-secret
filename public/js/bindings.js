@@ -15,8 +15,20 @@
 		$('#mask').stop().fadeOut(400);
 	});
 	//Submit Story
-	$('.submitModal').on("click", function () {
+	$("#shareForm").on('submit', function (event) {
+		event.preventDefault();
+		var data = $(this).serialize();
+		$.ajax({
+			type: "POST",
+			url: 'submit',
+			data: data
+		}).done(function () {
+			
+		}).fail(function () {
 
+		}).always(function () {
+			console.log(arguments);
+		});
 	});
 	//Image Highlighting
 	$('.image').on("click", function () {

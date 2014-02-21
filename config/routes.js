@@ -2,6 +2,7 @@ module.exports = function (app) {
 
 	//Controller
 	var controller = require('../app/controllers/controller');
+	var api = require('../app/controllers/api');
 		//index route
 		app.get('/', controller.index);
 		//is - home route
@@ -26,11 +27,11 @@ module.exports = function (app) {
 		app.get('/l/resources', controller.isnotResources);
 		// is - shared route
 		app.get('/I/shared', controller.isShared);
-		//isnot - shared route
+		// isnot - shared route
 		app.get('/l/shared', controller.isnotShared);
-		//DB Test
+		// test - DB Test
 		app.get('/test/db-test', controller.dbTest);
-		//404 
-		app.get('*', controller.notfound);
-		app.get('*/*', controller.notfound);
+		// test - DB Test / submit
+		app.post('/test/submit', api.submit);
+		app.get('/api/share', api.retrieve);
 };
