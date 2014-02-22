@@ -1,0 +1,61 @@
+<div id="submissionModal">
+	<form id="shareForm" class="content" method="post" accept-charset="utf-8">
+		<div class="col1">
+			<div class="header hText">
+				MY STATUS <span class="red">IS NOT</span> A SECRET BECAUSE....
+			</div>
+			<textarea class="storyInput" type="text" name="story"></textarea>
+			<div class="subheader cText">
+				Below fields are optional:
+			</div>
+			<div class="optionalInputs">
+				<input class="name-input" placeholder="Name" name="name" />
+				<input class="country-input" placeholder="Country" name="country" />
+				<input class="state-input" placeholder="State" name="state" />
+			</div>
+			<input class="hText submitModal" type="submit" value="SHARE" />
+		</div>
+		<div class="col2">
+			<div class="header cText">
+				Choose a photo:
+			</div>
+			<div class="images">
+				<img class="image selected" src="../img/mini-logo.png" />
+				<img class="image" src="../img/dont-know.png" />
+				<img class="image" src="../img/i-know.png" />
+				<img class="image" src="../img/i-share.png" />
+				<img class="image" src="../img/why-not.png" />
+				<img class="image" src="../img/default-image.png" />
+			</div>
+			<input id="uploadImage" type="file" name="image" />
+		</div>
+	</form>
+</div>
+<div id="modalMask"></div>
+<div id="processing">
+	<div class="processing hText">
+		PROCESSING
+		<div id="fadingBarsG">
+			<div id="fadingBarsG_1" class="fadingBarsG"></div>
+			<div id="fadingBarsG_2" class="fadingBarsG"></div>
+			<div id="fadingBarsG_3" class="fadingBarsG"></div>
+			<div id="fadingBarsG_4" class="fadingBarsG"></div>
+			<div id="fadingBarsG_5" class="fadingBarsG"></div>
+			<div id="fadingBarsG_6" class="fadingBarsG"></div>
+			<div id="fadingBarsG_7" class="fadingBarsG"></div>
+			<div id="fadingBarsG_8" class="fadingBarsG"></div>
+		</div>
+	</div>
+</div>
+<div id="modalSuccess">
+	<div class="notification hText">
+		THANK YOU FOR SHARING YOUR STORY.<br>
+		WE ARE READING IT NOW AND YOU CAN EXPECT TO SEE IT SOON.
+	</div>
+</div>
+<div id="modalFail">
+	<div class="notification hText">
+		UH OH! AN ERROR OCCURRED SUBMITTING YOUR STORY.<br>
+		PLEASE TRY AGAIN LATER.
+	</div>
+</div>

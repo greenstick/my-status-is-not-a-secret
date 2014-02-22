@@ -5,33 +5,24 @@ module.exports = function (app) {
 	var api = require('../app/controllers/api');
 		//index route
 		app.get('/', controller.index);
-		//is - home route
-		app.get('/I/home', controller.is);
-		// isnot - home route
-		app.get('/l/home', controller.isnot);
-		// is - about route
-		app.get('/I/about', controller.isAbout);
-		// isnot - about route
-		app.get('/l/about', controller.isnotAbout);
-		// is - why share route
-		app.get('/I/whyshare', controller.isWhyShare);
-		// isnot - why share route
-		app.get('/l/whyshare', controller.isnotWhyShare);
-		// is - give route
-		app.get('/I/give', controller.isGive);
-		// isnot - give route
-		app.get('/l/give', controller.isnotGive);
-		// is - resources route
-		app.get('/I/resources', controller.isResources);
-		// isnot - about route
-		app.get('/l/resources', controller.isnotResources);
-		// is - shared route
-		app.get('/I/shared', controller.isShared);
-		// isnot - shared route
-		app.get('/l/shared', controller.isnotShared);
+		//home route
+		app.get('/home', controller.home);
+		//about route
+		app.get('/about', controller.about);
+		//whyshare route
+		app.get('/whyshare', controller.whyshare);
+		//give route
+		app.get('/give', controller.give);
+		//resources route
+		app.get('/resources', controller.resources);
+		//shared route
+		app.get('/shared', controller.shared);
+		// modal route
+		app.get('/modal', controller.modal);
+		// modal - submit route
+		app.post('/submit', api.submit);
 		// test - DB Test
 		app.get('/test/db-test', controller.dbTest);
-		// test - DB Test / submit
-		app.post('/test/submit', api.submit);
+		// test -submit route
 		app.get('/api/share', api.retrieve);
 };

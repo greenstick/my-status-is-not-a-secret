@@ -36,38 +36,7 @@
 		</div>
 	</div>
 	<div id="mask"></div>
-	<div id="modal">
-		<form id="shareForm" class="content" method="post" accept-charset="utf-8">
-			<div class="col1">
-				<div class="header hText">
-					MY STATUS <span class="red">IS NOT</span> A SECRET BECAUSE....
-				</div>
-				<textarea class="storyInput" type="text" name="story"></textarea>
-				<div class="subheader cText">
-					Below fields are optional:
-				</div>
-				<div class="optionalInputs">
-					<input class="name-input" placeholder="Name" name="name" />
-					<input class="country-input" placeholder="Country" name="country" />
-					<input class="state-input" placeholder="State" name="state" />
-				</div>
-				<input class="hText submitModal" type="submit" value="SHARE" />
-			</div>
-			<div class="col2">
-				<div class="header cText">
-					Choose a photo:
-				</div>
-				<div class="images">
-					<img class="image" src="../img/i-know.png">
-					<img class="image" src="../img/i-share.png">
-					<img class="image" src="../img/mini-logo.png">
-					<img class="image" src="../img/dont-know.png">
-					<img class="image" src="../img/why-not.png">
-					<img class="image" src="../img/default-image.png">
-				</div>
-			</div>
-		</form>
-		<div class="exitModal hText">X</div>
-	</div>
+	<iframe id="iframe" allowtransparency="true" src="/modal" seamless></iframe>
+	<div id="exitModal" class="hText">X</div>
 </div>
 </body>

@@ -1,5 +1,5 @@
 <body>
-<div id="wrapper" class="home">
+<div id="wrapper" class="whyshare">
 	<div class="head hText">
 		<div class="headLeft">
 			<div class="homeLogo">
@@ -32,45 +32,87 @@
 		<div class="r1">
 			<div class="col1">
 				<div class="header hText">
-					OVER <span class="red">2 MILLION</span> PEOPLE ARE DIAGNOSED WITH HIV EVERY YEAR.
+					MY STATUS <span class="red">IS</span> A SECRET
 				</div>
 				<div class="info cText">
-					The disease knows no boundaries of race, gender, or sexuality, even in the United States where<br />
-					50,000 new infections are recorded annually. Others are positive and don't know it. Others are<br />
-					negative and don't know it. Either way, if your status is a secret to yourself, you're not able to<br />
-					make the best decisions for your health or the health of others.
+					Not knowing your HIV status can be paralyzing. The tension leading up to finding out your<br />
+					results&mdash;agonizing. Knowing is freedom from doubt and the ability to determine how best to<br />
+					protect yourself, others, and your own future. 
 				</div>
 				<div class="content">
-					
+					<div class="leader hText">
+						WHAT'S NO SECRET?<span class="red"> HIV AFFECTS EVERYONE</span>
+					</div>
+					<div class="stat">
+						<div class="img">
+							<img src="../img/holding-hands.png" />
+						</div>
+						<div class="text hText">
+							<div class="lead">
+								1 in 5
+							</div>
+							<div class="body cText">
+								people living with HIV<br />
+								are undiagnosed
+							</div>
+						</div>
+					</div>
+					<div class="stat">
+						<div class="img">
+							<img src="../img/pie-chart.png" />
+						</div>
+						<div class="text hText">
+							<div class="lead">
+								YOUNG PEOPLE<br />
+								BETWEEN 13 AND 29
+							</div>
+							<div class="body cText">
+								represent 34% of new<br />
+								HIV infections&mdash;the<br />
+								largest share of any age<br />
+								group.
+							</div>
+						</div>
+					</div>
+					<div class="stat">
+						<div class="img">
+							<img src="../img/stopwatch.png" />
+						</div>
+						<div class="text hText">
+							<div class="lead">
+								EVERY NINE AND<br />
+								A HALF MINUTES
+							</div>
+							<div class="body cText">
+								someone in the U.S. is<br />
+								infected with HIV
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="col2">
-				<div class="content">
-					<img src="../img/monument.png" />
-				</div>
 				<div class="header hText">
-					MY STATUS <span class="red">IS NOT</span><br />
-					A SECRET BECAUSE...<br />
-					<img class="quotes" src="../img/quotes.png">
-					<div class="contributor">H. Azalea, NY</div>
+					OVER <span class="red">2 MILLION</span> PEOPLE<br />
+					ARE DIAGNOSED WITH HIV<BR />
+					EVERY YEAR.
+				</div>
+				<div class="content">
+
 				</div>
 				<div class="info cText">
-					Not knowing your HIV status can be para&ndash;<br />
-					lyzing. The tension leading up to finding<br />
-					our your results&mdash;agonizing. Knowing is<br />
-					freedom from doubt and the ability to<br />
-					determine how best to protect yourselves,<br />
-					others, and your own future.<br />
-					<div class="readmore"><a href="shared">Read more >></a></div>
+					We all keep secrets from ourselves. Some-<br />
+					times we think it's easier to push some-<br />
+					thing down inside ourselves than confront<br />
+					it head-on, but sooner or later, the fears<br />
+					and truths we hide resurface. There are real<br />
+					consequences to this habit&mdash;no truer than<br />
+					when it comes to your health.
 				</div>
-				<div class="button hText openModal">
-					<div class="share">
-						SHARE
-					</div>
-					<div class="why">
-						WHY YOUR STATUS<br />
-						IS NOT A SECRET
-					</div>
+				<div class="button hText">
+					<a href="resources">
+						HIV/AIDS RESOURCES
+					</a>
 				</div>
 			</div>
 		</div>
@@ -193,40 +235,7 @@
 		</div>
 	</div>
 	<div id="mask"></div>
-	<div id="modal">
-		<form class="content">
-			<div class="col1">
-				<div class="header hText">
-					MY STATUS <span class="red">IS NOT</span> A SECRET BECAUSE....
-				</div>
-				<textarea class="storyInput" type="text"></textarea>
-				<div class="subheader cText">
-					Below fields are optional:
-				</div>
-				<div class="optionalInputs">
-					<input class="name-input" placeholder="Name"/>
-					<input class="country-input" placeholder="Country"/>
-					<input class="state-input" placeholder="State"/>
-				</div>
-				<div class="hText submitModal">
-					SHARE
-				</div>
-			</div>
-			<div class="col2">
-				<div class="header cText">
-					Choose a photo:
-				</div>
-				<div class="images">
-					<img class="image" src="../img/i-know.png">
-					<img class="image" src="../img/i-share.png">
-					<img class="image" src="../img/mini-logo.png">
-					<img class="image" src="../img/dont-know.png">
-					<img class="image" src="../img/why-not.png">
-					<img class="image" src="../img/default-image.png">
-				</div>
-			</div>
-		</form>
-		<div class="exitModal hText">X</div>
-	</div>
+	<iframe id="iframe" allowtransparency="true" src="/modal" seamless></iframe>
+	<div id="exitModal" class="hText">X</div>
 </div>
 </body>

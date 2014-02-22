@@ -1,80 +1,50 @@
 var mongoose = require('mongoose');
 
 	exports.index = function(req, res){
-		res.render('home/index', {
+		res.render('', {
 	    	title: 'Welcome'
 			});
 	};
 
-	exports.is = function(req, res){
-		res.render('is/home', {
+	exports.home = function(req, res){
+		res.render('home', {
 			title: 'Home'
 		});
 	};
 
-	exports.isnot = function(req, res){
-		res.render('isnot/home', {
-			title: 'Home'
-		});
-	};
-
-	exports.isAbout = function(req, res){
-		res.render('is/about', {
+	exports.about = function(req, res){
+		res.render('about', {
 			title: 'About'
 		});
 	};
 
-	exports.isnotAbout = function(req, res){
-		res.render('isnot/about', {
-			title: 'About'
-		});
-	};
-
-	exports.isWhyShare = function(req, res){
-		res.render('is/whyshare', {
+	exports.whyshare = function(req, res){
+		res.render('whyshare', {
 			title: 'Why Share?'
 		});
 	};
 
-	exports.isnotWhyShare = function(req, res){
-		res.render('isnot/whyshare', {
-			title: 'Why Share?'
-		});
-	};
-
-	exports.isGive = function(req, res){
-		res.render('is/give', {
+	exports.give = function(req, res){
+		res.render('give', {
 			title: 'Give'
 		});
 	};
 
-	exports.isnotGive = function(req, res){
-		res.render('isnot/give', {
-			title: 'Give'
-		});
-	};
-
-	exports.isResources = function(req, res){
-		res.render('is/resources', {
+	exports.resources = function(req, res){
+		res.render('resources', {
 			title: 'Resources'
 		});
 	};
 
-	exports.isnotResources = function(req, res){
-		res.render('isnot/resources', {
-			title: 'Resources'
-		});
-	};
-
-	exports.isShared = function (req, res){
-		res.render('is/shared', {
+	exports.shared = function (req, res){
+		res.render('shared', {
 			title: 'Shared'
 		});
 	};
 
-	exports.isnotShared = function (req, res){
-		res.render('isnot/shared', {
-			title: 'Shared'
+	exports.modal = function (req, res) {
+		res.render('modal', {
+			title: "Submit Story"
 		});
 	};
 

@@ -16,6 +16,7 @@ exports.submit = function (req, res) {
 	submission.save(function (err, submission, count) {
 		console.log(submission)
 		res.json(submission);
+
 	});
 }
 exports.retrieve = function (req, res) {
