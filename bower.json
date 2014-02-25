@@ -7,6 +7,9 @@
     "components"
   ],
   "dependencies": {
-    "jQuery": "~2.1.0"
+    "jQuery": "~2.1.0",
+    "knockout.js": "~3.0.0",
+    "masonry": "~3.1.4",
+    "isotope": "~1.5.26"
   }
 }
