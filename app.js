@@ -21,8 +21,4 @@ var app = express();
 require('./config/express')(app, config);
 require('./config/routes')(app);
 
-// app.configure(function() {
-// 	app.use(express.bodyParser());
-// });
-
 app.listen(process.env.PORT || config.port);

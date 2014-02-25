@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
 var SubmissionSchema = new Schema ({
 	id: Number,
 	date: Date,
+	timezone: Date,
 	order: Number,
 	name: {
 		first: String,

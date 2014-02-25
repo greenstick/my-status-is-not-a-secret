@@ -1,5 +1,5 @@
 /**
- *	Modal Bindings
+ *	Submit Modal Event Bindings
  **/
 
 	//Submit Story Binding
@@ -17,16 +17,21 @@
 	})
 
 /**
- *	Methods
+ *	Modal Interaction Methods
  **/
 
+ 	//Select Image
 	var selectImage = function (element) {
 		$('.image').removeClass('selected')
 		$(element).addClass('selected');
 	};
+
+	//Upload Image
 	var uploadImage = function () {
 		$('#uploadImage').click();
 	};
+
+	//Submit Story to DB
 	var submitStory = function (element) {
 		event.preventDefault();
 		var data = $(element).serialize();

@@ -86,7 +86,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 .twitter:hover {
 	background: url('../img/icons.png') -100px -55px;
 }
-#iframe {
+#iframeModal {
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -109,6 +109,12 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	cursor: pointer;
 	z-index: 1000;
 	display: none;
+}
+#iframeFeed {
+	position: relative;
+	width: 940px;
+	height: auto;
+	margin: 0 auto;
 }
 /**
  *	Splash Page Styles
@@ -279,7 +285,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	position: absolute;
  	top: 0px;
  	left: 0px;
- 	width: 400px;
+ 	width: 420px;
  	height: 110px;
  	padding: 0 0 10px 0;
  	display: inline-block;
@@ -287,7 +293,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  .head .headLeft .homeLogo {
  	position: relative;
  	width: 140px;
- 	margin: 6px 0 0 0;
+ 	margin: 6px 0 8px 0;
  	padding: 0 12px 0 0;
  	border-right: 1px solid rgba(230, 60, 46, 1);
  	display: inline-block;
@@ -295,8 +301,10 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  .head .headLeft .statement {
  	position: relative;
  	top: -8px;
- 	width: 237px;
- 	padding: 16px 0 0 6px;
+ 	left: -4px;
+ 	width: 253px;
+ 	height: 94px;
+ 	padding: 16px 0 0 10px;
  	font-size: 12px;
  	line-height: 20px;
  	letter-spacing: 2px;
@@ -306,7 +314,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  .head .headRight {
  	position: absolute;
  	top: 0px;
- 	left: 400px;
+ 	left: 420px;
  	width: 540px;
  	height: 110px;
  	padding: 0 0 10px 0;
@@ -316,7 +324,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	position: relative;
  	width: 148px;
  	height: 72px;
- 	padding: 8px 0 0 408px;
+ 	padding: 8px 0 0 388px;
  	display: inline-block;
  }
  .head .headRight .share .icon {
@@ -337,7 +345,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	display: inline-block;
  }
  .head .headRight .nav a {
- 	margin: 0 0 0 54px;
+ 	margin: 0 0 0 50px;
  }
 
 /**
@@ -1474,6 +1482,28 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	padding: 6px 0 0 0;
  	text-align: center;
  	background-color: rgba(230, 60, 46, 1);
+ }
+ .shared .r2 {
+ 	position: relative;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 960px;
+ 	margin: 0 0 0 -7px;
+ }
+ .shared .r3 {
+ 	position: relative;
+ 	top: 0px;
+ 	left: 0px;
+ 	margin: 30px auto;
+ }
+ .shared .r3 .loading {
+ 	position: relative;
+ 	top: 0px;
+ 	left: 50%;
+ 	width: 160px;
+ 	margin: 0 0 0 -80px;
+ 	text-align: center;
+ 	display: block;
  }
 
 /**

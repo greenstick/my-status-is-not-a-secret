@@ -21,8 +21,8 @@ module.exports = function (app) {
 		app.get('/modal', controller.modal);
 		// modal - submit route
 		app.post('/submit', api.submit);
+		// feed - retrieve route
+		app.get('/retrieve', api.retrieve);
 		// test - DB Test
 		app.get('/test/db-test', controller.dbTest);
-		// test -submit route
-		app.get('/api/share', api.retrieve);
 };

@@ -13,13 +13,13 @@
 	})
 
 /** 
- *	Methods
+ *	Modal CSS Methods
  **/
 
 	var openModal = function () {
-		$('#iframe, #mask, #exitModal').stop().fadeIn(600);
+		$('#iframeModal, #mask, #exitModal').stop().fadeIn(600);
 	};
 
 	var exitModal = function () {
-		$('#mask, #exitModal, #iframe').stop().fadeOut(400);
+		$('#mask, #exitModal, #iframeModal').stop().fadeOut(400);
 	};
