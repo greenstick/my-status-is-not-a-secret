@@ -29,8 +29,9 @@ exports.submit = function (req, res) {
 
 //Retrieve Stories
 exports.retrieve = function (req, res) {
-	req.param("page")
-	var query = Submission.find({}, 'story name.first location.country location.state location.city s3imgURL cloudfrontURL createdAt').limit(10);
+	req.param("page");
+	console.log(page);
+	var query = Submission.find({}, 'story name.first location.country location.state location.city s3imgURL cloudfrontURL createdAt').limit(16);
 		query.exec(function (error, submissions) {
 			if (error) return console.log(error)
 			res.json(submissions);

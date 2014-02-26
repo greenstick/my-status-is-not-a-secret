@@ -731,7 +731,7 @@
 
 
     reLayout : function( callback ) {
-
+      this.reloadItems();
       this[ '_' +  this.options.layoutMode + 'Reset' ]();
       this.layout( this.$filteredAtoms, callback );
 

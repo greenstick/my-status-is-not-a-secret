@@ -29,211 +29,45 @@
 		</div>
 	</div>
 	<div class="r1">
-		<div class="prompt hText" onclick="feed.retrieve()">
+		<div class="prompt hText" onclick="feed.update()">
 			MY STATUS IS NOT A SECRET BECAUSE...
 		</div>
 	</div>
 	<div class="r2">
-		<div id="feed" class="js-masonry" data-masonry-options='{"columnWidth": 220, "itemSelector": ".storyTile"}'>
-			<div class="storyTile">
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW
+		<!-- ko if: feed.pages != 'undefined' -->
+		<div id="feed" data-bind="foreach: feed.pages">
+			<!-- ko if: page != 'undefined' -->
+			<div class="page js-masonry" data-bind="foreach: page" data-masonry-options='{"columnWidth": 220, "itemSelector": ".storyTile"}'>
+				<div class="storyTile" data-bind="isotope: {container: '#feed', itemSelector: '.storyTile'}">
+					<img src="../img/my-status-200.png" />
+					<div class="divisor"></div>
+					<div class="author hText">
+						<!-- ko if: name.first != 'undefined' -->
+						<span data-bind="text: name.first"></span>
+						<!-- /ko -->
+						<!-- ko if: location.state != 'undefined' -->
+						<span data-bind="text: location.state"></span>
+						<!-- /ko -->
+					</div>
+
+				</div>
 			</div>
-			<div class="storyTile">
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW
-			</div>
-			<div class="storyTile">
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW
-			</div>
-			<div class="storyTile">
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW
-			</div>
-			<div class="storyTile">
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW
-			</div>
-			<div class="storyTile">
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW
-			</div>
-			<div class="storyTile">
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW
-			</div>
-			<div class="storyTile">
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW
-			</div>
-			<div class="storyTile">
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW
-			</div>
-			<div class="storyTile">
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW
-			</div>
-			<div class="storyTile">
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW
-			</div>
-			<div class="storyTile">
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW<br>
-				MEOWMEOWMEOW
-			</div>
+			<!-- /ko -->
 		</div>
+		<!-- /ko -->
 	</div>
 	<div class="r3">
 		<div class="loading hText">
 			LOADING
-			<div id="fadingBarsG">
-				<div id="fadingBarsG_1" class="fadingBarsG"></div>
-				<div id="fadingBarsG_2" class="fadingBarsG"></div>
-				<div id="fadingBarsG_3" class="fadingBarsG"></div>
-				<div id="fadingBarsG_4" class="fadingBarsG"></div>
-				<div id="fadingBarsG_5" class="fadingBarsG"></div>
-				<div id="fadingBarsG_6" class="fadingBarsG"></div>
-				<div id="fadingBarsG_7" class="fadingBarsG"></div>
-				<div id="fadingBarsG_8" class="fadingBarsG"></div>
+			<div id="loadingBarsG">
+				<div id="loadingBarsG_1" class="loadingBarsG"></div>
+				<div id="loadingBarsG_2" class="loadingBarsG"></div>
+				<div id="loadingBarsG_3" class="loadingBarsG"></div>
+				<div id="loadingBarsG_4" class="loadingBarsG"></div>
+				<div id="loadingBarsG_5" class="loadingBarsG"></div>
+				<div id="loadingBarsG_6" class="loadingBarsG"></div>
+				<div id="loadingBarsG_7" class="loadingBarsG"></div>
+				<div id="loadingBarsG_8" class="loadingBarsG"></div>
 			</div>
 		</div>
 	</div>

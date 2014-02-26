@@ -1,43 +1,43 @@
-#fadingBarsG {
+#loadingBarsG {
 	position:relative;
 	width:160px;
 	height:19px
 	}
 
-.fadingBarsG {
+.loadingBarsG {
 	position:absolute;
 	top:0;
 	background-color:#E63C2E;
 	width:19px;
 	height:19px;
-	-moz-animation-name:bounce_fadingBarsG;
+	-moz-animation-name:bounce_loadingBarsG;
 	-moz-animation-duration:1.2s;
 	-moz-animation-iteration-count:infinite;
 	-moz-animation-direction:linear;
 	-moz-transform:scale(.3);
-	-webkit-animation-name:bounce_fadingBarsG;
+	-webkit-animation-name:bounce_loadingBarsG;
 	-webkit-animation-duration:1.2s;
 	-webkit-animation-iteration-count:infinite;
 	-webkit-animation-direction:linear;
 	-webkit-transform:scale(.3);
-	-ms-animation-name:bounce_fadingBarsG;
+	-ms-animation-name:bounce_loadingBarsG;
 	-ms-animation-duration:1.2s;
 	-ms-animation-iteration-count:infinite;
 	-ms-animation-direction:linear;
 	-ms-transform:scale(.3);
-	-o-animation-name:bounce_fadingBarsG;
+	-o-animation-name:bounce_loadingBarsG;
 	-o-animation-duration:1.2s;
 	-o-animation-iteration-count:infinite;
 	-o-animation-direction:linear;
 	-o-transform:scale(.3);
-	animation-name:bounce_fadingBarsG;
+	animation-name:bounce_loadingBarsG;
 	animation-duration:1.2s;
 	animation-iteration-count:infinite;
 	animation-direction:linear;
 	transform:scale(.3);
 }
 
-#fadingBarsG_1 {
+#loadingBarsG_1 {
 	left:0;
 	-moz-animation-delay:0.48s;
 	-webkit-animation-delay:0.48s;
@@ -46,7 +46,7 @@
 	animation-delay:0.48s;
 }
 
-#fadingBarsG_2 {
+#loadingBarsG_2 {
 	left:20px;
 	-moz-animation-delay:0.6s;
 	-webkit-animation-delay:0.6s;
@@ -55,7 +55,7 @@
 	animation-delay:0.6s;
 }
 
-#fadingBarsG_3 {
+#loadingBarsG_3 {
 	left:40px;
 	-moz-animation-delay:0.72s;
 	-webkit-animation-delay:0.72s;
@@ -64,7 +64,7 @@
 	animation-delay:0.72s;
 }
 
-#fadingBarsG_4 {
+#loadingBarsG_4 {
 	left:60px;
 	-moz-animation-delay:0.84s;
 	-webkit-animation-delay:0.84s;
@@ -73,7 +73,7 @@
 	animation-delay:0.84s;
 }
 
-#fadingBarsG_5 {
+#loadingBarsG_5 {
 	left:80px;
 	-moz-animation-delay:0.96s;
 	-webkit-animation-delay:0.96s;
@@ -82,7 +82,7 @@
 	animation-delay:0.96s;
 }
 
-#fadingBarsG_6 {
+#loadingBarsG_6 {
 	left:100px;
 	-moz-animation-delay:1.08s;
 	-webkit-animation-delay:1.08s;
@@ -91,7 +91,7 @@
 	animation-delay:1.08s;
 }
 
-#fadingBarsG_7 {
+#loadingBarsG_7 {
 	left:120px;
 	-moz-animation-delay:1.2s;
 	-webkit-animation-delay:1.2s;
@@ -100,7 +100,7 @@
 	animation-delay:1.2s;
 }
 
-#fadingBarsG_8 {
+#loadingBarsG_8 {
 	left:140px;
 	-moz-animation-delay:1.32s;
 	-webkit-animation-delay:1.32s;
@@ -109,7 +109,7 @@
 	animation-delay:1.32s;
 }
 
-@-moz-keyframes bounce_fadingBarsG {
+@-moz-keyframes bounce_loadingBarsG {
 	0% {
 		-moz-transform:scale(1);
 		background-color:#E63C2E;
@@ -122,7 +122,7 @@
 
 }
 
-@-webkit-keyframes bounce_fadingBarsG {
+@-webkit-keyframes bounce_loadingBarsG {
 	0% {
 		-webkit-transform:scale(1);
 		background-color:#E63C2E;
@@ -135,7 +135,7 @@
 
 	}
 
-	@-ms-keyframes bounce_fadingBarsG {
+	@-ms-keyframes bounce_loadingBarsG {
 	0% {
 		-ms-transform:scale(1);
 		background-color:#E63C2E;
@@ -148,7 +148,7 @@
 
 }
 
-@-o-keyframes bounce_fadingBarsG {
+@-o-keyframes bounce_loadingBarsG {
 	0% {
 		-o-transform:scale(1);
 		background-color:#E63C2E;
@@ -161,7 +161,7 @@
 
 	}
 
-	@keyframes bounce_fadingBarsG {
+	@keyframes bounce_loadingBarsG {
 	0% {
 		transform:scale(1);
 		background-color:#E63C2E;
