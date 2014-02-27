@@ -151,7 +151,7 @@ var Feed = function () {
 		if ($(window).scrollTop() >= 118) {
 			$('.ui').fadeIn(600);
 		} else {
-			$('.ui').fadeOut(400);
+			$('.ui').fadeOut(200);
 		}
 	});
 
