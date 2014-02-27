@@ -1494,16 +1494,28 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	position: relative;
  	top: 0px;
  	left: 0px;
- 	margin: 30px auto;
+ 	height: 30px;
+ 	margin: 30px auto 40px auto;
  }
- .shared .r3 .loading {
+ .shared .r3 .loading, .shared .r3 .failed {
  	position: relative;
  	top: 0px;
  	left: 50%;
  	width: 160px;
  	margin: 0 0 0 -80px;
  	text-align: center;
- 	display: block;
+ 	display: none;
+ }
+ .shared .r3 .done {
+ 	position: relative;
+ 	top: 0px;
+ 	left: 50%;
+ 	width: 400px;
+ 	height: 24px;
+ 	margin: 0 0 0 -200px;
+ 	padding: 6px 0 0 0;
+ 	text-align: center;
+ 	display: none;
  }
 
 /**

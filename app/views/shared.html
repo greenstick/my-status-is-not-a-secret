@@ -29,32 +29,22 @@
 		</div>
 	</div>
 	<div class="r1">
-		<div class="prompt hText" onclick="feed.update()">
+		<div class="prompt hText">
 			MY STATUS IS NOT A SECRET BECAUSE...
 		</div>
 	</div>
 	<div class="r2">
-		<!-- ko if: feed.pages != 'undefined' -->
-		<div id="feed" data-bind="foreach: feed.pages">
-			<!-- ko if: page != 'undefined' -->
-			<div class="page js-masonry" data-bind="foreach: page" data-masonry-options='{"columnWidth": 220, "itemSelector": ".storyTile"}'>
-				<div class="storyTile" data-bind="isotope: {container: '#feed', itemSelector: '.storyTile'}">
-					<img src="../img/my-status-200.png" />
-					<div class="divisor"></div>
-					<div class="author hText">
-						<!-- ko if: name.first != 'undefined' -->
-						<span data-bind="text: name.first"></span>
-						<!-- /ko -->
-						<!-- ko if: location.state != 'undefined' -->
-						<span data-bind="text: location.state"></span>
-						<!-- /ko -->
-					</div>
-
+		<div id="feed" class="js-masonry" data-bind="foreach: feed.pages">
+			<div class="storyTile" data-bind="isotope: {container: '#feed', itemSelector: '.storyTile'}, attr: {'id': _id}">
+				<img src="../img/my-status-200.png" />
+				<div class="divisor"></div>
+				<div class="author hText">
+					<span data-bind="text: name.first"></span>
+					<span data-bind="text: location.state"></span>
 				</div>
+				<div class="story cText" data-bind="text: $data.story"></div>
 			</div>
-			<!-- /ko -->
 		</div>
-		<!-- /ko -->
 	</div>
 	<div class="r3">
 		<div class="loading hText">
@@ -70,6 +60,15 @@
 				<div id="loadingBarsG_8" class="loadingBarsG"></div>
 			</div>
 		</div>
+		<div class="failed hText">
+			UH OH! FAILED TO LOAD STORIES
+		</div>
+		<div class="done button hText openModal">
+			SHARE WHY MY STATUS IS NOT A SECRET
+		</div>
 	</div>
+	<div id="mask"></div>
+	<iframe id="iframeModal" allowtransparency="true" src="/modal" seamless></iframe>
+	<div id="exitModal" class="hText">X</div>
 </div>
 </body>

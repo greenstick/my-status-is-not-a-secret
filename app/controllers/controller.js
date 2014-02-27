@@ -53,3 +53,9 @@ var mongoose = require('mongoose');
 			title: 'DB Test'
 		});
 	};
+
+	exports.moderation = function (req, res) {
+		res.render('moderation', {
+			title: 'Moderation Queue'
+		});
+	};

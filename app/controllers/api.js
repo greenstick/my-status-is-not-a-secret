@@ -11,6 +11,7 @@ exports.submit = function (req, res) {
 	var submission = new Submission({
 			story: req.param("story"),
 			date: date,
+			approved: false,
 			name: {
 				first: req.param("name")
 			},
@@ -23,17 +24,47 @@ exports.submit = function (req, res) {
 	submission.save(function (error, submission, count) {
 		if (error) return console.log(error)
 		res.json(submission);
-
 	});
 };
 
 //Retrieve Stories
 exports.retrieve = function (req, res) {
-	req.param("page");
-	console.log(page);
-	var query = Submission.find({}, 'story name.first location.country location.state location.city s3imgURL cloudfrontURL createdAt').limit(16);
+	var skipValue = 16 * (req.param("page") -1);
+	var query = Submission.find({}, 'story name.first location.country location.state location.city s3imgURL cloudfrontURL createdAt', {skip: skipValue, limit: 16});
 		query.exec(function (error, submissions) {
 			if (error) return console.log(error)
 			res.json(submissions);
 		})
+};
+
+//Retrieve for Moderation
+exports.newPosts = function (req, res) {
+	var query = Submission.find({}, 'story name.first location.country location.state location.city s3imgURL cloudfrontURL createdAt');
+		query.exec(function (error, submissions) {
+			if (error) return console.log(error)
+			res.json(submissions);
+		})
+};
+
+//Update Post
+exports.approvePosts = function (req, res) {
+	var idList = req.param("idList");
+	console.log(idList);
+	var updated = new Date();
+	submission.update();
+};
+
+//Hide Post
+exports.hidePosts = function (req, res) {
+	var idList = req.param("idList");
+	var updated = new Date();
+	submission.update();
+};
+
+exports.showApproved = function (req, res) {
+
+};
+
+exports.showHidden = function (req, res) {
+
 };

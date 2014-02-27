@@ -1,0 +1,77 @@
+<body>
+<div id="wrapper" class="moderation">
+	<div class="head hText">
+		<div class="headLeft">
+			<div class="homeLogo">
+				<a href="home">
+					<img src="../img/home-logo.png" />
+				</a>
+			</div>
+			<div class="statement">
+				SUPPORTING PARTICIPANTS<br />
+				OF AIDS/LIFE CYCLE AND<br />
+				THE WORK OF THE AIDS<br />
+				HEALTHCARE FOUNDATION
+			</div>
+		</div>
+		<div class="headRight">
+			<div class="share">
+				<div class="icon email"></div>
+				<div class="icon facebook"></div>
+				<div class="icon twitter"></div>
+			</div>
+			<div class="nav">
+				<a href="about" id="aboutLink">ABOUT</a>
+				<a href="whyshare" id="whyshareLink">WHY SHARE?</a>
+				<a href="give" id="giveLink">GIVE</a>
+				<a href="resources" id="resourcesLink">RESOURCES</a>
+			</div>
+		</div>
+	</div>
+	<div class="content">
+		<div class="r1">
+			<div class="prompt hText">
+				MODERATION
+			</div>
+		</div>
+		<div class="r2">
+			<div id="feed" class="js-masonry" data-bind="foreach: feed.pages">
+				<div class="storyTile" data-bind="isotope: {container: '#feed', itemSelector: '.storyTile'}, attr: {'id': _id}">
+					<img src="../img/my-status-200.png" />
+					<div class="divisor"></div>
+					<div class="author hText">
+						<span data-bind="text: name.first"></span>
+						<span data-bind="text: location.state"></span>
+					</div>
+					<div class="story cText" data-bind="text: $data.story"></div>
+				</div>
+			</div>
+		</div>
+		<div class="r3">
+			<div class="loading hText">
+				LOADING
+				<div id="loadingBarsG">
+					<div id="loadingBarsG_1" class="loadingBarsG"></div>
+					<div id="loadingBarsG_2" class="loadingBarsG"></div>
+					<div id="loadingBarsG_3" class="loadingBarsG"></div>
+					<div id="loadingBarsG_4" class="loadingBarsG"></div>
+					<div id="loadingBarsG_5" class="loadingBarsG"></div>
+					<div id="loadingBarsG_6" class="loadingBarsG"></div>
+					<div id="loadingBarsG_7" class="loadingBarsG"></div>
+					<div id="loadingBarsG_8" class="loadingBarsG"></div>
+				</div>
+			</div>
+			<div class="failed hText">
+				UH OH! FAILED TO LOAD STORIES
+			</div>
+		</div>
+	</div>
+	<div id="mask"></div>
+	<div class="ui">
+		<div class="approvePosts button hText">APPROVE SELECTION</div>
+		<div class="hidePosts button hText">HIDE SELECTION</div>
+		<div class="showApproved button hText">SHOW APPROVED</div>
+		<div class="showHidden button hText">SHOW HIDDEN</div>
+	</div>
+</div>
+</body>
