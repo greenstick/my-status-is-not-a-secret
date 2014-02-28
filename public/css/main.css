@@ -279,6 +279,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  .head {
  	position: relative;
  	height: 109px;
+ 	overflow: hidden;
  	border-bottom: 1px solid rgba(230, 60, 46, 1);
  }
  .head .headLeft {
@@ -286,8 +287,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	top: 0px;
  	left: 0px;
  	width: 420px;
- 	height: 110px;
- 	padding: 0 0 10px 0;
+ 	height: 108px;
  	display: inline-block;
  }
  .head .headLeft .homeLogo {
@@ -302,9 +302,9 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	position: relative;
  	top: -8px;
  	left: -4px;
- 	width: 253px;
+ 	width: 252px;
  	height: 94px;
- 	padding: 16px 0 0 10px;
+ 	padding: 14px 0 0 10px;
  	font-size: 12px;
  	line-height: 20px;
  	letter-spacing: 2px;
@@ -316,8 +316,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	top: 0px;
  	left: 420px;
  	width: 540px;
- 	height: 110px;
- 	padding: 0 0 10px 0;
+ 	height: 108px;
  	display: inline-block;
  }
  .head .headRight .share {

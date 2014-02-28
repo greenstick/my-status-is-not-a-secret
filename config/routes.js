@@ -22,7 +22,7 @@ module.exports = function (app) {
 		app.get('/moderation', passport.authenticate('basic', {session: false}), controller.moderation);
 		// modal route
 		app.get('/modal', controller.modal);
-		// moderation route
+		// modal submit
 		app.post('/submit', api.submit);
 		// moderation - retrieve route
 		app.get('/newposts', api.newPosts);

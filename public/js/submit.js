@@ -3,7 +3,7 @@
  **/
 
 	//Submit Story Binding
-	$("#shareForm").on('submit', function (event) {
+	$(".submitModal").on('submit', function (event) {
 		submitStory(this);
 	});
 
@@ -32,10 +32,10 @@
 	};
 
 	//Submit Story to DB
+
 	var submitStory = function (element) {
-		event.preventDefault();
-		var data = $(element).serialize();
 		$('#modalMask, #processing').stop().show();
+		var data = $(element).serialize();
 		$.ajax({
 			type: "POST",
 			url: '/submit',
@@ -50,4 +50,32 @@
 		}).always(function () {
 			console.log(data);
 		});
+		// $('#shareForm').iframePostForm({
+		// 	json: true,
+		// 	post: function () {
+		// 		if ($('input[type=file').val().length) {
+		// 			$('#modalMask, #processing').stop().show();
+		// 			console.log("processing");
+		// 		} else {
+		// 			$('#modalMask, #noImage').stop().fadeIn(600, function () {
+		// 				$('#modalMask, #noImage').stop().fadeOut(600);
+		// 			});
+		// 			console.log("no image");
+		// 			return false;
+		// 		}
+		// 	},
+		// 	complete: function (response) {
+		// 		if (!response.success) {
+		// 			$('#modalFail').stop().fadeIn(600);
+		// 			console.log("image upload failed");
+		// 		} else {
+		// 			if (response.postedValues) {
+		// 				console.log(response.imageSize);
+		// 				console.log("^^^^^^^^ image size ^^^^^^^^");
+		// 				console.log(response.imageSource);
+		// 				console.log("^^^^^^^^ image source ^^^^^^^^");
+		// 			}
+		// 		}
+		// 	}
+		// });
 	};

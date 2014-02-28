@@ -33,45 +33,36 @@ var Feed = function () {
 			})
 		};
 
-		//Update Feed
-		feed.update = function (data, load) {
-			$('.failed').hide();
-			$('.loading').show();
-			console.log("XHR Status: Requesting...");
-			$.ajax({
-				type: "GET", 
-				url: "/newposts",
-				dataType: "json",
-				data: {"page": load}
-			}).done(function (response) {
-				console.log("XHR Status: Success");
-				var data = response;
-					for(var i = 0; i < data.length; i++) {
-						if (data[i].approved !== true) {
-							feed.pages.push(data[i]);
-						}
-					}
-			}).fail(function () {
-				$('.loading').hide();
-				$('.failed').show();
-				console.log("XHR Status: Failed");
-			}).always(function () {
-				console.log("XHR Status: Resolved");
-				$('.loading').hide();
-			})
-		};
+		feed.removeID = function (arr) {
+			var what, a = arguments, L = a.length, ax;
+		    while (L > 1 && arr.length) {
+		        what = a[--L];
+		        while ((ax= arr.indexOf(what)) !== -1) {
+		            arr.splice(ax, 1);
+		        }
+		    }
+		    return arr;
+		}
 
 		//Select Tile
 		feed.select = function (tile) {
-			$(tile).addClass('selected');
-			$('.storyTile.selected').each(function (element) {
-				feed.idList.push($(element).attr('id'));
-			})
+			 if ($(tile).hasClass('selected')) {
+			 	feed.removeID(feed.idList, $(tile).attr('id'))
+			 	$(tile).removeClass('selected');
+			 	if (!feed.idList.length && $(window).scrollTop() <= 118) {
+			 		$('.ui').fadeOut(200);
+			 	}
+			 } else {
+			 	$(tile).addClass('selected');
+			 	feed.idList.push($(tile).attr('id'));
+			 	$('.ui').fadeIn(600);
+			 }
+			 console.log(feed.idList);
 		};
 
 		//Approve Selected Tiles
 		feed.approvePosts = function (idList) {
-			$('#mask, #loader').fadeIn(600);
+			$('#mask').fadeIn(600);
 			$('.storyTile.selected').each(function () {
 				feed.idList.push($(this).attr('id'));
 			})
@@ -81,79 +72,97 @@ var Feed = function () {
 				dataType: "json",
 				data: {"idList": idList}
 			}).done(function (response) {
-
+				console.log("XHR Status: Success");
+				var data = response;
+					feed.pages([]);
+					for(var i = 0; i < data.length; i++) {
+						if (data[i].approved !== true) {
+							feed.pages.push(data[i]);
+						}
+					}
 			}).fail(function () {
-
+				console.log("XHR Status: Failed");
 			}).always(function () {
-				$('#mask, #loader').fadeOut(400);
+				$('#mask').fadeOut(400);
 			})
 		};
 
 		//Hide Selected Tiles
 		feed.hidePosts = function (idList) {
-			$('#mask, #loader').fadeIn(600);
+			$('#mask').fadeIn(600);
 			$.ajax({
 				type: "GET",
 				url: "/hidePosts",
 				dataType: "json",
 				data: {"idList": idList}
 			}).done(function (response) {
-
+				console.log("XHR Status: Success");
+				var data = response;
+				feed.pages([]);
+					for(var i = 0; i < data.length; i++) {
+						if (data[i].approved !== true) {
+							feed.pages.push(data[i]);
+						}
+					}
 			}).fail(function () {
-
+				console.log("XHR Status: Failed");
 			}).always(function () {
-				$('#mask, #loader').fadeOut(400);
+				$('#mask').fadeOut(400);
 			})
 		};
 
-		//Hide Selected Tiles
-		feed.showApproved = function (idList) {
-			$('#mask, #loader').fadeIn(600)
+		//Show Approved Posts
+		feed.showApproved = function () {
+			$('#mask').fadeIn(600)
+			console.log("XHR Status: Requesting...");
 			$.ajax({
-				type: "GET",
-				url: "/showApproved",
-				dataType: "json",
-				data: {"idList": idList}
+				type: "GET", 
+				url: "/showApproved"
 			}).done(function (response) {
-
+				console.log("XHR Status: Success");
+				var data = response;
+				feed.pages([]);
+					for(var i = 0; i < data.length; i++) {
+						if (data[i].approved === true) {
+							feed.pages.push(data[i]);
+						}
+					}
 			}).fail(function () {
-
+				console.log("XHR Status: Failed");
 			}).always(function () {
-				$('#mask, #loader').fadeOut(400);
+				console.log("XHR Status: Resolved");
+				$('#mask').fadeOut(400);
 			})
 		};
 
-				//Hide Selected Tiles
-		feed.showHidden = function (idList) {
-			$('#mask, #loader').fadeIn(600)
+		//Show Hidden Posts
+		feed.showHidden = function () {
+			$('#mask').fadeIn(600)
+			console.log("XHR Status: Requesting...");
 			$.ajax({
-				type: "GET",
-				url: "/showHidden",
-				dataType: "json",
-				data: {"idList": idList}
+				type: "GET", 
+				url: "/showHidden"
 			}).done(function (response) {
-
+				console.log("XHR Status: Success");
+				var data = response;
+				feed.pages([]);
+					for(var i = 0; i < data.length; i++) {
+						if (data[i].approved !== true) {
+							feed.pages.push(data[i]);
+						}
+					}
 			}).fail(function () {
-
+				console.log("XHR Status: Failed");
 			}).always(function () {
-				$('#mask, #loader').fadeOut(400);
+				console.log("XHR Status: Resolved");
+				$('#mask').fadeOut(400);
 			})
 		};
-
 };
 
 /**
  *	Event Bindings
  **/
-
-	// Fade UI into View
-	$(window).scroll(function () {   
-		if ($(window).scrollTop() >= 118) {
-			$('.ui').fadeIn(600);
-		} else {
-			$('.ui').fadeOut(200);
-		}
-	});
 
 	$('#feed').on('click', '.storyTile', function (tile) {
 		feed.select(this);
@@ -165,11 +174,20 @@ var Feed = function () {
 		feed.hidePosts(feed.idList);
 	});
 	$('.showApproved').on('click', function () {
-		feed.showApproved(feed.idList);
+		feed.showApproved();
 	});
 	$('.showHidden').on('click', function () {
-		feed.showHidden(feed.idList);
+		feed.showHidden();
 	});
+
+	$(window).scroll(function () {   
+		if ($(window).scrollTop() <= 118 && !feed.idList.length) {
+			$('.ui').fadeOut(200);
+		} else {
+			$('.ui').fadeIn(600);
+		}
+	});
+
 
 /**
  *	Isotope Custom Binding
@@ -204,6 +222,7 @@ ko.bindingHandlers.isotope = {
             itemSelector: value.itemSelector
         });
         $container.isotope('appended', $el);
+        $container.isotope('reLayout');
     }
 };
 
