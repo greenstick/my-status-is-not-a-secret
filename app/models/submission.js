@@ -24,8 +24,8 @@ var SubmissionSchema = new Schema ({
 	},
 	s3imgURL: String,
 	cloudfrontURL: String,
-	createdAt: String,
-	updatedAt: String
+	createdAt: Date,
+	updatedAt: Date
 });
 
 module.exports = mongoose.model("submission", SubmissionSchema);

@@ -18,18 +18,20 @@ module.exports = function (app) {
 		app.get('/resources', controller.resources);
 		// shared route
 		app.get('/shared', controller.shared);
-		// moderation route
-		app.get('/moderation', passport.authenticate('basic', {session: false}), controller.moderation);
 		// modal route
 		app.get('/modal', controller.modal);
 		// modal submit
 		app.post('/submit', api.submit);
+		// moderation route
+		app.get('/moderation', passport.authenticate('basic', {session: false}), controller.moderation);
 		// moderation - retrieve route
 		app.get('/newposts', api.newPosts);
 		// moderation - approvePosts
 		app.get('/approvePosts', api.approvePosts);
 		// moderation - hidePosts
 		app.get('/hidePosts', api.hidePosts);
+		// moderation - deletePosts
+		app.get('/deletePosts', api.deletePosts);
 		// moderation - showApproved
 		app.get('/showApproved', api.showApproved);
 		// moderation - showHidden

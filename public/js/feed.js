@@ -22,9 +22,10 @@ var Feed = function () {
 				console.log("XHR Status: Success");
 				var data = response;
 					for(var i = 0; i < data.length; i++) {
-						feed.pages.push(data[i]);
+						if (data[i].approved === true) {
+							feed.pages.push(data[i]);
+						}
 					}
-					$('#feed').isotope('reLayout');
 			}).fail(function () {
 				console.log("XHR Status: Failed");
 			}).always(function () {
@@ -50,7 +51,9 @@ var Feed = function () {
 						feed.end = true;
 					}
 					for(var i = 0; i < data.length; i++) {
-						feed.pages.push(data[i]);
+						if (data[i].approved === true) {
+							feed.pages.push(data[i]);
+						};
 					}
 					console.log(feed.pages());
 			}).fail(function () {
@@ -61,11 +64,6 @@ var Feed = function () {
 				console.log("XHR Status: Resolved");
 			})
 		};
-
-		//Load Content to Isotope
-		feed.loadContent = function () {
-			$('#feed').isotope('reLayout');
-		}
 };
 
 /**
@@ -74,27 +72,31 @@ var Feed = function () {
 
 ko.bindingHandlers.isotope = {
     init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+
+    },
+    update: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
     	var $el = $(element);
         var value = ko.utils.unwrapObservable(valueAccessor());
         var $container = $(value.container);
-        $container.isotope({
-            itemSelector: value.itemSelector
-        });
-        $container.isotope({
-        	masonry: {
-        		columnWidth: 240
-        	}, 
-        	itemSelector: $el
-    	});
-    },
-    update: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
-        var $el = $(element);
-        var value = ko.utils.unwrapObservable(valueAccessor());
-        var $container = $(value.container);
-        $container.isotope({
-            itemSelector: value.itemSelector
-        });
-        $container.isotope('appended', $el);
+        var updateLayout = function () {
+        	$container.isotope({
+	            itemSelector: value.itemSelector
+	        });
+	        $container.isotope({
+	        	masonry: {
+	        		columnWidth: 240
+	        	},
+	        	itemSelector: $el
+	    	});
+	    	$container.isotope('appended', $el);
+	        $container.isotope('reLayout');
+        };
+        if (!$container.hasClass('isotope')) {
+	    	updateLayout();
+	    } else {
+	    	$container.isotope('destroy');
+	    	updateLayout();
+	    }
     }
 
 };

@@ -50,32 +50,4 @@
 		}).always(function () {
 			console.log(data);
 		});
-		// $('#shareForm').iframePostForm({
-		// 	json: true,
-		// 	post: function () {
-		// 		if ($('input[type=file').val().length) {
-		// 			$('#modalMask, #processing').stop().show();
-		// 			console.log("processing");
-		// 		} else {
-		// 			$('#modalMask, #noImage').stop().fadeIn(600, function () {
-		// 				$('#modalMask, #noImage').stop().fadeOut(600);
-		// 			});
-		// 			console.log("no image");
-		// 			return false;
-		// 		}
-		// 	},
-		// 	complete: function (response) {
-		// 		if (!response.success) {
-		// 			$('#modalFail').stop().fadeIn(600);
-		// 			console.log("image upload failed");
-		// 		} else {
-		// 			if (response.postedValues) {
-		// 				console.log(response.imageSize);
-		// 				console.log("^^^^^^^^ image size ^^^^^^^^");
-		// 				console.log(response.imageSource);
-		// 				console.log("^^^^^^^^ image source ^^^^^^^^");
-		// 			}
-		// 		}
-		// 	}
-		// });
 	};

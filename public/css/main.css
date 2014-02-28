@@ -1491,7 +1491,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  }
  .shared .r3 {
  	position: relative;
- 	top: 0px;
+ 	bottom: 0px;
  	left: 0px;
  	height: 30px;
  	margin: 30px auto 40px auto;

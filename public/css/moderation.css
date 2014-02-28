@@ -69,12 +69,23 @@
  	top: 0px;
  	left: 50%;
  	width: 940px;
- 	height: 74px;
- 	padding: 42px 0 0 0;
+ 	height: 96px;
+ 	padding: 20px 0 0 0;
  	margin: 0 0 0 -471px;
  	background-color: rgba(255, 255, 255, .8);
  	z-index: 100;
  	display: none;
+ }
+ .moderation .ui .showNew {
+ 	position: relative;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 200px;
+ 	height: 24px;
+ 	padding: 6px 0 0 0;
+ 	margin: 0 10px 0 18px;
+ 	display: inline-block;
+ 	text-align: center;
  }
  .moderation .ui .approvePosts {
  	position: relative;
@@ -83,18 +94,18 @@
  	width: 200px;
  	height: 24px;
  	padding: 6px 0 0 0;
- 	margin: 0 0 0 10px;
+ 	margin: 0 18px 0 18px;
  	display: inline-block;
  	text-align: center;
  }
- .moderation .ui .hidePosts {
+ .moderation .ui .selectAll {
  	position: relative;
  	top: 0px;
  	left: 0px;
  	width: 200px;
  	height: 24px;
  	padding: 6px 0 0 0;
- 	margin: 0 18px 0 36px;
+ 	margin: 0 18px 0 10px;
  	display: inline-block;
  	text-align: center;
  }
@@ -105,7 +116,40 @@
  	width: 200px;
  	height: 24px;
  	padding: 6px 0 0 0;
- 	margin: 0 36px 0 18px;
+ 	margin: 0 18px 0 18px;
+ 	display: inline-block;
+ 	text-align: center;
+ }
+ .moderation .ui .deleteSelected {
+ 	position: relative;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 200px;
+ 	height: 24px;
+ 	padding: 6px 0 0 0;
+ 	margin: 16px 10px 0 18px;
+ 	display: inline-block;
+ 	text-align: center;
+ }
+ .moderation .ui .hidePosts {
+ 	position: relative;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 200px;
+ 	height: 24px;
+ 	padding: 6px 0 0 0;
+ 	margin: 16px 18px 0 18px;
+ 	display: inline-block;
+ 	text-align: center;
+ }
+ .moderation .ui .deselectAll {
+ 	position: relative;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 200px;
+ 	height: 24px;
+ 	padding: 6px 0 0 0;
+ 	margin: 16px 18px 0 10px;
  	display: inline-block;
  	text-align: center;
  }
@@ -116,7 +160,7 @@
  	width: 200px;
  	height: 24px;
  	padding: 6px 0 0 0;
- 	margin: 0 10px 0 0;
+ 	margin: 16px 18px 0 18px;
  	display: inline-block;
  	text-align: center;
  }
