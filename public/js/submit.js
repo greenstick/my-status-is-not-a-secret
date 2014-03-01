@@ -11,7 +11,7 @@
 	$('.image').on("click", function () {
 		selectImage(this);
 	})
-	//Upload Image Binding
+	//User Uploaded Image Binding
 	$('.image:nth-child(6)').on("click", function () {
 		uploadImage();
 	})
@@ -22,8 +22,11 @@
 
  	//Select Image
 	var selectImage = function (element) {
-		$('.image').removeClass('selected')
+		$('.image').removeClass('selected');
 		$(element).addClass('selected');
+		var longPath = $('.selected').attr('src');
+		var path = longPath.slice(7, longPath.length);
+		$('#selectedImage').val(path);
 	};
 
 	//Upload Image
@@ -32,14 +35,15 @@
 	};
 
 	//Submit Story to DB
-
 	var submitStory = function (element) {
 		$('#modalMask, #processing').stop().show();
 		var data = $(element).serialize();
 		$.ajax({
 			type: "POST",
 			url: '/submit',
-			data: data
+			data: {
+				formData: data
+			}
 		}).done(function () {
 			$('#modalMask').hide();
 			$('#processing, #submissionModal').stop().fadeOut(400);
@@ -51,3 +55,9 @@
 			console.log(data);
 		});
 	};
+
+/**
+ *	Init First Selected Image
+ **/
+
+selectImage('.image:first-child');

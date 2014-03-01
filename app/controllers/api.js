@@ -7,51 +7,68 @@ var Submission = require('../models/submission.js'),
 
 //Submit 
 exports.submit = function (req, res) {
-		//Creating New Submission
-		var date = new Date(),
-			id = null,
-			submission = new Submission({
-				story: req.param("story"),
-				createdAt: date,
-				approved: false,
-				name: {
-					first: req.param("name")
-				},
-				location: {
-					country: req.param("country"),
-					state: req.param("state")
-				}
-			});
-
-		//Saving Submission to DB
-		submission.save(function (error, submission, count) {
-			if (error) return console.log(error)
-			id = submission._id;
-			console.log(id);
-			res.json(submission);
+	//Creating New Submission
+	var date = new Date(),
+		id = null,
+		submission = new Submission({
+			story: req.param("story"),
+			createdAt: date,
+			approved: false,
+			name: {
+				first: req.param("name")
+			},
+			location: {
+				country: req.param("country"),
+				state: req.param("state")
+			}
 		});
 
-	//Photo Variables
-	var photo = req.files.image;
-	console.log(photo);
-	// var s3response = null;
-	// var s3 = knox.createClient({
-	// 	key: 'AKIAIDSMNL7XAYRZ6VNA',
-	// 	secret: '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',
-	// 	bucket: 'aids-life-cycle'
-	// });
-	// var s3Headers = {
-	// 	'Content-Type': photo.type,
-	// 	'x-amx-acl': 'public-read'
-	// };
-
-	// //Saving File to S3 and Retrieving 
-	// s3.putFile(photo.path, photo.name, s3Headers, function (err, s3res) {
-	// 	if (err) return console.log(err);
-	// 	s3imgURL = s3res.url;
-	// 	console.log(s3imgURL);
-	// });
-	// res.json(submission);
+	//Saving Submission to DB
+	submission.save(function (error, submission, count) {
+		//Photo Variables
+		var photo = req.files.image,
+			cloudfrontURL;
+			if (photo.name) {
+				//S3
+				var ext = photo.name.split('.', 2)[1],
+					cloudfrontURL = 'feed-images/' + photo.name;
+					photo.name = submission._id + '.' + ext;
+				var s3 = knox.createClient({
+					key: 'AKIAIDSMNL7XAYRZ6VNA',
+					secret: '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',
+					bucket: 'aids-life-cycle'
+				});
+				var s3Headers = {
+					'Content-Type': photo.type,
+					'x-amx-acl': 'public-read'
+				};
+				if (error) return console.log(error)
+				s3.putFile(photo.path, 'feed-images/' + photo.name, s3Headers, function (err, s3res) {
+					if (err) return console.log(err);
+					s3imgURL = s3res.url;
+					var update = Submission.update({_id: submission._id}, {$set: {cloudfrontURL: cloudfrontURL}}, function () {
+						update.exec(function (error, updated) {
+							if (error) return console.log(error)
+							res.render('success', {
+								title: 'Success'
+							});
+						});
+					});
+				});
+			} else {
+				//Selected Image
+				cloudfrontURL = 'feed-images/' + req.param("selectedImage");
+				console.log(req.param("selectedImage") + "selectedImage");
+				var update = Submission.update({_id: submission._id}, {$set: {cloudfrontURL: cloudfrontURL}}, function () {
+					update.exec(function (error, updated) {
+						if (error) return console.log(error)
+						res.render('success', {
+							title: 'Success'
+						});
+					});
+				});
+			}
+	});
 };
 
 //Retrieve Stories
@@ -77,7 +94,6 @@ exports.newPosts = function (req, res) {
 exports.approvePosts = function (req, res) {
 	var idList = req.param("idList");
 	var updated = new Date();
-	//Updating 
 	var update = Submission.update({_id: { $in: idList}}, {$set: {approved: true, updatedAt: updated}}, {multi: true}, function () {
 		update.exec(function (error, submissions) {
 			if (error) return console.log(error)
@@ -95,7 +111,6 @@ exports.approvePosts = function (req, res) {
 exports.hidePosts = function (req, res) {
 	var idList = req.param("idList");
 	var updated = new Date();
-	//Updating 
 	var update = Submission.update({_id: { $in: idList}}, {$set: {approved: false, updatedAt: updated}}, {multi: true}, function () {
 		update.exec(function (error, submissions) {
 			if (error) return console.log(error)
@@ -129,9 +144,12 @@ exports.showHidden = function (req, res) {
 
 exports.deletePosts = function (req, res) {
 	var idList = req.param("idList");
-	console.log(idList);
-	var query = Submission.remove({_id: { $in: idList}}, function (err) {
-		if (err) return console.log(err);
+	if (idList.length > 0) {
+		var query = Submission.remove({_id: { $in: idList}}, function (err) {
+			if (err) return console.log(err);
+			res.json({deleted: idList});
+		});
+	} else {
 		res.json({deleted: idList});
-	});
+	}
 };

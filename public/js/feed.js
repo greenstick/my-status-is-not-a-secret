@@ -26,6 +26,7 @@ var Feed = function () {
 							feed.pages.push(data[i]);
 						}
 					}
+					console.log(data);
 			}).fail(function () {
 				console.log("XHR Status: Failed");
 			}).always(function () {

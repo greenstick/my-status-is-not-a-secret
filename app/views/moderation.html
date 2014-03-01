@@ -37,7 +37,7 @@
 		<div class="r2">
 			<div id="feed" class="js-masonry" data-bind="foreach: feed.pages">
 				<div class="storyTile" data-bind="isotope: {container: '#feed', itemSelector: '.storyTile'}, attr: {'id': _id}">
-					<img src="../img/my-status-200.png" />
+					<img data-bind="attr: {'src': '//d1cllk76e9bo1o.cloudfront.net/' + cloudfrontURL}" />
 					<div class="divisor"></div>
 					<div class="author hText">
 						<span data-bind="text: name.first"></span>

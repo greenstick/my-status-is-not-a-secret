@@ -42,7 +42,7 @@ var Feed = function () {
 			var what, a = arguments, L = a.length, ax;
 		    while (L > 1 && arr.length) {
 		        what = a[--L];
-		        while ((ax= arr.indexOf(what)) !== -1) {
+		        while ((ax = arr.indexOf(what)) !== -1) {
 		            arr.splice(ax, 1);
 		        }
 		    }
@@ -70,7 +70,7 @@ var Feed = function () {
 		feed.openUI = function (e) {
 			var y = event.clientY;
 			if (feed.uiOpen !== true) {
-				if (y < 20) {
+				if (y < 16) {
 					$('.ui').stop().fadeIn(600);
 					feed.uiOpen = true;
 				}
@@ -81,7 +81,7 @@ var Feed = function () {
 		feed.closeUI = function (e) {
 			var y = event.clientY;
 			setTimeout(function () {
-				if (y > 80 && $(window).scrollTop() <= 118) {
+				if (y > 114 && $(window).scrollTop() <= 118) {
 					$('.ui').stop().fadeOut(200);
 				}
 				feed.uiOpen = false;
@@ -106,7 +106,6 @@ var Feed = function () {
 
 		//Delete Posts
 		feed.deletePosts = function (idList) {
-			console.log(idList);
 			$('#mask').fadeIn(600);
 			$('.storyTile.selected').each(function () {
 				feed.idList.push($(this).attr('id'));

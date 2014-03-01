@@ -48,7 +48,7 @@ var mongoose = require('mongoose');
 		});
 	};
 
-	exports.dbTest = function (req, res){
+	exports.dbTest = function (req, res) {
 		res.render('test/db-test', {
 			title: 'DB Test'
 		});

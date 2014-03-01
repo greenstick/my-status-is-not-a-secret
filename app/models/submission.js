@@ -3,7 +3,6 @@ var mongoose = require('mongoose'),
 
 var SubmissionSchema = new Schema ({
 	id: Number,
-	date: Date,
 	approved: Boolean,
 	timezone: Date,
 	order: Number,
@@ -22,7 +21,6 @@ var SubmissionSchema = new Schema ({
 		twitter: String,
 		facebook: String
 	},
-	s3imgURL: String,
 	cloudfrontURL: String,
 	createdAt: Date,
 	updatedAt: Date

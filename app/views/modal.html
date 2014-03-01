@@ -1,5 +1,5 @@
 <div id="submissionModal">
-	<form id="shareForm" class="content" accept-charset="utf-8" enctype="multipart/form-data">
+	<form id="shareForm" method="post" class="content" action="/submit" accept-charset="utf-8" enctype="multipart/form-data">
 		<div class="col1">
 			<div class="header hText">
 				MY STATUS <span class="red">IS NOT</span> A SECRET BECAUSE....
@@ -20,14 +20,15 @@
 				Choose a photo:
 			</div>
 			<div class="images">
-				<img class="image selected" src="../img/mini-logo.png" />
-				<img class="image" src="../img/dont-know.png" />
+				<img class="image selected" src="../img/my-status.png" />
+				<img class="image" src="../img/1-in-5.png" />
 				<img class="image" src="../img/i-know.png" />
 				<img class="image" src="../img/i-share.png" />
 				<img class="image" src="../img/why-not.png" />
 				<img class="image" src="../img/default-image.png" />
 			</div>
 			<input id="uploadImage" type="file" name="image" />
+			<input id="selectedImage" type="hidden" name="selectedImage" />
 		</div>
 	</form>
 </div>
@@ -51,12 +52,6 @@
 	<div class="notification hText">
 		UH OH! NO IMAGE SELECTED.<br>
 		PLEASE CHOOSE OR UPLOAD AN IMAGE.
-	</div>
-</div>
-<div id="modalSuccess">
-	<div class="notification hText">
-		THANK YOU FOR SHARING YOUR STORY.<br>
-		WE ARE READING IT NOW AND YOU CAN EXPECT TO SEE IT SOON.
 	</div>
 </div>
 <div id="modalFail">
