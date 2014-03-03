@@ -34,11 +34,11 @@ passport.use(new BasicStrategy(
 
 //S3 Image Upload Handling
 //Development Version
-var s3 = knox.createClient({
-	key: 'AKIAIDSMNL7XAYRZ6VNA',
-	secret: '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',
-	bucket: 'aids-life-cycle'
-});
+// var s3 = knox.createClient({
+// 	key: 'AKIAIDSMNL7XAYRZ6VNA',
+// 	secret: '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',
+// 	bucket: 'aids-life-cycle'
+// });
 
 //S3 Image Upload Handling
 //Deployment Version

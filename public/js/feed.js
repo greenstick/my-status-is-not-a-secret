@@ -3,68 +3,68 @@
  **/
 
 var Feed = function () {
-	var feed = this;
-		feed.pages = ko.observableArray([]),
-		feed.chunk = 1,
-		feed.end = false,
-		feed.idList = [];
+var feed = this;
+	feed.pages = ko.observableArray([]),
+	feed.chunk = 1,
+	feed.end = false,
+	feed.idList = [];
 
-		//Initialize Feed
-		feed.init = function (page) {
-			$('.loading').show();
-			console.log("XHR Status: Requesting...");
-			$.ajax({
-				type: "GET", 
-				url: "/retrieve",
-				dataType: "json",
-				data: {"page": page}
-			}).done(function (response) {
-				console.log("XHR Status: Success");
-				var data = response;
-					for(var i = 0; i < data.length; i++) {
-						if (data[i].approved === true) {
-							feed.pages.push(data[i]);
-						}
+	//Initialize Feed
+	feed.init = function (page) {
+		$('.loading').show();
+		console.log("XHR Status: Requesting...");
+		$.ajax({
+			type: "GET", 
+			url: "/retrieve",
+			dataType: "json",
+			data: {"page": page}
+		}).done(function (response) {
+			console.log("XHR Status: Success");
+			var data = response;
+				for(var i = 0; i < data.length; i++) {
+					if (data[i].approved === true) {
+						feed.pages.push(data[i]);
 					}
-					console.log(data);
-			}).fail(function () {
-				console.log("XHR Status: Failed");
-			}).always(function () {
-				$('.loading').hide();
-				console.log("XHR Status: Resolved");
-			})
-		};
+				}
+				console.log(data);
+		}).fail(function () {
+			console.log("XHR Status: Failed");
+		}).always(function () {
+			$('.loading').hide();
+			console.log("XHR Status: Resolved");
+		})
+	};
 
-		//Update Feed
-		feed.update = function (load) {
-			$('.failed').hide();
-			$('.loading').show();
-			console.log("XHR Status: Requesting...");
-			$.ajax({
-				type: "GET", 
-				url: "/retrieve",
-				dataType: "json",
-				data: {"page": load}
-			}).done(function (response) {
-				console.log("XHR Status: Success");
-				var data = response;
-					if (data.length < 16) {
-						feed.end = true;
-					}
-					for(var i = 0; i < data.length; i++) {
-						if (data[i].approved === true) {
-							feed.pages.push(data[i]);
-						};
-					}
-					console.log(feed.pages());
-			}).fail(function () {
-				$('.failed').show();
-				console.log("XHR Status: Failed");
-			}).always(function () {
-				$('.loading').hide();
-				console.log("XHR Status: Resolved");
-			})
-		};
+	//Update Feed
+	feed.update = function (load) {
+		$('.failed').hide();
+		$('.loading').show();
+		console.log("XHR Status: Requesting...");
+		$.ajax({
+			type: "GET", 
+			url: "/retrieve",
+			dataType: "json",
+			data: {"page": load}
+		}).done(function (response) {
+			console.log("XHR Status: Success");
+			var data = response;
+				if (data.length < 16) {
+					feed.end = true;
+				}
+				for(var i = 0; i < data.length; i++) {
+					if (data[i].approved === true) {
+						feed.pages.push(data[i]);
+					};
+				}
+				console.log(feed.pages());
+		}).fail(function () {
+			$('.failed').show();
+			console.log("XHR Status: Failed");
+		}).always(function () {
+			$('.loading').hide();
+			console.log("XHR Status: Resolved");
+		})
+	};
 };
 
 /**
@@ -99,7 +99,6 @@ ko.bindingHandlers.isotope = {
 	    	updateLayout();
 	    }
     }
-
 };
 
 /**

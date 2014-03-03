@@ -6,13 +6,12 @@
 	$(".submitModal").on('submit', function (event) {
 		submitStory(this);
 	});
-
 	//Image Highlighting Binding
-	$('.image').on("click", function () {
+	$('.image').on("click", function (event) {
 		selectImage(this);
 	})
 	//User Uploaded Image Binding
-	$('.image:nth-child(6)').on("click", function () {
+	$('.image:nth-child(6)').on("click", function (events) {
 		uploadImage();
 	})
 
@@ -22,10 +21,13 @@
 
  	//Select Image
 	var selectImage = function (element) {
+		var longPath, path, l;
+		console.log(element);
 		$('.image').removeClass('selected');
 		$(element).addClass('selected');
-		var longPath = $('.selected').attr('src');
-		var path = longPath.slice(7, longPath.length);
+		console.log($('.selected').attr('src'));
+		longPath = $('.selected').attr('src');
+		path = longPath.slice(7, longPath.length);
 		$('#selectedImage').val(path);
 	};
 
@@ -41,9 +43,7 @@
 		$.ajax({
 			type: "POST",
 			url: '/submit',
-			data: {
-				formData: data
-			}
+			data: data
 		}).done(function () {
 			$('#modalMask').hide();
 			$('#processing, #submissionModal').stop().fadeOut(400);

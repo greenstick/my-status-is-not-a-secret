@@ -38,6 +38,4 @@ module.exports = function (app) {
 		app.get('/showHidden', api.showHidden);
 		// feed - retrieve route
 		app.get('/retrieve', api.retrieve);
-		// test - DB Test
-		app.get('/test/db-test', controller.dbTest);
 };
