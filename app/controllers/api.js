@@ -33,21 +33,14 @@ exports.submit = function (req, res) {
 				var ext = photo.name.split('.', 2)[1];
 					photo.name = submission._id + '.' + ext;
 					cloudfrontURL = 'feed-images/' + photo.name;
-				//S3 Image Upload Handling
-				//Development Version
-				var s3 = knox.createClient({
-					key: 'AKIAIDSMNL7XAYRZ6VNA',
-					secret: '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',
-					bucket: 'aids-life-cycle'
-				});
 
 				//S3 Image Upload Handling
 				//Deployment Version
-				// var s3 = knox.createClient({
-				// 	key: process.env.AWS_ACCESS_KEY_ID,
-				// 	secret: process.env.AWS_SECRET_ACCESS_KEY,
-				// 	bucket: process.env.S3_BUCKET_NAME
-				// });
+				var s3 = knox.createClient({
+					key: process.env.AWS_ACCESS_KEY_ID,
+					secret: process.env.AWS_SECRET_ACCESS_KEY,
+					bucket: process.env.S3_BUCKET_NAME
+				});
 				var s3Headers = {
 					'Content-Type': photo.type,
 					'x-amx-acl': 'public-read'
