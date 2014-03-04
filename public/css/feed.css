@@ -44,7 +44,28 @@
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 200px;
+	width: 154px;
+	height: 26px;
+	padding: 4px 0 0 0;
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+#feed .storyTile .author .comma {
+	position: absolute;
+	top: 0px;
+	left: 154px;
+	width: 6px;
+	height: 26px;
+	padding: 4px 0 0 0;
+	display: inline-block;
+}
+#feed .storyTile .author .location {
+	position: absolute;
+	top: 0px;
+	left: 160px;
+	width: 40px;
 	height: 26px;
 	padding: 4px 0 0 0;
 	display: inline-block;
