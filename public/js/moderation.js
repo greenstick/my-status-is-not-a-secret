@@ -14,12 +14,12 @@ var Feed = function () {
 		//Initialize Feed
 		feed.init = function () {
 			$('.loading').show();
-			console.log("XHR Status: Requesting...");
+			// console.log("XHR Status: Requesting...");
 			$.ajax({
 				type: "GET", 
 				url: "/newposts"
 			}).done(function (response) {
-				console.log("XHR Status: Success");
+				// console.log("XHR Status: Success");
 				var data = response;
 					for(var i = 0; i < data.length; i++) {
 						if (data[i].updatedAt == null) {
@@ -31,9 +31,9 @@ var Feed = function () {
 					}
 					feed.firstLoad = false;
 			}).fail(function () {
-				console.log("XHR Status: Failed");
+				// console.log("XHR Status: Failed");
 			}).always(function () {
-				console.log("XHR Status: Resolved");
+				// console.log("XHR Status: Resolved");
 				$('.loading').hide();
 			})
 		};
@@ -116,7 +116,7 @@ var Feed = function () {
 				dataType: "json",
 				data: {"idList": idList}
 			}).done(function (response) {
-				console.log("XHR Status: Success");
+				// console.log("XHR Status: Success");
 				var data = response;
 					feed.pages([]);
 					for(var i = 0; i < data.length; i++) {
@@ -126,7 +126,7 @@ var Feed = function () {
 					}
 				feed.idList = [];
 			}).fail(function () {
-				console.log("XHR Status: Failed");
+				// console.log("XHR Status: Failed");
 			}).always(function () {
 				$('#mask').fadeOut(400);
 			})
@@ -144,7 +144,7 @@ var Feed = function () {
 				dataType: "json",
 				data: {"idList": idList}
 			}).done(function (response) {
-				console.log("XHR Status: Success");
+				// console.log("XHR Status: Success");
 				var data = response;
 					feed.pages([]);
 					for(var i = 0; i < data.length; i++) {
@@ -154,7 +154,7 @@ var Feed = function () {
 					}
 				feed.idList = [];
 			}).fail(function () {
-				console.log("XHR Status: Failed");
+				// console.log("XHR Status: Failed");
 			}).always(function () {
 				$('#mask').fadeOut(400);
 			})
@@ -169,7 +169,7 @@ var Feed = function () {
 				dataType: "json",
 				data: {"idList": idList}
 			}).done(function (response) {
-				console.log("XHR Status: Success");
+				// console.log("XHR Status: Success");
 				var data = response;
 				feed.pages([]);
 					for(var i = 0; i < data.length; i++) {
@@ -179,7 +179,7 @@ var Feed = function () {
 					}
 				feed.idList = [];
 			}).fail(function () {
-				console.log("XHR Status: Failed");
+				// console.log("XHR Status: Failed");
 			}).always(function () {
 				$('#mask').fadeOut(400);
 			})
@@ -188,12 +188,12 @@ var Feed = function () {
 		//Show Approved Posts
 		feed.showApproved = function () {
 			$('#mask').fadeIn(600)
-			console.log("XHR Status: Requesting...");
+			// console.log("XHR Status: Requesting...");
 			$.ajax({
 				type: "GET", 
 				url: "/showApproved"
 			}).done(function (response) {
-				console.log("XHR Status: Success");
+				// console.log("XHR Status: Success");
 				var data = response;
 				feed.pages([]);
 					for(var i = 0; i < data.length; i++) {
@@ -203,9 +203,9 @@ var Feed = function () {
 					}
 				feed.idList = [];
 			}).fail(function () {
-				console.log("XHR Status: Failed");
+				// console.log("XHR Status: Failed");
 			}).always(function () {
-				console.log("XHR Status: Resolved");
+				// console.log("XHR Status: Resolved");
 				$('#mask').fadeOut(400);
 			})
 		};
@@ -213,12 +213,12 @@ var Feed = function () {
 		//Show Hidden Posts
 		feed.showHidden = function () {
 			$('#mask').fadeIn(600)
-			console.log("XHR Status: Requesting...");
+			// console.log("XHR Status: Requesting...");
 			$.ajax({
 				type: "GET", 
 				url: "/showHidden"
 			}).done(function (response) {
-				console.log("XHR Status: Success");
+				// console.log("XHR Status: Success");
 				var data = response;
 				feed.pages([]);
 					for(var i = 0; i < data.length; i++) {
@@ -228,9 +228,9 @@ var Feed = function () {
 					}
 				feed.idList = [];
 			}).fail(function () {
-				console.log("XHR Status: Failed");
+				// console.log("XHR Status: Failed");
 			}).always(function () {
-				console.log("XHR Status: Resolved");
+				// console.log("XHR Status: Resolved");
 				$('#mask').fadeOut(400);
 			})
 		};
@@ -238,12 +238,12 @@ var Feed = function () {
 		//Show New POsts
 		feed.showNew = function () {
 			$('.loading').show();
-			console.log("XHR Status: Requesting...");
+			// console.log("XHR Status: Requesting...");
 			$.ajax({
 				type: "GET", 
 				url: "/newposts"
 			}).done(function (response) {
-				console.log("XHR Status: Success");
+				// console.log("XHR Status: Success");
 				var data = response;
 					feed.pages([]);
 					for(var i = 0; i < data.length; i++) {
@@ -252,9 +252,9 @@ var Feed = function () {
 						}
 					}
 			}).fail(function () {
-				console.log("XHR Status: Failed");
+				// console.log("XHR Status: Failed");
 			}).always(function () {
-				console.log("XHR Status: Resolved");
+				// console.log("XHR Status: Resolved");
 				$('.loading').hide();
 			})
 		};

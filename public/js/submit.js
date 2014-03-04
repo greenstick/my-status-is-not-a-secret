@@ -21,11 +21,9 @@
 
  	//Select Image
 	var selectImage = function (element) {
-		var longPath, path, l;
-		console.log(element);
+		var longPath, path;
 		$('.image').removeClass('selected');
 		$(element).addClass('selected');
-		console.log($('.selected').attr('src'));
 		longPath = $('.selected').attr('src');
 		path = longPath.slice(7, longPath.length);
 		$('#selectedImage').val(path);

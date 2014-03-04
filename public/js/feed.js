@@ -12,26 +12,26 @@ var feed = this;
 	//Initialize Feed
 	feed.init = function (page) {
 		$('.loading').show();
-		console.log("XHR Status: Requesting...");
+		// console.log("XHR Status: Requesting...");
 		$.ajax({
 			type: "GET", 
 			url: "/retrieve",
 			dataType: "json",
 			data: {"page": page}
 		}).done(function (response) {
-			console.log("XHR Status: Success");
+			// console.log("XHR Status: Success");
 			var data = response;
 				for(var i = 0; i < data.length; i++) {
 					if (data[i].approved === true) {
 						feed.pages.push(data[i]);
 					}
 				}
-				console.log(data);
+				// console.log(data);
 		}).fail(function () {
-			console.log("XHR Status: Failed");
+			// console.log("XHR Status: Failed");
 		}).always(function () {
 			$('.loading').hide();
-			console.log("XHR Status: Resolved");
+			// console.log("XHR Status: Resolved");
 		})
 	};
 
@@ -39,14 +39,14 @@ var feed = this;
 	feed.update = function (load) {
 		$('.failed').hide();
 		$('.loading').show();
-		console.log("XHR Status: Requesting...");
+		// console.log("XHR Status: Requesting...");
 		$.ajax({
 			type: "GET", 
 			url: "/retrieve",
 			dataType: "json",
 			data: {"page": load}
 		}).done(function (response) {
-			console.log("XHR Status: Success");
+			// console.log("XHR Status: Success");
 			var data = response;
 				if (data.length < 16) {
 					feed.end = true;
@@ -56,13 +56,13 @@ var feed = this;
 						feed.pages.push(data[i]);
 					};
 				}
-				console.log(feed.pages());
+				// console.log(feed.pages());
 		}).fail(function () {
 			$('.failed').show();
-			console.log("XHR Status: Failed");
+			// console.log("XHR Status: Failed");
 		}).always(function () {
 			$('.loading').hide();
-			console.log("XHR Status: Resolved");
+			// console.log("XHR Status: Resolved");
 		})
 	};
 };

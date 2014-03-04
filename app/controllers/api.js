@@ -24,7 +24,7 @@ exports.submit = function (req, res) {
 		});
 
 	//Saving Submission to DB
-	submission.save(function (error, submission, count) {
+	submission.save(function (e, submission, count) {
 		//Photo Variables
 		var photo = req.files.image,
 			cloudfrontURL;
@@ -46,7 +46,7 @@ exports.submit = function (req, res) {
 					'Content-Type': photo.type,
 					'x-amx-acl': 'public-read'
 				};
-				if (error) return console.log(error)
+				if (e) return console.log(e)
 				s3.putFile(photo.path, cloudfrontURL, s3Headers, function (err, s3res) {
 					if (err) return console.log(err);
 					s3imgURL = s3res.url;
@@ -62,7 +62,6 @@ exports.submit = function (req, res) {
 			} else {
 				//Selected Image
 				cloudfrontURL = 'feed-images/' + req.param("selectedImage");
-				console.log(req.param("selectedImage") + "selectedImage");
 				var update = Submission.update({_id: submission._id}, {$set: {cloudfrontURL: cloudfrontURL}}, function () {
 					update.exec(function (error, updated) {
 						if (error) return console.log(error)
@@ -99,8 +98,8 @@ exports.approvePosts = function (req, res) {
 	var idList = req.param("idList");
 	var updated = new Date();
 	var update = Submission.update({_id: { $in: idList}}, {$set: {approved: true, updatedAt: updated}}, {multi: true}, function () {
-		update.exec(function (error, submissions) {
-			if (error) return console.log(error)
+		update.exec(function (err, submissions) {
+			if (err) return console.log(err)
 		})
 	});
 	var query = Submission.find({approved: false}, 'approved story name.first location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', function () {
@@ -116,8 +115,8 @@ exports.hidePosts = function (req, res) {
 	var idList = req.param("idList");
 	var updated = new Date();
 	var update = Submission.update({_id: { $in: idList}}, {$set: {approved: false, updatedAt: updated}}, {multi: true}, function () {
-		update.exec(function (error, submissions) {
-			if (error) return console.log(error)
+		update.exec(function (err, submissions) {
+			if (err) return console.log(err)
 		})
 	});
 	var query = Submission.find({approved: true}, 'approved story name.first location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', function () {
