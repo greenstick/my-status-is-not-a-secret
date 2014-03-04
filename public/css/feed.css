@@ -13,7 +13,7 @@
 	height: auto;
 	padding: 10px;
 	margin: 10px 0 10px 0;
-	display: inline-block;
+	display: none;
 	background-color: rgba(51, 51, 51, 1);
 	overflow: hidden;
 }

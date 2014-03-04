@@ -30,6 +30,7 @@ var Feed = function () {
 						$('#feed').isotope('reLayout');
 					}
 					feed.firstLoad = false;
+					$('.storyTile').css('display', 'inline-block');
 			}).fail(function () {
 				// console.log("XHR Status: Failed");
 			}).always(function () {
@@ -124,7 +125,8 @@ var Feed = function () {
 							feed.pages.push(data[i]);
 						}
 					}
-				feed.idList = [];
+					$('.storyTile').css('display', 'inline-block');
+					feed.idList = [];
 			}).fail(function () {
 				// console.log("XHR Status: Failed");
 			}).always(function () {
@@ -152,7 +154,8 @@ var Feed = function () {
 							feed.pages.push(data[i]);
 						}
 					}
-				feed.idList = [];
+					$('.storyTile').css('display', 'inline-block');
+					feed.idList = [];
 			}).fail(function () {
 				// console.log("XHR Status: Failed");
 			}).always(function () {
@@ -177,7 +180,8 @@ var Feed = function () {
 							feed.pages.push(data[i]);
 						}
 					}
-				feed.idList = [];
+					$('.storyTile').css('display', 'inline-block');
+					feed.idList = [];
 			}).fail(function () {
 				// console.log("XHR Status: Failed");
 			}).always(function () {
@@ -201,7 +205,8 @@ var Feed = function () {
 							feed.pages.push(data[i]);
 						}
 					}
-				feed.idList = [];
+					$('.storyTile').css('display', 'inline-block');
+					feed.idList = [];
 			}).fail(function () {
 				// console.log("XHR Status: Failed");
 			}).always(function () {
@@ -226,7 +231,8 @@ var Feed = function () {
 							feed.pages.push(data[i]);
 						}
 					}
-				feed.idList = [];
+					$('.storyTile').css('display', 'inline-block');
+					feed.idList = [];
 			}).fail(function () {
 				// console.log("XHR Status: Failed");
 			}).always(function () {
@@ -251,6 +257,8 @@ var Feed = function () {
 							feed.pages.push(data[i]);
 						}
 					}
+					$('.storyTile').css('display', 'inline-block');
+					feed.idList = [];
 			}).fail(function () {
 				// console.log("XHR Status: Failed");
 			}).always(function () {

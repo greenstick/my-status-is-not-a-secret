@@ -26,6 +26,7 @@ var feed = this;
 						feed.pages.push(data[i]);
 					}
 				}
+				$('.storyTile').css('display', 'inline-block');
 				// console.log(data);
 		}).fail(function () {
 			// console.log("XHR Status: Failed");
@@ -56,6 +57,7 @@ var feed = this;
 						feed.pages.push(data[i]);
 					};
 				}
+				$('.storyTile').css('display', 'inline-block');
 				// console.log(feed.pages());
 		}).fail(function () {
 			$('.failed').show();
