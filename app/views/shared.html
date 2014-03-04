@@ -39,8 +39,7 @@
 				<img data-bind="attr: {'src': '//d1cllk76e9bo1o.cloudfront.net/' + cloudfrontURL}" />
 				<div class="divisor"></div>
 				<div class="author hText">
-					<div class="name" data-bind="text: name.first">
-					</div>
+					<div class="name" data-bind="text: name.first"></div>
 					<!-- ko if: name.first != "" && location.state != "" -->
 					<div class="comma">, </div>
 					<!-- /ko -->
@@ -49,6 +48,7 @@
 				<div class="story cText" data-bind="text: $data.story"></div>
 			</div>
 		</div>
+		<div class="clear"></div>
 	</div>
 	<div class="r3">
 		<div class="loading hText">

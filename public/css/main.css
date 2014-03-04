@@ -1497,8 +1497,11 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	width: 960px;
  	margin: 0 0 50px -7px;
  }
+ .shared .r2 .clear {
+ 	clear: both;
+ }
  .shared .r3 {
- 	position: fixed;
+ 	position: relative;
  	bottom: 0px;
  	height: 30px;
  	margin: 30px auto 40px auto;
