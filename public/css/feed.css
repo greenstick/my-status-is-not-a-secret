@@ -44,7 +44,7 @@
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 154px;
+	width: 152px;
 	height: 26px;
 	padding: 4px 0 0 0;
 	display: inline-block;
@@ -56,8 +56,8 @@
 #feed .storyTile .author .comma {
 	position: absolute;
 	top: 0px;
-	left: 154px;
-	width: 6px;
+	left: 152px;
+	width: 8px;
 	height: 26px;
 	padding: 4px 0 0 0;
 	display: inline-block;
