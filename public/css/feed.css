@@ -44,19 +44,7 @@
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 160px;
-	height: 26px;
-	padding: 4px 0 0 0;
-	display: inline-block;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
-#feed .storyTile .author .location {
-	position: absolute;
-	top: 0px;
-	left: 160px;
-	width: 40px;
+	width: 200px;
 	height: 26px;
 	padding: 4px 0 0 0;
 	display: inline-block;

@@ -39,12 +39,7 @@
 				<img data-bind="attr: {'src': '//d1cllk76e9bo1o.cloudfront.net/' + cloudfrontURL}" />
 				<div class="divisor"></div>
 				<div class="author hText">
-					<div class="name" data-bind="text: name.first">
-					</div>
-					<!-- ko if: name.first != "" && location.state != "" -->
-					<span>, </span>
-					<!-- /ko -->
-					<div class="location" data-bind="text: location.state"></div>
+					<div class="name" data-bind="text: function () { return name.first + ((name.first != '' && location.state != '') ? ', ' : '') + location.state }"></div>
 				</div>
 				<div class="story cText" data-bind="text: $data.story"></div>
 			</div>
