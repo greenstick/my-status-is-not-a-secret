@@ -83,9 +83,6 @@ ko.bindingHandlers.isotope = {
         var $container = $(value.container);
         var updateLayout = function () {
         	$container.isotope({
-	        	containerStyle: {
-	        		overflow: "visible"
-	        	},
 	            itemSelector: value.itemSelector
 	        });
 	        $container.isotope({
