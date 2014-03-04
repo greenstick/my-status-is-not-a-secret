@@ -22,7 +22,7 @@
 			</div>
 			<div class="nav">
 				<a href="about" id="aboutLink">ABOUT</a>
-				<a href="whyshare" id="whyshareLink">WHY SHARE?</a>
+				<a href="whyknow" id="whyknowLink">WHY KNOW?</a>
 				<a href="give" id="giveLink">GIVE</a>
 				<a href="resources" id="resourcesLink">RESOURCES</a>
 			</div>
@@ -39,8 +39,12 @@
 				<img data-bind="attr: {'src': '//d1cllk76e9bo1o.cloudfront.net/' + cloudfrontURL}" />
 				<div class="divisor"></div>
 				<div class="author hText">
-					<span data-bind="text: name.first"></span>
-					<span data-bind="text: location.state"></span>
+					<div class="name" data-bind="text: name.first">
+					</div>
+					<!-- ko if: name.first != "" && location.state != "" -->
+					<span>, </span>
+					<!-- /ko -->
+					<div class="location" data-bind="text: location.state"></div>
 				</div>
 				<div class="story cText" data-bind="text: $data.story"></div>
 			</div>

@@ -41,6 +41,7 @@ exports.submit = function (req, res) {
 					secret: process.env.AWS_SECRET_ACCESS_KEY,
 					bucket: process.env.S3_BUCKET_NAME
 				});
+
 				var s3Headers = {
 					'Content-Type': photo.type,
 					'x-amx-acl': 'public-read'

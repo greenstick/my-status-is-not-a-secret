@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 	exports.index = function(req, res){
 		res.render('', {
 	    	title: 'Welcome'
-			});
+		});
 	};
 
 	exports.home = function(req, res){
@@ -18,9 +18,9 @@ var mongoose = require('mongoose');
 		});
 	};
 
-	exports.whyshare = function(req, res){
-		res.render('whyshare', {
-			title: 'Why Share?'
+	exports.whyknow = function(req, res){
+		res.render('whyknow', {
+			title: 'Why Know?'
 		});
 	};
 
@@ -45,12 +45,6 @@ var mongoose = require('mongoose');
 	exports.modal = function (req, res) {
 		res.render('modal', {
 			title: "Submit Story"
-		});
-	};
-
-	exports.dbTest = function (req, res) {
-		res.render('test/db-test', {
-			title: 'DB Test'
 		});
 	};
 

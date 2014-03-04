@@ -3,8 +3,8 @@
  **/
 
 	//Submit Story Binding
-	$(".submitModal").on('submit', function (event) {
-		submitStory(this);
+	$(".submitModal").on('click', function () {
+		submitStory();
 	});
 	//Image Highlighting Binding
 	$('.image').on("click", function (event) {
@@ -37,23 +37,8 @@
 	};
 
 	//Submit Story to DB
-	var submitStory = function (element) {
-		$('#modalMask, #processing').stop().show();
-		var data = $(element).serialize();
-		$.ajax({
-			type: "POST",
-			url: '/submit',
-			data: data
-		}).done(function () {
-			$('#modalMask').hide();
-			$('#processing, #submissionModal').stop().fadeOut(400);
-			$('#modalSuccess').stop().fadeIn(600);
-			document.getElementById('shareForm').reset();
-		}).fail(function () {
-			$('#modalFail').stop().fadeIn(600);
-		}).always(function () {
-			console.log(data);
-		});
+	var submitStory = function () {
+		$('#modalMask, #processing').stop().fadeIn(200);
 	};
 
 /**
