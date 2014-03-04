@@ -41,6 +41,16 @@ a:hover {
 	color: rgba(230, 60, 46, 1);
 	text-decoration: none;
 }
+a:hover .button {
+	background-color: #FFFFFF;
+}
+.openModal {
+	cursor: pointer;
+}
+.openModal:hover .button {
+	color: rgba(230, 60, 46, 1);
+	background-color: #FFFFFF;
+}
 input {
 	border: none;
 	opacity: .9;
@@ -286,7 +296,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	position: absolute;
  	top: 0px;
  	left: 0px;
- 	width: 420px;
+ 	width: 154px;
  	height: 108px;
  	display: inline-block;
  }
@@ -298,32 +308,34 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	border-right: 1px solid rgba(230, 60, 46, 1);
  	display: inline-block;
  }
- .head .headLeft .statement {
- 	position: relative;
- 	top: -8px;
- 	left: -4px;
- 	width: 252px;
- 	height: 94px;
- 	padding: 14px 0 0 10px;
+ .head .headRight {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 154px;
+ 	width: 786px;
+ 	height: 108px;
+ 	display: inline-block;
+ }
+ .head .headRight .statement {
+ 	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 226px;
+ 	height: 78px;
+ 	padding: 2px 0 0 10px;
  	font-size: 12px;
  	line-height: 20px;
  	letter-spacing: 2px;
  	color: rgba(102, 102, 102, 1);
  	display: inline-block;
  }
- .head .headRight {
+ .head .headRight .share {
  	position: absolute;
  	top: 0px;
- 	left: 420px;
- 	width: 540px;
- 	height: 108px;
- 	display: inline-block;
- }
- .head .headRight .share {
- 	position: relative;
+ 	left: 236px;
  	width: 148px;
  	height: 72px;
- 	padding: 8px 0 0 388px;
+ 	padding: 8px 0 0 424px;
  	display: inline-block;
  }
  .head .headRight .share .icon {
@@ -338,13 +350,19 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	border: none;
  }
  .head .headRight .nav {
- 	width: inherit;
+ 	position: absolute;
+ 	top: 80px;
+ 	left: 0px;
+ 	width: 786px;
  	height: 20px;
  	padding: 0 0 8px 0;
  	display: inline-block;
  }
  .head .headRight .nav a {
- 	margin: 0 0 0 50px;
+ 	margin: 0 0 0 56px;
+ }
+ .head .headRight .nav a:first-child {
+ 	margin: 0 0 0 12px;
  }
 
 /**
@@ -816,29 +834,21 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	height: 70px;
  	margin: 20px 20px 0 20px;
  }
-/* .whyknow .r1 .col2 .content {
+ .whyknow .r1 .col2 .content {
  	position: absolute;
  	top: 90px;
  	left: 0px;
  	width: 260px;
  	height: 150px;
  	margin: 0 20px 0 20px;
- }*/
- .whyknow .r1 .col2 .content {
- 	position: absolute;
- 	top: 90px;
- 	left: 0px;
- 	width: 260px;
- 	height: 0px;
- 	margin: 0 20px 0 20px;
  }
  .whyknow .r1 .col2 .info {
  	position: absolute;
- 	top: 90px;
+ 	top: 240px;
  	left: 0px;
  	width: 260px;
- 	height: 260px;
- 	margin: 30px 20px 30px 20px;
+ 	height: 120px;
+ 	margin: 30px 20px 20px 20px;
  	font-size: 14px;
  }	
  .whyknow .r1 .col2 .button {

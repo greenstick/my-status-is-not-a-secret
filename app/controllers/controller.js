@@ -42,6 +42,12 @@ var mongoose = require('mongoose');
 		});
 	};
 
+	exports.interviews = function (req, res){
+		res.render('interviews', {
+			title: 'Interviews'
+		});
+	};
+
 	exports.modal = function (req, res) {
 		res.render('modal', {
 			title: "Submit Story"

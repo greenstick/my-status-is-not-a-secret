@@ -10,12 +10,16 @@ exports.submit = function (req, res) {
 	//Creating New Submission
 	var date = new Date(),
 		id = null,
+		name = function (input) {
+			input === '' ? input = 'Anonymous' : input = input;
+			return input;
+		},
 		submission = new Submission({
 			story: req.param("story"),
 			createdAt: date,
 			approved: false,
 			name: {
-				first: req.param("name")
+				first: name(req.param("name"))
 			},
 			location: {
 				country: req.param("country"),

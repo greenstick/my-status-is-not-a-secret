@@ -18,6 +18,8 @@ module.exports = function (app) {
 		app.get('/resources', passport.authenticate('basic', {session: false}), controller.resources);
 		// shared route
 		app.get('/shared', passport.authenticate('basic', {session: false}), controller.shared);
+		// interviews route
+		app.get('/interviews', passport.authenticate('basic', {session: false}), controller.interviews);
 		// modal route
 		app.get('/modal', passport.authenticate('basic', {session: false}), controller.modal);
 		// modal submit
