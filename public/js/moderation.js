@@ -69,7 +69,7 @@ var Feed = function () {
 
 		//Open UI on Mouseover
 		feed.openUI = function (e) {
-			var y = event.clientY;
+			var y = e.clientY;
 			if (feed.uiOpen !== true) {
 				if (y < 16) {
 					$('.ui').stop().fadeIn(600);
@@ -80,7 +80,7 @@ var Feed = function () {
 
 		//Close UI on Mouseover
 		feed.closeUI = function (e) {
-			var y = event.clientY;
+			var y = e.clientY;
 			setTimeout(function () {
 				if (y > 114 && $(window).scrollTop() <= 118) {
 					$('.ui').stop().fadeOut(200);

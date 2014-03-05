@@ -56,7 +56,12 @@ exports.submit = function (req, res) {
 					s3imgURL = s3res.url;
 					var update = Submission.update({_id: submission._id}, {$set: {cloudfrontURL: cloudfrontURL}}, function () {
 						update.exec(function (error, updated) {
-							if (error) return console.log(error)
+							if (error) {
+								res.render('failed', {
+									title: "Submission Failed"
+								});
+								return console.log(error);
+							}
 							res.render('success', {
 								title: 'Success'
 							});
@@ -68,7 +73,12 @@ exports.submit = function (req, res) {
 				cloudfrontURL = 'feed-images/' + req.param("selectedImage");
 				var update = Submission.update({_id: submission._id}, {$set: {cloudfrontURL: cloudfrontURL}}, function () {
 					update.exec(function (error, updated) {
-						if (error) return console.log(error)
+						if (error) {
+							res.render('failed', {
+								title: "Submission Failed"
+							});
+							return console.log(error);
+						}
 						res.render('success', {
 							title: 'Success'
 						});

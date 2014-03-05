@@ -120,12 +120,6 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	z-index: 1000;
 	display: none;
 }
-#iframeFeed {
-	position: relative;
-	width: 940px;
-	height: auto;
-	margin: 0 auto;
-}
 /**
  *	Splash Page Styles
  **/
@@ -359,7 +353,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	display: inline-block;
  }
  .head .headRight .nav a {
- 	margin: 0 0 0 56px;
+ 	margin: 0 0 0 54px;
  }
  .head .headRight .nav a:first-child {
  	margin: 0 0 0 12px;
