@@ -1311,11 +1311,11 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	position: relative;
  	top: 0px;
  	width: 280px;
- 	height: 44px;
+ 	height: 24px;
  	padding: 6px 0 0 ;
  	font-size: 16px;
  	text-align: center;
- 	margin: 90px auto;
+ 	margin: 110px auto;
 }
 .give .r1 .col2 .top .img, .give .r1 .col2 .bottom .img {
 	position: absolute;
