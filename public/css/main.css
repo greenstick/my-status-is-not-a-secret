@@ -44,6 +44,13 @@ a:hover {
 a:hover .button {
 	background-color: #FFFFFF;
 }
+a .buttonMask, .openModal .buttonMask {
+	position: absolute;
+	background-color: rgba(26, 26, 26, 0);
+}
+a:hover .buttonMask, .openModal:hover .buttonMask {
+	background-color: rgba(26, 26, 26, .6);
+}
 .openModal {
 	cursor: pointer;
 }
@@ -104,6 +111,11 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	height: 310px;
 	margin: -155px 0 0 -280px;
 	z-index: 1000;
+	visibility: hidden;
+	display: block;
+}
+#iframeModal.loaded {
+	visibility: visible;
 	display: none;
 }
 #exitModal {
@@ -708,6 +720,12 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	top: 0px;
  	left: 0px;
  }
+ .home .r2 a .buttonMask, .home .r8 a .buttonMask, .home .r8 .openModal .buttonMask {
+	top: 0px;
+	left: 0px;
+	width: 480px;
+	height: 110px;
+ }
 
 /**
  *	Why Know? Page Styles
@@ -1075,6 +1093,12 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	top: 0px;
  	left: 0px;
  }
+ .whyknow .r2 a .buttonMask, .whyknow .r8 a .buttonMask, .whyknow .r8 .openModal .buttonMask {
+	top: 0px;
+	left: 0px;
+	width: 480px;
+	height: 110px;
+ }
 
  /**
   *	About Page Styles
@@ -1150,6 +1174,12 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	font-size: 13px;
 	letter-spacing: 1px;
 	text-align: center;
+}
+.about .r3 a .buttonMask {
+	top: 0px;
+	left: 20px;
+	width: 900px;
+	height: 110px;
 }
 
  /**
@@ -1297,6 +1327,12 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	width: 940px;
 	margin: 30px auto 0 auto;
 	border-top: 1px solid rgba(230, 60, 46, 1);
+}
+.give .r1 a .buttonMask {
+	top: 0px;
+	left: 0px;
+	width: 480px;
+	height: 230px;
 }
 
  /**
@@ -1472,7 +1508,15 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	margin: 30px auto 0 auto;
 	border-top: 1px solid rgba(230, 60, 46, 1);
  }
-
+ .resources .r2 .buttonMask {
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 288px;
+ 	height: 100px;
+ }
+ .resources .r2 .content a:hover .left {
+ 	background-color: rgba(255, 255, 255, 1);
+ }
  /**
   *	Shared Page Styles
   **/

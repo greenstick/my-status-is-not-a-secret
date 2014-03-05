@@ -2,6 +2,10 @@
  *	DOM Event Bindings
  **/
 
+$(document).ready(function () {
+	
+	$('#iframeModal').addClass('loaded');
+
  	//Open Modal
 	$('.openModal').on("click", function () {
 		openModal();
@@ -23,3 +27,5 @@
 	var exitModal = function () {
 		$('#mask, #exitModal, #iframeModal').stop().fadeOut(400);
 	};
+
+})
