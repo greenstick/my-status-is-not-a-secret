@@ -81,8 +81,9 @@ var Feed = function () {
 		//Close UI on Mouseover
 		feed.closeUI = function (e) {
 			var y = e.clientY;
+			var x = e.clientX;
 			setTimeout(function () {
-				if (y > 114 && $(window).scrollTop() <= 118) {
+				if (!$('.ui').is(":hover") && $(window).scrollTop() <= 118) {
 					$('.ui').stop().fadeOut(200);
 				}
 				feed.uiOpen = false;
