@@ -282,7 +282,9 @@ var Feed = function () {
 	});
 	// UI - Mouseout Close
 	$('.ui').on('mouseout', function (e) {
-		feed.closeUI(e);
+		if (!$('.storyTile').hasClass('selected')) {
+			feed.closeUI(e);
+		}
 	});
 	// UI - Approve Selected Posts
 	$('.approvePosts').on('click', function () {
