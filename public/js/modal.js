@@ -3,7 +3,7 @@
  **/
 
 $(document).ready(function () {
-	
+	//Ensures iFrame Function in Safari
 	$('#iframeModal').addClass('loaded');
 
  	//Open Modal

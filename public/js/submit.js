@@ -4,7 +4,7 @@
 
 	//Submit Story Binding
 	$(".submitModal").on('click', function () {
-		submitStory();
+		$('.storyInput').is(':invalid') ? false : $('.state-input').is(':invalid') ? false : submitStory();
 	});
 	//Image Highlighting Binding
 	$('.image').on("click", function (event) {
@@ -26,12 +26,15 @@
 		$(element).addClass('selected');
 		longPath = $('.selected').attr('src');
 		path = longPath.slice(7, longPath.length);
-		$('#selectedImage').val(path);
+		$('.selectedImage').val(path);
 	};
 
 	//Upload Image
 	var uploadImage = function () {
 		$('#uploadImage').click();
+		$('#uploadImage').change(function () {
+
+		})
 	};
 
 	//Submit Story to DB

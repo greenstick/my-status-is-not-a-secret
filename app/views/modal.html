@@ -4,14 +4,15 @@
 			<div class="header hText">
 				MY STATUS <span class="red">IS NOT</span> A SECRET BECAUSE....
 			</div>
-			<textarea class="storyInput" type="text" name="story"></textarea>
+			<textarea class="storyInput" type="text" name="story" required></textarea>
 			<div class="subheader cText">
 				Below fields are optional:
 			</div>
 			<div class="optionalInputs">
-				<input class="name-input" placeholder="Name" name="name" />
+				<input class="first-input" placeholder="First Name" name="first" />
+				<input class="last-input" placeholder="Last Name" name="last" />
 				<input class="country-input" placeholder="Country" name="country" />
-				<input class="state-input" placeholder="State" name="state" />
+				<input class="state-input" placeholder="State" name="state" pattern=".{2,2}" title="Please enter your 2 character state abbreviation." />
 			</div>
 			<input class="hText submitModal" type="submit" value="SHARE" />
 		</div>
@@ -26,9 +27,12 @@
 				<img class="image" src="../img/i-share.png" />
 				<img class="image" src="../img/why-not.png" />
 				<img class="image" src="../img/default-image.png" />
+				<input class="selectedImage" type="hidden" name="selectedImage" />
 			</div>
-			<input id="uploadImage" type="file" name="image" />
-			<input id="selectedImage" type="hidden" name="selectedImage" />
+			<!-- <form id="imageForm" method="post" action="/editImage" accept-charset="utf-8" enctype="multipart/form-data"> -->
+				<input id="uploadImage" type="file" name="image" />
+<!-- 				<input class="sendImage" type="submit" name="sendImage" /> -->
+			<!-- </form> -->
 		</div>
 	</form>
 </div>

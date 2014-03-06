@@ -22,6 +22,8 @@ module.exports = function (app) {
 		app.get('/interviews', passport.authenticate('basic', {session: false}), controller.interviews);
 		// modal route
 		app.get('/modal', passport.authenticate('basic', {session: false}), controller.modal);
+		// modal edit image
+		app.get('/editImage', passport.authenticate('basic', {session: false}), api.editImage);
 		// modal submit
 		app.post('/submit', passport.authenticate('basic', {session: false}), api.submit);
 		// moderation route

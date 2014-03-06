@@ -61,8 +61,8 @@
 	position: absolute;
 	top: 200px;
 	left: 0px;
-	height: 16px;
-	padding: 4px 0 0 0;
+	height: 18px;
+	padding: 2px 0 0 0;
 	font-size: 12px;
 }
 #submissionModal .content .col1 .optionalInputs {
@@ -72,25 +72,32 @@
 	height: 20px;
 	width: 330px;
 }
-#submissionModal .content .col1 .optionalInputs .name-input {
+#submissionModal .content .col1 .optionalInputs .first-input {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 146px;
+	width: 84px;
+	height: 20px;
+}
+#submissionModal .content .col1 .optionalInputs .last-input {
+	position: absolute;
+	top: 0px;
+	left: 100px;
+	width: 84px;
 	height: 20px;
 }
 #submissionModal .content .col1 .optionalInputs .country-input {
 	position: absolute;
 	top: 0px;
-	left: 160px;
+	left: 200px;
 	width: 72px;
 	height: 20px;
 }
 #submissionModal .content .col1 .optionalInputs .state-input {
 	position: relative;
 	top: 0px;
-	left: 246px;
-	width: 72px;
+	left: 288px;
+	width: 31px;
 	height: 20px;
 }
 #submissionModal .content .col1 .submitModal {

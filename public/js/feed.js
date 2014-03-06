@@ -27,7 +27,6 @@ var feed = this;
 					}
 				}
 				$('.storyTile').css('display', 'inline-block');
-				// console.log(data);
 		}).fail(function () {
 			// console.log("XHR Status: Failed");
 		}).always(function () {
@@ -58,7 +57,6 @@ var feed = this;
 					};
 				}
 				$('.storyTile').css('display', 'inline-block');
-				// console.log(feed.pages());
 		}).fail(function () {
 			$('.failed').show();
 			// console.log("XHR Status: Failed");
@@ -111,7 +109,7 @@ ko.bindingHandlers.isotope = {
 	$(window).scroll(function () {   
 		if ($(window).scrollTop() + $(window).height() == $(document).height()) {
 			feed.chunk++;
-			feed.end == false ? feed.update(feed.chunk) : $('.done').show();
+			feed.end === false ? feed.update(feed.chunk) : $('.done').show();
 		}
 	});
 
