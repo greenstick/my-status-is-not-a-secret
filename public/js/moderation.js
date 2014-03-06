@@ -84,10 +84,10 @@ var Feed = function () {
 			var x = e.clientX;
 			setTimeout(function () {
 				if (!$('.ui').is(":hover") && $(window).scrollTop() <= 118) {
-					$('.ui').stop().fadeOut(200);
+					$('.ui').stop().fadeOut(300);
 				}
 				feed.uiOpen = false;
-			}, 200)
+			}, 400)
 		}
 
 		//Select All Tiles
