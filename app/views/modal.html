@@ -22,17 +22,14 @@
 			</div>
 			<div class="images">
 				<img class="image selected" src="../img/my-status.png" />
-				<img class="image" src="../img/1-in-5.png" />
+				<img class="image" src="../img/1-in-6.png" />
 				<img class="image" src="../img/i-know.png" />
 				<img class="image" src="../img/i-share.png" />
 				<img class="image" src="../img/why-not.png" />
 				<img class="image" src="../img/default-image.png" />
 				<input class="selectedImage" type="hidden" name="selectedImage" />
-			</div>
-			<!-- <form id="imageForm" method="post" action="/editImage" accept-charset="utf-8" enctype="multipart/form-data"> -->
 				<input id="uploadImage" type="file" name="image" />
-<!-- 				<input class="sendImage" type="submit" name="sendImage" /> -->
-			<!-- </form> -->
+			</div>
 		</div>
 	</form>
 </div>
@@ -56,5 +53,33 @@
 	<div class="notification hText">
 		UH OH! AN ERROR OCCURRED SUBMITTING YOUR STORY.<br>
 		PLEASE TRY AGAIN LATER.
+	</div>
+</div>
+<div id="imageEditor">
+	<div class="content">
+		<div class="col1">
+			<div class="header hText">
+				EDIT UPLOAD
+			</div>
+			<div class="mainImage">
+				<div class="containment">
+					<img id="uploadedImage" />
+				</div>
+			</div>
+			<div class="hText doneEditing" type="submit" value="SHARE">DONE</div>
+		</div>
+		<div class="col2">
+			<div class="header cText">
+				Choose a filter:
+			</div>
+			<div class="filters">
+				<div class="filter hText selected" data-filter="noFilter" >No Filter</div>
+				<div class="filter hText" data-filter="love" >Love</div>
+				<div class="filter hText" data-filter="pinhole" >Pinhole</div>
+				<div class="filter hText" data-filter="glowingSun" >Glowing</div>
+				<div class="filter hText" data-filter="nostalgia" >Nostalgia</div>
+				<div class="filter hText" data-filter="clarity" >Clarity</div>
+			</div>
+		</div>
 	</div>
 </div>

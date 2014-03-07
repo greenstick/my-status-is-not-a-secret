@@ -61,6 +61,11 @@ exports.submit = function (req, res) {
 				// 	secret: process.env.AWS_SECRET_ACCESS_KEY,
 				// 	bucket: process.env.S3_BUCKET_NAME
 				// });
+				var s3 = knox.createClient({
+					key: 'AKIAIDSMNL7XAYRZ6VNA',
+					secret: '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',
+					bucket: 'aids-life-cycle'
+				});
 
 				//S3 Headers
 				var s3Headers = {
@@ -105,11 +110,6 @@ exports.submit = function (req, res) {
 				});
 			}
 	});
-};
-
-exports.editImage = function (req, res) {
-	var photo = req.files.image;
-		console.log(photo);
 };
 
 //Retrieve Stories

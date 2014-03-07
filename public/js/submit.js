@@ -32,9 +32,6 @@
 	//Upload Image
 	var uploadImage = function () {
 		$('#uploadImage').click();
-		$('#uploadImage').change(function () {
-
-		})
 	};
 
 	//Submit Story to DB
