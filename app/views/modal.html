@@ -1,5 +1,5 @@
 <div id="submissionModal">
-	<form id="shareForm" method="post" class="content" action="/submit" accept-charset="utf-8" enctype="multipart/form-data">
+	<form id="shareForm" method="post" class="content" accept-charset="utf-8" enctype="multipart/form-data">
 		<div class="col1">
 			<div class="header hText">
 				MY STATUS <span class="red">IS NOT</span> A SECRET BECAUSE....
@@ -14,7 +14,7 @@
 				<input class="country-input" placeholder="Country" name="country" />
 				<input class="state-input" placeholder="State" name="state" pattern=".{2,2}" title="Please enter your 2 character state abbreviation." />
 			</div>
-			<input class="hText submitModal" type="submit" value="SHARE" />
+			<div class="hText submitModal" value="SHARE">SHARE</div>
 		</div>
 		<div class="col2">
 			<div class="header cText">
@@ -28,6 +28,7 @@
 				<img class="image" src="../img/why-not.png" />
 				<img class="image" src="../img/default-image.png" />
 				<input class="selectedImage" type="hidden" name="selectedImage" />
+				<input class="editedImage" type="hidden" name="editedImage" />
 				<input id="uploadImage" type="file" name="image" />
 			</div>
 		</div>
@@ -55,6 +56,12 @@
 		PLEASE TRY AGAIN LATER.
 	</div>
 </div>
+<div id="modalSuccess">
+	<div class="notification hText">
+		THANK YOU FOR SHARING YOUR STORY.<br>
+		WE ARE READING IT NOW AND YOU CAN EXPECT TO SEE IT SOON.
+	</div>
+</div>
 <div id="imageEditor">
 	<div class="content">
 		<div class="col1">
@@ -78,7 +85,7 @@
 				<div class="filter hText" data-filter="pinhole" >Pinhole</div>
 				<div class="filter hText" data-filter="glowingSun" >Glowing</div>
 				<div class="filter hText" data-filter="nostalgia" >Nostalgia</div>
-				<div class="filter hText" data-filter="clarity" >Clarity</div>
+				<div class="filter hText" data-filter="hemingway" >Clarity</div>
 			</div>
 		</div>
 	</div>

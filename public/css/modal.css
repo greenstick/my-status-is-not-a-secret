@@ -105,7 +105,8 @@
  	top: 250px;
  	left: 0px;
  	width: 326px;
- 	height: 20px;
+ 	height: 18px;
+ 	padding: 2px 0 0 0;
  	font-size: 16px;
  	text-align: center;
  	color: #FFFFFF;
@@ -221,7 +222,7 @@
 	margin: -155px 0 0 -280px;
 	z-index: 2000;
 	background-color: rgba(255, 255, 255, 1);
-	display: block;
+	display: none;
 }
 #modalFail {
 	position: fixed;

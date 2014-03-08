@@ -19,6 +19,50 @@
  *	Modal Interaction Methods
  **/
 
+ //Initialize Feed
+	var submitStory = function (page) {
+		$('#modalMask, #processing').stop().fadeIn(200);
+		var story = $('.storyInput').val(),
+			first = $('.first-input').val(),
+			last = $('.last-input').val(),
+			country = $('.country-input').val(),
+			state = $('.state-input').val(),
+			selected = $('.selectedImage').val(),
+			edited = window.localStorage.getItem("image-edited") || '';
+		// console.log("XHR Status: Requesting...");
+		$.ajax({
+			type: "POST", 
+			url: "../submit",
+			dataType: "json",
+			data: {
+				"data": {
+					"story": story,
+					"name": {
+						"first": first,
+						"last": last
+					},
+					"location": {
+						"country": country,
+						"state": state
+					},
+					"images": {
+						"edited": edited,
+						"selected": selected
+					}
+				}
+			}
+		}).done(function (response) {
+			$('#modalSuccess').fadeIn(600);
+			// console.log("XHR Status: Success");
+		}).fail(function () {
+			// console.log("XHR Status: Failed");
+		}).always(function () {
+			// console.log("XHR Status: Resolved");
+			window.localStorage.removeItem('image-edited');
+			$('#modalMask, #processing').stop().fadeOut(400);
+		})
+	};
+
  	//Select Image
 	var selectImage = function (element) {
 		var longPath, path;
@@ -32,11 +76,6 @@
 	//Upload Image
 	var uploadImage = function () {
 		$('#uploadImage').click();
-	};
-
-	//Submit Story to DB
-	var submitStory = function () {
-		$('#modalMask, #processing').stop().fadeIn(200);
 	};
 
 /**
