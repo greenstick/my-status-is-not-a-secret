@@ -80,7 +80,7 @@ exports.submit = function (req, res) {
 						};
 						//Putting Files to S3
 						s3.putFile(submission._id + '-tempImg', cloudfrontURL, s3Headers, function (err, s3res) {
-							// if (err) return console.log(err);
+							if (err) return console.log(err);
 							s3imgURL = s3res.url;
 							//Updating Submission With S3 URL for Image
 							var update = Submission.update({_id: submission._id}, {$set: {cloudfrontURL: cloudfrontURL}}, function () {
