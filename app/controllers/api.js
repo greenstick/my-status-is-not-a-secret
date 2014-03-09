@@ -64,7 +64,7 @@ exports.submit = function (req, res) {
 							return response;
 					},
 					imageBuffer = decodeBase64Image(editedImg);
-					fs.writeFile(submission._id + "-tempIMG", imageBuffer.data, function (err) {
+					fs.writeFile("./tmp/" + submission._id + "-tempIMG", imageBuffer.data, function (err) {
 						//S3 Image Upload Handling
 						//Authentication - Deployment Version
 						var s3 = knox.createClient({
@@ -72,14 +72,13 @@ exports.submit = function (req, res) {
 							secret: process.env.AWS_SECRET_ACCESS_KEY,
 							bucket: process.env.S3_BUCKET_NAME
 						});
-
 						//S3 Headers
 						var s3Headers = {
 							'Content-Type': 'image/png',
 							'x-amx-acl': 'public-read'
 						};
 						//Putting Files to S3
-						s3.putFile(submission._id + '-tempImg', cloudfrontURL, s3Headers, function (err, s3res) {
+						s3.putFile("./tmp/" + submission._id + '-tempImg', cloudfrontURL, s3Headers, function (err, s3res) {
 							if (err) return console.log(err);
 							s3imgURL = s3res.url;
 							//Updating Submission With S3 URL for Image
@@ -127,9 +126,6 @@ exports.retrieve = function (req, res) {
 
 //Retrieve for Moderation
 exports.newPosts = function (req, res) {
-	// Submission.remove({}, function () {
-	// 	return console.log("submissions removed")
-	// })
 	var query = Submission.find({updated: null}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt');
 		query.exec(function (error, submissions) {
 			if (error) return console.log(error)
