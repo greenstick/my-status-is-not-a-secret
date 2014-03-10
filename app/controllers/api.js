@@ -64,7 +64,7 @@ exports.submit = function (req, res) {
 							return response;
 					},
 					imageBuffer = decodeBase64Image(editedImg);
-					fs.writeFile("/tmp/" + submission._id + "-tempIMG", imageBuffer.data, function (err) {
+					fs.writeFile(submission._id + "-tempImg", imageBuffer.data, function (err) {
 						//S3 Image Upload Handling
 						//Authentication - Deployment Version
 						var s3 = knox.createClient({
@@ -78,7 +78,7 @@ exports.submit = function (req, res) {
 							'x-amx-acl': 'public-read'
 						};
 						//Putting Files to S3
-						s3.putFile("/tmp/" + submission._id + '-tempImg', cloudfrontURL, s3Headers, function (err, s3res) {
+						s3.putFile(submission._id + '-tempImg', cloudfrontURL, s3Headers, function (err, s3res) {
 							if (err) return console.log(err);
 							s3imgURL = s3res.url;
 							//Updating Submission With S3 URL for Image
