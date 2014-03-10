@@ -293,6 +293,32 @@
 	position: absolute;
 	background-color: transparent;
 }
+#imageEditor .content .col1 .ui-slider-vertical {
+	position: absolute;
+	top: 40px;
+	left: 20px;
+	width: 2px;
+	height: 180px;
+	border: none;
+	background: none;
+	color: transparent;
+	background-color: rgba(102, 102, 102, 1) !important;
+	cursor: pointer;
+}
+#imageEditor .content .col1 .ui-slider-vertical .ui-slider-range {
+	display: none;
+}
+#imageEditor .content .col1 .ui-slider-vertical .ui-slider-handle{
+	width: 12px;
+	height: 20px;
+	left: -5px !important;
+	background: none !important;
+	background-color: rgba(230, 60, 46, 1) !important;
+	cursor: pointer;
+	border: none;
+	box-shadow: none;
+	outline: none;
+}
 #imageEditor .content .col1 .doneEditing {
 	position: absolute;
  	top: 250px;

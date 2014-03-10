@@ -10,40 +10,41 @@ var Submission = require('../models/submission.js'),
 exports.submit = function (req, res) {
 	//Creating New Submission
 	var date = new Date(),
-		id = null,
-		data = req.param("data"),
-		story = data.story,
-		first = data.name.first,
-		last = data.name.last,
-		country = data.location.country,
-		state = data.location.state,
-		selectedImg = data.images.selected,
-		editedImg = data.images.edited;
+	id = null,
+	data = req.param("data"),
+	story = data.story,
+	first = data.name.first,
+	last = data.name.last,
+	country = data.location.country,
+	state = data.location.state,
+	selectedImg = data.images.selected,
+	editedImg = data.images.edited;
 
-		//Basic Name Formatting for Design
-		if (first == '' && last == '') {
-			last = 'Anonymous';
+	//Basic Name Formatting for Design
+	if (first == '' && last == '') {
+		last = 'Anonymous';
+	}
+	if (first == '' && last != '' && state != '') {
+		last = last + ',';
+	}
+	if (first != '' && last != '') {
+		first = first[0] + '.';
+	}
+
+	//Creating Document
+	var submission = new Submission({
+		story: story,
+		createdAt: date,
+		approved: false,
+		name: {
+			first: first,
+			last: last
+		},
+		location: {
+			country: country,
+			state: state
 		}
-		if (first == '' && last != '' && state != '') {
-			last = last + ',';
-		}
-		if (first != '' && last != '') {
-			first = first[0] + '.';
-		}
-		//Creating Document
-		var submission = new Submission({
-				story: story,
-				createdAt: date,
-				approved: false,
-				name: {
-					first: first,
-					last: last
-				},
-				location: {
-					country: country,
-					state: state
-				}
-			});
+	});
 
 	//Saving Submission to DB
 	submission.save(function (e, submission, count) {
@@ -72,6 +73,7 @@ exports.submit = function (req, res) {
 							secret: process.env.AWS_SECRET_ACCESS_KEY,
 							bucket: process.env.S3_BUCKET_NAME
 						});
+
 						//S3 Headers
 						var s3Headers = {
 							'Content-Type': 'image/png',
@@ -90,8 +92,8 @@ exports.submit = function (req, res) {
 									}
 									res.json(submission);
 									fs.unlink(submission._id + "-tempImg", function (err) {
-										if (err) return console.log("Temp img delete fail");
-										console.log("delete success");
+										if (err) return console.log("Temp Img Deletion Failure");
+										console.log("Temp Img Cleared");
 									})
 								});
 							});
