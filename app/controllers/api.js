@@ -3,6 +3,21 @@ var Submission = require('../models/submission.js'),
 	fs = require('fs');
 
 /**
+ *	Utility Functions
+ **/
+
+var decodeBase64Image = function (dataString) {
+	var matches = dataString.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/),
+	    response = {};
+		if (matches.length !== 3) {
+			return new Error('Invalid input string');
+		}
+		response.type = matches[1];
+		response.data = new Buffer(matches[2], 'base64');
+		return response;
+};
+
+/**
  *	Database Access API
  **/
 
@@ -52,19 +67,8 @@ exports.submit = function (req, res) {
 		var cloudfrontURL;
 			//Image Upload - S3
 			if (selectedImg == 'default-image.png') {
-				var photoName = submission._id + '.png',
-					cloudfrontURL = 'feed-images/' + photoName,
-					decodeBase64Image = function (dataString) {
-						var matches = dataString.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/),
-						    response = {};
-							if (matches.length !== 3) {
-								return new Error('Invalid input string');
-							}
-							response.type = matches[1];
-							response.data = new Buffer(matches[2], 'base64');
-							return response;
-					},
-					imageBuffer = decodeBase64Image(editedImg);
+				var imageBuffer = decodeBase64Image(editedImg),
+					cloudfrontURL = 'feed-images/' + submission._id + '.' + imageBuffer.type.substr(6);
 					fs.writeFile(submission._id + "-tempImg", imageBuffer.data, function (err) {
 						//S3 Image Upload Handling
 						//Authentication - Deployment Version
@@ -76,7 +80,7 @@ exports.submit = function (req, res) {
 
 						//S3 Headers
 						var s3Headers = {
-							'Content-Type': 'image/png',
+							'Content-Type': imageBuffer.type,
 							'x-amx-acl': 'public-read'
 						};
 						//Putting Files to S3
