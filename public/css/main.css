@@ -403,6 +403,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	left: 0px;
 	width: 940px;
 	height: 90px;
+	text-align: left;
 }
 .footer .logos {
 	position: absolute;
@@ -416,8 +417,15 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	margin: auto 0 auto 30px;
 	vertical-align: middle;
 }
+.footer .logos a:first-child {
+	margin: auto 0;
+}
 .footer .logos a img {
 	display: inline-block;
+}
+.splash .footer {
+	width: 612px;
+	margin: 20px auto 0 auto;
 }
 
 /**
