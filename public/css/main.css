@@ -779,7 +779,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  .home .r2 a .buttonMask, .home .r8 a .buttonMask, .home .r8 .openModal .buttonMask {
 	top: 0px;
 	left: 0px;
-	width: 480px;
+	width: 460px;
 	height: 110px;
  }
 
@@ -1165,7 +1165,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  .whyknow .r2 a .buttonMask, .whyknow .r8 a .buttonMask, .whyknow .r8 .openModal .buttonMask {
 	top: 0px;
 	left: 0px;
-	width: 480px;
+	width: 460px;
 	height: 110px;
  }
 
@@ -1400,7 +1400,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 .give .r1 a .buttonMask {
 	top: 0px;
 	left: 0px;
-	width: 480px;
+	width: 460px;
 	height: 230px;
 }
 
@@ -1574,7 +1574,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  .resources .r2 .buttonMask {
  	top: 0px;
  	left: 0px;
- 	width: 288px;
+ 	width: 280px;
  	height: 100px;
  }
  .resources .r2 .content a:hover .left {
