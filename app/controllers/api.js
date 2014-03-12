@@ -21,19 +21,19 @@ var decodeBase64Image = function (dataString) {
  *	Database Access API
  **/
 
-//Submit 
+//Submit Post
 exports.submit = function (req, res) {
 	//Creating New Submission
 	var date = new Date(),
-	id = null,
-	data = req.param("data"),
-	story = data.story,
-	first = data.name.first,
-	last = data.name.last,
-	country = data.location.country,
-	state = data.location.state,
-	selectedImg = data.images.selected,
-	editedImg = data.images.edited;
+		id = null,
+		data = req.param("data"),
+		story = data.story,
+		first = data.name.first,
+		last = data.name.last,
+		country = data.location.country,
+		state = data.location.state,
+		selectedImg = data.images.selected,
+		editedImg = data.images.edited;
 
 	//Basic Name Formatting for Design
 	if (first == '' && last == '') {
@@ -173,6 +173,7 @@ exports.hidePosts = function (req, res) {
 	});
 };
 
+//Show Approved Posts
 exports.showApproved = function (req, res) {
 	var query = Submission.find({approved: true}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', function () {
 		query.exec(function (error, submissions) {
@@ -182,6 +183,7 @@ exports.showApproved = function (req, res) {
 	});		
 };
 
+//Show Hidden Posts
 exports.showHidden = function (req, res) {
 	var query = Submission.find({approved: false}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', function () {
 		query.exec(function (error, submissions) {
@@ -191,6 +193,7 @@ exports.showHidden = function (req, res) {
 	});
 };
 
+//Delete Selected Posts
 exports.deletePosts = function (req, res) {
 	var idList = req.param("idList");
 	if (idList.length > 0) {

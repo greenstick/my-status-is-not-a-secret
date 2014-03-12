@@ -132,6 +132,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	z-index: 1000;
 	display: none;
 }
+
 /**
  *	Splash Page Styles
  **/
@@ -143,13 +144,11 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	padding: 60px 0 0 0;
 
 }
-/* Row 1 */
 .splash .r1 {
 	width: 612px;
 	font-size: 102px;
 	line-height: 112px;
 }
-/* Row 2 */
 .splash .r2 {
 	width: 612px;
 	height: 125px;
@@ -251,14 +250,12 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	backface-visibility: hidden;
 	transform: rotatey(180deg);
 }
-/* Row 3 */
 .splash .r3 {
 	width: 612px;
 	font-size: 102px;
 	letter-spacing: 10px;
 	line-height: 112px
 }
-/* Row 4 */
 .splash .r4 {
 	width: 612px;
 	height: 64px;
@@ -267,7 +264,6 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	font-weight: normal;
 	letter-spacing: .5px;
 }
-/* Row 5 */
 .splash .r5 {
 	width: 612px;
 }
@@ -279,7 +275,6 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	color: rgba(230, 60, 46, 1);
 	margin: 0 0 8px 0;
 }
-/* Row 6 */
 .splash .r6 {
 	width: 612px;
 	text-align: left;
@@ -388,6 +383,43 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  .resources .head .headRight .nav a:nth-child(6) {
  	color: rgba(230, 60, 46, 1);
  }
+
+/**
+ *	Foot Styles
+ **/
+
+.footerBreak {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 940px;
+	height: 0px;
+	margin: 30px auto 19px auto;
+	border-bottom: 1px solid rgba(230, 60, 46, 1);
+}
+.footer {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 940px;
+	height: 90px;
+}
+.footer .logos {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 940px;
+	height: 90px;
+}
+.footer .logos a {
+	display: inline-block;
+	margin: auto 0 auto 30px;
+	vertical-align: middle;
+}
+.footer .logos a img {
+	display: inline-block;
+}
+
 /**
  *	Home Page Styles
  **/
@@ -696,7 +728,6 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  .home .r8 {
  	position: relative;
  	height: 110px;
- 	margin-bottom: 80px;
  }
  .home .r8 .col1 {
  	position: absolute;
@@ -750,7 +781,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 
  .whyknow .r1 {
  	position: relative;
- 	height: 470px;
+ 	height: 490px;
  	margin: 30px 0 30px 0;
  }
  .whyknow .r1 .col1 {
@@ -784,7 +815,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	top: 130px;
  	left: 0px;
  	width: 580px;
- 	height: 310px;
+ 	height: 330px;
  	margin: 20px 20px 10px 20px;
  }
  .whyknow .r1 .col1 .content .leader {
@@ -800,7 +831,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
   	top: 40px;
  	width: 193px;
  	height: 250px;
- 	margin: 0 0 20px 0;
+ 	margin: 0 0 10px 0;
  }
  .whyknow .r1 .col1 .content .stat .img {
   	height: 134px;
@@ -851,6 +882,16 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	font-size: 48px;
  	line-height: 40px;
  }
+ .whyknow .r1 .col1 .content .sources {
+ 	position: absolute;
+ 	top: 300px;
+ 	left: 0px;
+ 	width: 540px;
+ 	height: 30px;
+ 	margin: 0 20px 0 20px;
+ 	text-align: right;
+ 	font-size: 8px;
+ }
  .whyknow .r1 .col2 {
  	position: absolute;
  	top: 0px;
@@ -864,29 +905,29 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	top: 0px;
  	left: 0px;
  	width: 260px;
- 	height: 70px;
+ 	height: 40px;
  	margin: 20px 20px 0 20px;
  }
  .whyknow .r1 .col2 .content {
  	position: absolute;
- 	top: 90px;
+ 	top: 60px;
  	left: 0px;
  	width: 260px;
- 	height: 150px;
+ 	height: 200px;
  	margin: 0 20px 0 20px;
  }
  .whyknow .r1 .col2 .info {
  	position: absolute;
- 	top: 240px;
+ 	top: 260px;
  	left: 0px;
  	width: 260px;
- 	height: 120px;
- 	margin: 30px 20px 20px 20px;
+ 	height: 130px;
+ 	margin: 20px 20px 20px 20px;
  	font-size: 14px;
  }	
  .whyknow .r1 .col2 .button {
  	position: absolute;
- 	top: 410px;
+ 	top: 430px;
  	width: 300px;
  	height: 42px;
  	padding: 18px 0 0 0;
@@ -1073,7 +1114,6 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  .whyknow .r8 {
  	position: relative;
  	height: 110px;
- 	margin-bottom: 80px;
  }
  .whyknow .r8 .col1 {
  	position: absolute;
@@ -1522,12 +1562,6 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	left: 100px;
  	width: 180px;
  	height: 100px;
- }
- .resources .r3 {
-	position: relative;
-	width: 940px;
-	margin: 30px auto 0 auto;
-	border-top: 1px solid rgba(230, 60, 46, 1);
  }
  .resources .r2 .buttonMask {
  	top: 0px;

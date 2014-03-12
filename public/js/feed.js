@@ -28,6 +28,7 @@ var feed = this;
 				}
 				$('.storyTile').css('display', 'inline-block');
 		}).fail(function () {
+			$('.failed').show();
 			// console.log("XHR Status: Failed");
 		}).always(function () {
 			$('.loading').hide();

@@ -23,14 +23,17 @@ var ImageEditor = function (args) {
 //Initialize
 ImageEditor.prototype.init = function () {
 	var editor = this;
+		editor.image = $(editor.tar);
 
 	this.renderImage({element: this, filter: ""});
 	editor.ui.fadeIn(600);
+	editor.image.focus();
 };
 
 //Render Image
 ImageEditor.prototype.renderImage = function (filter, resize) {
-	var editor = this, input = editor.file[0]; editor.image = $(editor.tar);
+	var editor = this, input = editor.file[0]; 
+		editor.image = $(editor.tar);
 
 	//Set Filter & Resize to Default Values if Undefined
 	typeof filter === "undefined" ? filter = "" : filter = filter;
@@ -64,7 +67,7 @@ ImageEditor.prototype.renderImage = function (filter, resize) {
 		})
 		reader.readAsDataURL(input.files[0])
 	}
-	else if (typeof reader === 'object' && filter !== "" && resize === 1) {
+	else if (typeof reader === 'object' && filter !== "") {
 		Caman(editor.tar, function () {
 			this.revert();
 			this[filter]();
@@ -144,7 +147,6 @@ ImageEditor.prototype.dragImage = function () {
 //Submit Edit
 ImageEditor.prototype.submitImage = function () {
 	var editor = this, x = 0, y = 0;
-
 		editor.image = $(editor.tar);
 
 	if (editor.image.width() > 200 && editor.image.height() > 200) {
@@ -202,18 +204,18 @@ $('#uploadImage').change(function () {
 	imgEditor.init();
 })
 
-$('.filter').on("touchend, click", function () {
+$('.filter').on("touchend click", function () {
 	imgEditor.selectFilter(this)
 })
 
-$('.resizeSlider').on("touchend, mouseup", function () {
+$('.resizeSlider').on("touchend mouseup", function () {
 	imgEditor.resizeImage(imgEditor.selectedFilter[0], $(this).val());
 })
 
-$('.doneEditing').on("touchend, click", function (event) {
+$('.doneEditing').on("touchend click", function (event) {
 	imgEditor.submitImage();
 });
 
-$('.mainImage').on("touchend, click", function () {
+$('.mainImage').on("touchend click", function () {
 	imgEditor.dragImage();
 })
