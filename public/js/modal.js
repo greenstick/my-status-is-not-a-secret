@@ -3,9 +3,7 @@
  **/
 
 $(document).ready(function () {
-	//Ensures iFrame Function in Safari
-	$('#iframeModal').addClass('loaded');
-
+	
  	//Open Modal
 	$('.openModal').on("click", function () {
 		openModal();
@@ -21,6 +19,7 @@ $(document).ready(function () {
  **/
 
 	var openModal = function () {
+		$('#iframeModal').css("left", "50%").css("visibility", "visible").hide();
 		$('#iframeModal, #mask, #exitModal').stop().fadeIn(600);
 	};
 

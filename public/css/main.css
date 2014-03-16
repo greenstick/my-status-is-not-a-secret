@@ -8,6 +8,7 @@ html {
 	font-weight: normal;
 }
 #wrapper {
+	position: relative;
 	width: 940px;
 	margin: 0 auto;
 }
@@ -95,28 +96,24 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	background: url('../img/icons.png') -100px -14px;
 }
 .email:hover {
-	background: url('../img/icons.png') 0px -55px;
+	background: url('../img/icons.png') 0px -56px;
 }
 .facebook:hover {
-	background: url('../img/icons.png') -50px -55px;
+	background: url('../img/icons.png') -50px -56px;
 }
 .twitter:hover {
-	background: url('../img/icons.png') -100px -55px;
+	background: url('../img/icons.png') -100px -56px;
 }
 #iframeModal {
 	position: fixed;
 	top: 50%;
-	left: 50%;
+	left: -1000px;
 	width: 560px;
 	height: 310px;
 	margin: -155px 0 0 -280px;
 	z-index: 1000;
-	visibility: hidden;
 	display: block;
-}
-#iframeModal.loaded {
-	visibility: visible;
-	display: none;
+	visibility: hidden;
 }
 #exitModal {
 	position: fixed;
@@ -131,6 +128,19 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	cursor: pointer;
 	z-index: 1000;
 	display: none;
+}
+#dot {
+	position: absolute;
+	top: 104px;
+	left: 148px;
+}
+.disclaimer {
+	position: relative;
+	width: 940px;
+	height: 12px;
+	padding: 8px 0 0 0;
+	font-size: 8px;
+	margin: 10px 0 10px 0;
 }
 
 /**
@@ -281,6 +291,15 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	font-size: 11px;
 	padding: 3px 0 0 0;
 	font-weight: normal;
+}
+.splash .disclaimer {
+	position: relative;
+	width: 612px;
+	height: 12px;
+	padding: 8px 0 0 0;
+	font-size: 8px;
+	margin: 10px auto 10px auto;
+	text-align: left;
 }
 
 /**
@@ -434,7 +453,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 
  .home .r1 {
  	position: relative;
- 	height: 510px;
+ 	height: 530px;
  	margin: 30px 0 30px 0;
  }
  .home .r1 .col1 {
@@ -450,12 +469,12 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	top: 0px;
  	left: 0px;
  	width: 580px;
- 	height: 18px;
+ 	height: 36px;
  	margin: 20px 20px 12px 20px;
  }
  .home .r1 .col1 .info {
  	position: absolute;
- 	top: 50px;
+ 	top: 70px;
  	left: 0px;
  	height: 80px;
  	width: 588px;
@@ -464,11 +483,11 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  }
  .home .r1 .col1 .content {
  	position: absolute;
- 	top: 130px;
+ 	top: 150px;
  	left: 0px;
  	width: 580px;
  	height: 370px;
- 	margin: 20px 0 0 0;
+ 	margin: 10px 20px 0 20px;
  }
  .home .r1 .col2 {
  	position: absolute;
@@ -518,13 +537,13 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	top: 310px;
  	left: 0px;
  	width: 260px;
- 	height: 130px;
+ 	height: 150px;
  	margin: 0px 20px 20px 20px;
- 	font-size: 13px;
+ 	font-size: 14px;
  }
  .home .r1 .col2 .info .readmore {
  	position: absolute;
- 	top: 110px;
+ 	top: 130px;
  	left: 0px;
  	width: 260px;
  	height: 14px;
@@ -532,7 +551,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  }
  .home .r1 .col2 .button {
  	position: absolute;
- 	top: 460px;
+ 	top: 480px;
  	width: 300px;
  	height: 50px;
  }
@@ -1451,16 +1470,16 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	background-color: rgba(102, 102, 102, 1);
  }
  .resources .r2 .col1 .content .left.p1 {
- 	height: 70px;
- 	padding: 30px 0 0 10px;
+ 	height: 88px;
+ 	padding: 12px 0 0 10px;
  }
  .resources .r2 .col1 .content .left.p2 {
-  	height: 80px;
- 	padding: 20px 0 0 10px;	
+  	height: 64px;
+ 	padding: 36px 0 0 10px;	
  }
  .resources .r2 .col1 .content .left.p3 {
- 	height: 60px;
- 	padding: 40px 0 0 10px;
+ 	height: 58px;
+ 	padding: 42px 0 0 10px;
  }
  .resources .r2 .col1 .content .right {
  	position: absolute;
@@ -1502,16 +1521,16 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	background-color: rgba(102, 102, 102, 1);
  }
  .resources .r2 .col2 .content .left.p1 {
- 	height: 64px;
- 	padding: 36px 0 0 10px;
+ 	height: 72px;
+ 	padding: 28px 0 0 10px;
  }
  .resources .r2 .col2 .content .left.p2 {
   	height: 80px;
  	padding: 20px 0 0 10px;	
  }
  .resources .r2 .col2 .content .left.p3 {
- 	height: 60px;
- 	padding: 40px 0 0 10px;
+ 	height: 72px;
+ 	padding: 28px 0 0 10px;
  }
  .resources .r2 .col2 .content .right {
  	position: absolute;
@@ -1553,16 +1572,16 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	background-color: rgba(102, 102, 102, 1);
  }
  .resources .r2 .col3 .content .left.p1 {
- 	height: 64px;
- 	padding: 36px 0 0 10px;
+ 	height: 56px;
+ 	padding: 44px 0 0 10px;
  }
  .resources .r2 .col3 .content .left.p2 {
   	height: 64px;
  	padding: 36px 0 0 10px;	
  }
  .resources .r2 .col3 .content .left.p3 {
- 	height: 64px;
- 	padding: 36px 0 0 10px;
+ 	height: 72px;
+ 	padding: 28px 0 0 10px;
  }
  .resources .r2 .col3 .content .right {
  	position: absolute;

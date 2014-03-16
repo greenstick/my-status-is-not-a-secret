@@ -11,6 +11,7 @@
     "knockout.js": "~3.0.0",
     "isotope": "~1.5.26",
     "caman": "~4.1.2",
-    "jquery-ui": "~1.10.4"
+    "jquery-ui": "~1.10.4",
+    "easeljs": "*"
   }
 }

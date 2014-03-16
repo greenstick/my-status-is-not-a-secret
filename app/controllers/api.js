@@ -70,6 +70,7 @@ exports.submit = function (req, res) {
 				var imageBuffer = decodeBase64Image(editedImg),
 					cloudfrontURL = 'feed-images/' + submission._id + '.' + imageBuffer.type.substr(6);
 					fs.writeFile(submission._id + "-tempImg", imageBuffer.data, function (err) {
+
 						//S3 Image Upload Handling
 						//Authentication - Deployment Version
 						var s3 = knox.createClient({
