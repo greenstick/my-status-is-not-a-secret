@@ -1,3 +1,7 @@
+/**
+ *	Basic Navigation Dot Class
+ **/
+
 var Dot = function (element) {
 	var dot = this;
 		dot.element = $(element);
@@ -17,7 +21,6 @@ Dot.prototype.defaultPosition = function () {
 Dot.prototype.linkHover = function (link) {
 	var to = this.linkPosition(link);
 		this.element.stop().animate({"left": to}, 400);
-		console.log(to);
 		return to;
 }
 //Animates Dot to Home Position
@@ -29,16 +32,22 @@ Dot.prototype.linkOut = function () {
 //Initializes Default Dot Position
 Dot.prototype.init = function () {
 	var def = this.defaultPosition();
-	this.element.css("left", def);
+		this.element.css("left", def);
 }
 
-var dot = new Dot('#dot', 148);
+//Instatiate New Dot
+var dot = new Dot('#dot');
 	dot.init();
+
+/**
+ *	Events
+ **/
 
 $('.nav a, .goHome').on("mouseover", function (e) {
 	dot.linkHover($(this));
 	e.preventDefault();
 })
+
 $('.nav a, .goHome').on("mouseout", function (e) {
 	dot.linkOut();
 	e.preventDefault();
