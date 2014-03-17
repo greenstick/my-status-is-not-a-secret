@@ -208,7 +208,7 @@ $('.filter').on("touchend click", function () {
 	imgEditor.selectFilter(this)
 })
 
-$('.resizeSlider').on("touchend mouseup", function () {
+$('.resizeSlider').on("touchstart mouseup", function () {
 	imgEditor.resizeImage(imgEditor.selectedFilter[0], $(this).val());
 })
 

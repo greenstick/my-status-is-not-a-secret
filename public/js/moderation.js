@@ -292,31 +292,31 @@ var Feed = function () {
 		feed.approvePosts(feed.idList);
 	});
 	// UI - Hide Selected Posts
-	$('.hidePosts').on('click', function () {
+	$('.hidePosts').on('touchend click', function () {
 		feed.hidePosts(feed.idList);
 	});
 	// UI - Show Approved posts
-	$('.showApproved').on('click', function () {
+	$('.showApproved').on('touchend click', function () {
 		feed.showApproved();
 	});
 	// UI - Show Hidden Posts
-	$('.showHidden').on('click', function () {
+	$('.showHidden').on('touchend click', function () {
 		feed.showHidden();
 	});
 	// UI - Select All Posts
-	$('.selectAll').on('click', function () {
+	$('.selectAll').on('touchend click', function () {
 		feed.selectAll();
 	})
 	// UI - Deselect All Posts
-	$('.deselectAll').on('click', function () {
+	$('.deselectAll').on('touchend click', function () {
 		feed.deselectAll();
 	})
 	// UI - Show New Posts
-	$('.showNew').on('click', function () {
+	$('.showNew').on('touchend click', function () {
 		feed.showNew();
 	})
 	// UI - Delete Selected Posts
-	$('.deleteSelected').on('click', function () {
+	$('.deleteSelected').on('touchend click', function () {
 		feed.deletePosts(feed.idList);
 	})
 
