@@ -41,7 +41,7 @@
 				<div class="divisor"></div>
 <!-- Author Formatting Conditionals -->
 					<!-- ko if: name.first != "" &&  name.last != "" -->
-					<div class="author hText" data-bind="text: name.first + ' ' + name.last"></div>
+					<div class="author hText" data-bind="text: name.first[0] + '. ' + name.last"></div>
 					<!-- /ko -->
 					<!-- ko if: name.first != "" &&  name.last == "" -->
 					<div class="author hText" data-bind="text: name.first"></div>
