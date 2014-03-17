@@ -35,17 +35,6 @@ exports.submit = function (req, res) {
 		selectedImg = data.images.selected,
 		editedImg = data.images.edited;
 
-	//Basic Name Formatting for Design
-	if (first == '' && last == '') {
-		last = 'Anonymous';
-	}
-	if (first == '' && last != '' && state != '') {
-		last = last + ',';
-	}
-	if (first != '' && last != '') {
-		first = first[0] + '.';
-	}
-
 	//Creating Document
 	var submission = new Submission({
 		story: story,
@@ -123,8 +112,8 @@ exports.submit = function (req, res) {
 
 //Retrieve Stories
 exports.retrieve = function (req, res) {
-	var skipValue = 16 * (req.param("page") -1);
-	var query = Submission.find({approved: true}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', {skip: skipValue, limit: 16});
+	var skipValue = 16 * (req.param("page") -1),
+		query = Submission.find({approved: true}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', {skip: skipValue, limit: 16});
 		query.exec(function (error, submissions) {
 			if (error) return console.log(error)
 			res.json(submissions);
@@ -142,36 +131,40 @@ exports.newPosts = function (req, res) {
 
 //Update Post
 exports.approvePosts = function (req, res) {
-	var idList = req.param("idList");
-	var updated = new Date();
-	var update = Submission.update({_id: { $in: idList}}, {$set: {approved: true, updatedAt: updated}}, {multi: true}, function () {
-		update.exec(function (err, submissions) {
-			if (err) return console.log(err)
-		})
-	});
-	var query = Submission.find({approved: false}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', function () {
-		query.exec(function (error, submissions) {
-			if (error) return console.log(error)
-			res.json(submissions);
-		})
-	});
+	var idList 	= req.param("idList"),
+		updated = new Date(),
+
+		update 	= Submission.update({_id: { $in: idList}}, {$set: {approved: true, updatedAt: updated}}, {multi: true}, function () {
+			update.exec(function (err, submissions) {
+				if (err) return console.log(err)
+			})
+		}),
+
+		query 	= Submission.find({approved: false}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', function () {
+			query.exec(function (error, submissions) {
+				if (error) return console.log(error)
+				res.json(submissions);
+			})
+		});
 };
 
 //Hide Post
 exports.hidePosts = function (req, res) {
-	var idList = req.param("idList");
-	var updated = new Date();
-	var update = Submission.update({_id: { $in: idList}}, {$set: {approved: false, updatedAt: updated}}, {multi: true}, function () {
-		update.exec(function (err, submissions) {
-			if (err) return console.log(err)
-		})
-	});
-	var query = Submission.find({approved: true}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', function () {
-		query.exec(function (error, submissions) {
-			if (error) return console.log(error)
-			res.json(submissions);
-		})
-	});
+	var idList = req.param("idList"),
+		updated = new Date(),
+		
+		update = Submission.update({_id: { $in: idList}}, {$set: {approved: false, updatedAt: updated}}, {multi: true}, function () {
+			update.exec(function (err, submissions) {
+				if (err) return console.log(err)
+			})
+		}),
+
+		query = Submission.find({approved: true}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', function () {
+			query.exec(function (error, submissions) {
+				if (error) return console.log(error)
+				res.json(submissions);
+			})
+		});
 };
 
 //Show Approved Posts

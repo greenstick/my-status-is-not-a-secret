@@ -33,41 +33,26 @@
 	top: 0px;
 	left: 0px;
 	width: 200px;
-	height: 30px;
-}
-#feed .storyTile .author .name {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 152px;
-	height: 26px;
+	height: 20px;
 	padding: 4px 0 0 0;
-	display: inline-block;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	text-align: right;
 }
-#feed .storyTile .author .comma {
-	position: absolute;
+#feed .storyTile .location {
+	position: relative;
 	top: 0px;
-	left: 152px;
-	width: 8px;
-	height: 26px;
+	left: 0px;
+	width: 200px;
+	height: 16px;
 	padding: 4px 0 0 0;
-	display: inline-block;
-}
-#feed .storyTile .author .location {
-	position: absolute;
-	top: 0px;
-	left: 160px;
-	width: 40px;
-	height: 26px;
-	padding: 4px 0 0 0;
+	font-size: 12px;
 	display: inline-block;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+	text-align: right;
 }
 #feed .storyTile .story {
 	position: relative;

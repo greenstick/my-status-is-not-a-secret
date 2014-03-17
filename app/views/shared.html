@@ -39,13 +39,31 @@
 			<div class="storyTile" data-bind="isotope: {container: '#feed', itemSelector: '.storyTile'}, attr: {'id': _id}">
 				<img data-bind="attr: {'src': '//d1cllk76e9bo1o.cloudfront.net/' + cloudfrontURL}" />
 				<div class="divisor"></div>
-				<div class="author hText">
-					<div class="name" data-bind="text: name.first + ' ' + name.last"></div>
-					<!-- ko if: name.first != "" && location.state != "" -->
-					<div class="comma">, </div>
+<!-- Author Formatting Conditionals -->
+					<!-- ko if: name.first != "" &&  name.last != "" -->
+					<div class="author hText" data-bind="text: name.first + ' ' + name.last"></div>
 					<!-- /ko -->
-					<div class="location" data-bind="text: location.state"></div>
-				</div>
+					<!-- ko if: name.first != "" &&  name.last == "" -->
+					<div class="author hText" data-bind="text: name.first"></div>
+					<!-- /ko -->
+					<!-- ko if: name.first == "" &&  name.last != "" -->
+					<div class="author hText" data-bind="text: name.last"></div>
+					<!-- /ko -->
+					<!-- ko if: name.first == "" && name.last == "" -->
+					<div class="author hText" data-bind="text: 'Anonymous'"></div>
+					<!-- /ko -->
+<!-- Location Formatting Conditionals -->
+					<!-- ko if: location.country != "" && location.state != "" -->
+					<div class="location hText" data-bind="text: location.country + ', ' + location.state"></div>
+					<!-- /ko -->
+					<!-- ko if: location.country != "" && location.state == "" -->
+					<div class="location hText" data-bind="text: location.country"></div>
+					<!-- /ko -->
+					<!-- ko if: location.country == "" && location.state != "" -->
+					<div class="location hText" data-bind="text: location.state"></div>
+					<!-- /ko -->
+					<!-- ko if: location.country == "" && location .state == "" -->
+					<!-- /ko -->
 				<div class="story cText" data-bind="text: $data.story"></div>
 			</div>
 		</div>
@@ -74,14 +92,16 @@
 	<div class="footerBreak"></div>
 	<div class="footer">
 		<div class="logos">
-			<a href="//www.columnfivemedia.com" target="_blank">
-				<img src="../img/logo/c5-logo.png" />
-			</a>
 			<a href="//www.aidslifecycle.org" target="_blank">
 				<img src="../img/logo/alc-logo.jpg" width="63px" height="90px" />
 			</a>
 			<a href="//www.advisorie.com/" target="_blank">
 				<img src="../img/logo/tag-logo.png" />
+			</a>
+		</div>
+		<div class="columnfive">
+			<a href="//www.columnfivemedia.com" target="_blank">
+				<img src="../img/logo/c5-logo.png" />
 			</a>
 		</div>
 	</div>

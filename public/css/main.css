@@ -428,8 +428,16 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 940px;
+	width: 728px;
 	height: 90px;
+}
+.footer .columnfive {
+	position: absolute;
+	top: 0px;
+	left: 728px;
+	width: 180px;
+	height: 90px;
+	margin: 0 0 0 32px;
 }
 .footer .logos a {
 	display: inline-block;
@@ -445,6 +453,12 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 .splash .footer {
 	width: 612px;
 	margin: 20px auto 30px auto;
+}
+.splash .footer .logos {
+	width: 400px;
+}
+.splash .footer .columnfive {
+	left: 400px;
 }
 
 /**
