@@ -171,7 +171,7 @@ ImageEditor.prototype.submitImage = function () {
 		this.crop(200, 200, x, y);
 		this.render(function () {
 			image = this.toBase64();
-			window.localStorage.setItem("image-edited", image);
+			localStorage.setItem("image-edited", image);
 		})
 	});
 

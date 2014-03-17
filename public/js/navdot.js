@@ -26,7 +26,7 @@ Dot.prototype.linkHover = function (link) {
 //Animates Dot to Home Position
 Dot.prototype.linkOut = function () {
 	var to = this.defaultPosition();
-		this.element.stop().animate({"left": to}, 200);
+		this.element.stop().animate({"left": to}, 300);
 		return to;
 }
 //Initializes Default Dot Position

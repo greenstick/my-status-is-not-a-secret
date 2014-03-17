@@ -47,11 +47,13 @@ exports.submit = function (req, res) {
 		location: {
 			country: country,
 			state: state
-		}
+		},
+		cloudfrontURL: 'feed-images/my-status.png',
 	});
 
 	//Saving Submission to DB
-	submission.save(function (e, submission, count) {
+	submission.save(function (err, submission, count) {
+		if (err) return console.log(err);
 		//Photo Variables
 		var cloudfrontURL;
 			//Image Upload - S3
@@ -59,7 +61,7 @@ exports.submit = function (req, res) {
 				var imageBuffer = decodeBase64Image(editedImg),
 					cloudfrontURL = 'feed-images/' + submission._id + '.' + imageBuffer.type.substr(6);
 					fs.writeFile(submission._id + "-tempImg", imageBuffer.data, function (err) {
-
+						if (err) return console.log(err);
 						//S3 Image Upload Handling
 						//Authentication - Deployment Version
 						var s3 = knox.createClient({
@@ -79,12 +81,13 @@ exports.submit = function (req, res) {
 							s3imgURL = s3res.url;
 							//Updating Submission With S3 URL for Image
 							var update = Submission.update({_id: submission._id}, {$set: {cloudfrontURL: cloudfrontURL}}, function () {
-								update.exec(function (error, updated) {
-									if (error) {
+								update.exec(function (err, updated) {
+									if (err) {
 										res.json(submission);
 										return console.log(error);
 									}
 									res.json(submission);
+									//Removing Temporary Image
 									fs.unlink(submission._id + "-tempImg", function (err) {
 										if (err) return console.log("Temp Img Deletion Failure");
 										console.log("Temp Img Cleared");
@@ -92,16 +95,15 @@ exports.submit = function (req, res) {
 								});
 							});
 						});
-
 					})
 			//Selected Image / No Upload
 			} else {
 				cloudfrontURL = 'feed-images/' + selectedImg;
 				var update = Submission.update({_id: submission._id}, {$set: {cloudfrontURL: cloudfrontURL}}, function () {
-					update.exec(function (error, updated) {
-						if (error) {
+					update.exec(function (err, updated) {
+						if (err) {
 							res.json(submission);
-							return console.log(error);
+							return console.log(err);
 						}
 						res.json(submission);
 					});
@@ -122,6 +124,9 @@ exports.retrieve = function (req, res) {
 
 //Retrieve for Moderation
 exports.newPosts = function (req, res) {
+	// Submission.remove({}, function () {
+	// 	console.log("cleared");
+	// })
 	var query = Submission.find({updated: null}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt');
 		query.exec(function (error, submissions) {
 			if (error) return console.log(error)

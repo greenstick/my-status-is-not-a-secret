@@ -28,7 +28,7 @@
 			country = $('.country-input').val(),
 			state = $('.state-input').val(),
 			selected = $('.selectedImage').val(),
-			edited = window.localStorage.getItem("image-edited") || '';
+			edited = localStorage.getItem("image-edited") || '';
 		// console.log("XHR Status: Requesting...");
 		$.ajax({
 			type: "POST", 
