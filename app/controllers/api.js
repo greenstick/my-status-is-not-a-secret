@@ -115,7 +115,7 @@ exports.submit = function (req, res) {
 //Retrieve Stories
 exports.retrieve = function (req, res) {
 	var skipValue = 16 * (req.param("page") -1),
-		query = Submission.find({approved: true}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', {skip: skipValue, limit: 16});
+		query = Submission.find({approved: true}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', {skip: skipValue, limit: 16, sort: {updatedAt: -1}});
 		query.exec(function (error, submissions) {
 			if (error) return console.log(error)
 			res.json(submissions);
