@@ -140,7 +140,10 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	height: 12px;
 	padding: 8px 0 0 0;
 	font-size: 8px;
+	letter-spacing: 1px;
+	color: rgba(102, 102, 102, 1);
 	margin: 10px 0 10px 0;
+	text-align: right;
 }
 
 /**
@@ -430,6 +433,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	left: 0px;
 	width: 728px;
 	height: 90px;
+	text-align: right;
 }
 .footer .columnfive {
 	position: absolute;
@@ -467,7 +471,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 
  .home .r1 {
  	position: relative;
- 	height: 530px;
+ 	height: 512px;
  	margin: 30px 0 30px 0;
  }
  .home .r1 .col1 {
@@ -483,21 +487,21 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	top: 0px;
  	left: 0px;
  	width: 580px;
- 	height: 36px;
+ 	height: 18px;
  	margin: 20px 20px 12px 20px;
  }
  .home .r1 .col1 .info {
  	position: absolute;
- 	top: 70px;
+ 	top: 52px;
  	left: 0px;
  	height: 80px;
- 	width: 588px;
- 	margin: 0 12px 0 20px;
- 	font-size: 14px;
+ 	width: 580px;
+ 	margin: 0 20px 0 20px;
+ 	font-size: 13px;
  }
  .home .r1 .col1 .content {
  	position: absolute;
- 	top: 150px;
+ 	top: 132px;
  	left: 0px;
  	width: 580px;
  	height: 370px;
@@ -551,13 +555,13 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	top: 310px;
  	left: 0px;
  	width: 260px;
- 	height: 150px;
+ 	height: 132px;
  	margin: 0px 20px 20px 20px;
- 	font-size: 14px;
+ 	font-size: 13px;
  }
  .home .r1 .col2 .info .readmore {
  	position: absolute;
- 	top: 130px;
+ 	top: 112px;
  	left: 0px;
  	width: 260px;
  	height: 14px;
@@ -565,7 +569,7 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  }
  .home .r1 .col2 .button {
  	position: absolute;
- 	top: 480px;
+ 	top: 462px;
  	width: 300px;
  	height: 50px;
  }
