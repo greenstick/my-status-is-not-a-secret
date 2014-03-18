@@ -174,7 +174,7 @@ exports.hidePosts = function (req, res) {
 
 //Show Approved Posts
 exports.showApproved = function (req, res) {
-	var query = Submission.find({approved: true}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', function () {
+	var query = Submission.find({approved: true}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', {sort: {updatedAt: -1}}, function () {
 		query.exec(function (error, submissions) {
 			if (error) return console.log(error)
 			res.json(submissions);
@@ -184,7 +184,7 @@ exports.showApproved = function (req, res) {
 
 //Show Hidden Posts
 exports.showHidden = function (req, res) {
-	var query = Submission.find({approved: false}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', function () {
+	var query = Submission.find({approved: false}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', {sort: {updatedAt: -1}}, function () {
 		query.exec(function (error, submissions) {
 			if (error) return console.log(error)
 			res.json(submissions);
