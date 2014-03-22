@@ -2,9 +2,10 @@
  *	Basic Navigation Dot Class
  **/
 
-var Dot = function (element) {
+var Dot = function (element, home) {
 	var dot = this;
-		dot.element = $(element);
+		dot.element = $(element),
+		dot.home = $(home);
 }
 
 //Gets Link Position
@@ -14,7 +15,7 @@ Dot.prototype.linkPosition = function (link) {
 }
 //Gets Default Dot Position
 Dot.prototype.defaultPosition = function () {
-	var home = $('.homePosition').data();
+	var home = this.home.data();
 		return home.position;
 }
 //Animates Dot To Hovered Link
@@ -36,7 +37,7 @@ Dot.prototype.init = function () {
 }
 
 //Instatiate New Dot
-var dot = new Dot('#dot');
+var dot = new Dot('#dot', '.homePosition');
 	dot.init();
 
 /**
@@ -45,10 +46,8 @@ var dot = new Dot('#dot');
 
 $('.nav a, .goHome').on("mouseover", function (e) {
 	dot.linkHover($(this));
-	e.preventDefault();
 })
 
 $('.nav a, .goHome').on("mouseout", function (e) {
 	dot.linkOut();
-	e.preventDefault();
 })

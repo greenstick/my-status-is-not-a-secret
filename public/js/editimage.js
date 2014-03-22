@@ -50,10 +50,10 @@ ImageEditor.prototype.renderImage = function (filter, resize) {
 			this.resize({
 				width:  rWidth,
 				height: rHeight
-			})
+			});
 			this[filter]();
 			this.render();
-		})
+		});
 		reader.readAsDataURL(input.files[0])
 	}
 	else if (typeof reader === 'object' && filter === "" && resize !== 1) {
@@ -62,9 +62,9 @@ ImageEditor.prototype.renderImage = function (filter, resize) {
 			this.resize({
 				width:  rWidth,
 				height: rHeight
-			})
+			});
 			this.render();
-		})
+		});
 		reader.readAsDataURL(input.files[0])
 	}
 	else if (typeof reader === 'object' && filter !== "") {
@@ -88,7 +88,6 @@ ImageEditor.prototype.renderImage = function (filter, resize) {
 			}
 			reader.readAsDataURL(input.files[0]);
 		}
-
 	}
 };
 
