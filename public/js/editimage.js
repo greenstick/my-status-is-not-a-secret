@@ -36,8 +36,8 @@ ImageEditor.prototype.renderImage = function (filter, resize) {
 		editor.image = $(editor.tar);
 
 	//Set Filter & Resize to Default Values if Undefined
-	typeof filter === "undefined" ? filter = "" : filter = filter;
-	typeof resize === "undefined" ? resize = 1  : resize = resize;
+	filter = filter || "";
+	resize = resize || 1;
 
 	//Dimensions to Resize To
 	var rWidth 	= editor.imageDimensions.width * resize,
@@ -51,10 +51,12 @@ ImageEditor.prototype.renderImage = function (filter, resize) {
 				width:  rWidth,
 				height: rHeight
 			});
-			this[filter]();
+			if (filter !== "noFilter") {
+				this[filter]();
+			};
 			this.render();
 		});
-		reader.readAsDataURL(input.files[0])
+		reader.readAsDataURL(input.files[0]);
 	}
 	else if (typeof reader === 'object' && filter === "" && resize !== 1) {
 		Caman(editor.tar, function () {
@@ -65,15 +67,17 @@ ImageEditor.prototype.renderImage = function (filter, resize) {
 			});
 			this.render();
 		});
-		reader.readAsDataURL(input.files[0])
+		reader.readAsDataURL(input.files[0]);
 	}
 	else if (typeof reader === 'object' && filter !== "") {
 		Caman(editor.tar, function () {
 			this.revert();
-			this[filter]();
+			if (filter !== "noFilter") {
+				this[filter]();
+			};
 			this.render();
 		})
-		reader.readAsDataURL(input.files[0])
+		reader.readAsDataURL(input.files[0]);
 	}
 	else {
 		if (input.files && input.files[0]) {
@@ -84,11 +88,28 @@ ImageEditor.prototype.renderImage = function (filter, resize) {
 					this.render();
 					editor.imageDimensions.width = this.imageWidth();
 					editor.imageDimensions.height = this.imageHeight();
-				})
-			}
+					$('.resizeSlider').slider("option", "min", imgEditor.setMinResize(editor.imageDimensions.width, editor.imageDimensions.height, '.resizeSlider'));
+				});
+			};
 			reader.readAsDataURL(input.files[0]);
+		};
+	};
+};
+
+ImageEditor.prototype.setMinResize = function (width, height, slider) {
+	var editor = this, resize = null;
+		editor.image = $(editor.tar);
+		editor.w = width, 
+		editor.h = height;
+
+		if (editor.w <= 200 || editor.h <= 200) {
+			$(slider).hide();
 		}
-	}
+		else {
+			//Adding 5% so image is never smaller than viewport
+			editor.w > editor.h ? resize = (200/editor.h) * 105 : resize = (200/editor.w) * 105;
+		}
+		return resize;
 };
 
 //Select Filter
@@ -137,11 +158,11 @@ ImageEditor.prototype.dragImage = function () {
 		else {
 			editor.container.css({width: 200, height: iH, top: iT, left: iL});
 			editor.image.css({top: editor.image.height() - 200, left: editor.image.width() - 200});
-		}
+		};
 	}
 	else {
 		editor.container.css({width: 200, height: 200, top: 0, left: 0});
-	}
+	};
 };
 //Submit Edit
 ImageEditor.prototype.submitImage = function () {
@@ -163,7 +184,7 @@ ImageEditor.prototype.submitImage = function () {
 	else {
 		x 	= 	editor.image.width()/2 - 100;
 		y 	= 	editor.image.height()/2 - 100;
-	}
+	};
 
 	//Cropping Image, Encoding to Base64, & Saving to Local Storage
 	Caman(editor.tar, function () {
@@ -171,7 +192,8 @@ ImageEditor.prototype.submitImage = function () {
 		this.render(function () {
 			image = this.toBase64();
 			localStorage.setItem("image-edited", image);
-		})
+		});
+
 	});
 
 	editor.ui.fadeOut(400);
@@ -194,22 +216,23 @@ $('.resizeSlider').slider({
 	slide: function (event, ui) {
 		$('.resizeSlider').val(ui.value);
 	}
-})
+});
+
 /**
  *	Event Bindings
  **/
 
 $('#uploadImage').change(function () {
 	imgEditor.init();
-})
+});
 
 $('.filter').on("touchend click", function () {
-	imgEditor.selectFilter(this)
-})
+	imgEditor.selectFilter(this);
+});
 
-$('.resizeSlider').on("touchstart mouseup", function () {
+$('.resizeSlider').on("touchend mouseup", function () {
 	imgEditor.resizeImage(imgEditor.selectedFilter[0], $(this).val());
-})
+});
 
 $('.doneEditing').on("touchend click", function (event) {
 	imgEditor.submitImage();
@@ -217,4 +240,4 @@ $('.doneEditing').on("touchend click", function (event) {
 
 $('.mainImage').on("touchend click", function () {
 	imgEditor.dragImage();
-})
+});
