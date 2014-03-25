@@ -459,10 +459,10 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	margin: 20px auto 30px auto;
 }
 .splash .footer .logos {
-	width: 456px;
+	width: 400px;
 }
 .splash .footer .columnfive {
-	left: 456px;
+	left: 400px;
 }
 
 /**
