@@ -1355,10 +1355,10 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 }
 .give .r1 .col1 .bottom .info {
 	position: absolute;
-	top: 160px;
+	top: 190px;
 	left: 0px;
 	width: 460px;
-	height: 120px;
+	height: 90px;
 	background-color: rgba(51, 51, 51, .75);
 }
 .give .r1 .col1 .bottom .info .price {
@@ -1368,7 +1368,6 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	width: 160px;
 	height: 64px;
 	margin: 13px 0 13px 20px;
-	padding: 15px 0;
 	border-right: 1px solid #FFFFFF;
 	font-size: 56px;
 	font-weight: bold;
@@ -1382,15 +1381,14 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	left: 180px;
 	top: 0px;
 	width: 270px;
-	height: 94px;
+	height: 64px;
 	margin: 13px 0 13px 10px;
 }
 .give .r1 .col1 .bottom .info .donate {
 	font-size: 14px;
 }
 .give .r1 .col1 .bottom .info .donate .cText {
-	font-size: 10px;
-	line-height: 15px;
+	font-size: 12px;
 }
 .give .r1 .col2 {
 	position: absolute;
@@ -1449,6 +1447,13 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	left: 0px;
 	width: 460px;
 	height: 230px;
+}
+.give .r2 {
+	width: 920px;
+	padding: 0 0 0 20px;
+	font-size: 12px;
+	color: rgba(102, 102, 102, 1);
+	border: none;
 }
 
  /**
