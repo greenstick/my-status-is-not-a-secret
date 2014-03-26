@@ -18,6 +18,9 @@ html {
 .cText {
 	font-family: 'PT Sans', sans-serif;
 }
+.cText a {
+	font-weight: bold;
+}
 .button {
 	cursor: pointer;
 	background-color: rgba(230, 60, 46, 1);
