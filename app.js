@@ -4,7 +4,8 @@ var express = require('express'),
   config = require('./config/config'),
   passport = require('passport'),
   BasicStrategy = require('passport-http').BasicStrategy,
-  knox = require('knox');
+  knox = require('knox'),
+  newrelic = require('newrelic');
 
 //Connect to DB
 mongoose.connect(config.db);
