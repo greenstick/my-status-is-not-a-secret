@@ -39,7 +39,8 @@
 		<div class="r1">
 			<div class="col1">
 				<div class="header hText">
-					<span class="red">2 MILLION +</span> PEOPLE ARE DIAGNOSED WITH HIV EVERY YEAR.
+
+					MORE THAN <span class="red">2 MILLION</span> PEOPLE ARE DIAGNOSED WITH HIV EVERY YEAR.
 				</div>
 				<div class="info cText">
 					The disease knows no boundaries of race, gender, or sexuality&mdash;even in the United States, 
@@ -53,23 +54,47 @@
 				</div>
 			</div>
 			<div class="col2">
-				<div class="content">
-					<img src="../img/monument.png" />
-				</div>
-				<div class="header hText">
-					MY STATUS <span class="red">IS NOT</span><br />
-					A SECRET BECAUSE...<br />
-					<img class="quotes" src="../img/quotes.png">
-					<div class="contributor">H. Azalea, NY</div>
-				</div>
-				<div class="info cText">
-					Not knowing your HIV status can be paralyzing.
-					The tension leading up to finding
-					our your results&mdash;agonizing. Knowing is
-					freedom from doubt and the ability to
-					determine how best to protect yourselves,
-					others, and your own future.<br />
-					<div class="readmore"><a href="shared">Read more >></a></div>
+				<div class="featured" data-bind="foreach: featured.post">
+					<div class="header hText">
+						MY STATUS <span class="red">IS NOT</span><br />
+						A SECRET BECAUSE...<br />
+					</div>
+					<div class="content">
+						<img data-bind="attr: {'src': '//d1cllk76e9bo1o.cloudfront.net/' + cloudfrontURL}" />
+					</div>
+					<div class="info cText">
+						<img class="quotes" src="../img/quotes.png" />
+						<div class="contributor">
+	<!-- Author Formatting Conditionals -->
+							<!-- ko if: name.first != "" &&  name.last != "" -->
+							<div class="author hText" data-bind="text: name.first[0] + '. ' + name.last"></div>
+							<!-- /ko -->
+							<!-- ko if: name.first != "" &&  name.last == "" -->
+							<div class="author hText" data-bind="text: name.first"></div>
+							<!-- /ko -->
+							<!-- ko if: name.first == "" &&  name.last != "" -->
+							<div class="author hText" data-bind="text: name.last"></div>
+							<!-- /ko -->
+							<!-- ko if: name.first == "" && name.last == "" -->
+							<div class="author hText" data-bind="text: 'Anonymous'"></div>
+							<!-- /ko -->
+	<!-- Location Formatting Conditionals -->
+							<!-- ko if: location.country != "" && location.state != "" -->
+							<div class="location hText" data-bind="text: location.country + ', ' + location.state"></div>
+							<!-- /ko -->
+							<!-- ko if: location.country != "" && location.state == "" -->
+							<div class="location hText" data-bind="text: location.country"></div>
+							<!-- /ko -->
+							<!-- ko if: location.country == "" && location.state != "" -->
+							<div class="location hText" data-bind="text: location.state"></div>
+							<!-- /ko -->
+							<!-- ko if: location.country == "" && location .state == "" -->
+							<!-- /ko -->
+						</div>
+						<div class="snippet" data-bind="text: formatStory(story, 176)">
+						</div>
+						<div class="readmore"><a href="shared">Read more >></a></div>
+					</div>
 				</div>
 				<div class="button hText openModal">
 					<div class="share">
@@ -230,4 +255,13 @@
 	<iframe id="iframeModal" src="/modal" seamless></iframe>
 	<div id="exitModal" class="hText">X</div>
 </div>
+<script>
+	//Used to set a max length for a string, cut it at the closest whitespace, then render ellipses
+	formatStory = function (string, max) {
+		var cut = string.substr(0, max - 3),
+			trimIndex = cut.lastIndexOf(" "),
+			formatted = cut.substr(0, trimIndex) + '...';
+		return formatted;
+	};
+</script>
 </body>

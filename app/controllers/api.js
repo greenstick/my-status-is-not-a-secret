@@ -49,6 +49,7 @@ exports.submit = function (req, res) {
 			state: state
 		},
 		cloudfrontURL: 'feed-images/my-status.png',
+		featured: false
 	});
 
 	//Saving Submission to DB
@@ -69,7 +70,6 @@ exports.submit = function (req, res) {
 							secret: process.env.AWS_SECRET_ACCESS_KEY,
 							bucket: process.env.S3_BUCKET_NAME
 						});
-
 						//S3 Headers
 						var s3Headers = {
 							'Content-Type': imageBuffer.type,
@@ -91,11 +91,11 @@ exports.submit = function (req, res) {
 									fs.unlink(submission._id + "-tempImg", function (err) {
 										if (err) return console.log("Temp Img Deletion Failure");
 										console.log("Temp Img Cleared");
-									})
+									});
 								});
 							});
 						});
-					})
+					});
 			//Selected Image / No Upload
 			} else {
 				cloudfrontURL = 'feed-images/' + selectedImg;
@@ -104,11 +104,11 @@ exports.submit = function (req, res) {
 						if (err) {
 							res.json(submission);
 							return console.log(err);
-						}
+						};
 						res.json(submission);
 					});
 				});
-			}
+			};
 	});
 };
 
@@ -117,21 +117,46 @@ exports.retrieve = function (req, res) {
 	var skipValue = 16 * (req.param("page") -1),
 		query = Submission.find({approved: true}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', {skip: skipValue, limit: 16, sort: {updatedAt: -1}});
 		query.exec(function (error, submissions) {
-			if (error) return console.log(error)
+			if (error) return console.log(error);
 			res.json(submissions);
-		})
+		});
+};
+
+//Get Featured Story
+exports.showFeatured = function (req, res) {
+	var query = Submission.find({featured: true}, 'approved featured story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', {limit: 1});
+		query.exec(function (error, submissions) {
+			if (error) return console.log(error);
+			res.json(submissions);
+		});
+};
+
+//Set Featured Story
+exports.featurePost = function (req, res) {
+	var idList = req.param("idList"),
+		updated = new Date(),
+
+		unfeature = Submission.update({featured: true}, {$set: {featured: false}}, {multi: true}, function () {
+			unfeature.exec(function (err, submissions) {
+				if (err) return console.log (err);
+			});
+		}),
+
+		query = Submission.update({_id: {$in: idList}}, {$set: {featured: true, approved: true, updatedAt: updated}}, function () {
+			query.exec(function (err, submissions) {
+				if (err) return console.log(err);
+				res.json(submissions);
+			});
+		});
 };
 
 //Retrieve for Moderation
 exports.newPosts = function (req, res) {
-	// Submission.remove({}, function () {
-	// 	console.log("cleared");
-	// })
 	var query = Submission.find({updated: null}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt');
 		query.exec(function (error, submissions) {
-			if (error) return console.log(error)
+			if (error) return console.log(error);
 			res.json(submissions);
-		})
+		});
 };
 
 //Update Post
@@ -142,14 +167,14 @@ exports.approvePosts = function (req, res) {
 		update 	= Submission.update({_id: { $in: idList}}, {$set: {approved: true, updatedAt: updated}}, {multi: true}, function () {
 			update.exec(function (err, submissions) {
 				if (err) return console.log(err)
-			})
+			});
 		}),
 
 		query 	= Submission.find({approved: false}, 'approved story name.first name.last location.country location.state location.city s3imgURL cloudfrontURL createdAt updatedAt', function () {
 			query.exec(function (error, submissions) {
 				if (error) return console.log(error)
 				res.json(submissions);
-			})
+			});
 		});
 };
 

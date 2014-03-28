@@ -38,6 +38,11 @@ module.exports = function (app) {
 		app.get('/showApproved', passport.authenticate('basic', {session: false}), api.showApproved);
 		// moderation - showHidden
 		app.get('/showHidden', passport.authenticate('basic', {session: false}), api.showHidden);
+		// moderation - showFeatured
+		app.get('/showFeatured', passport.authenticate('basic', {session: false}), api.showFeatured);
+		// moderation - featurePost
+		app.get('/featurePost', passport.authenticate('basic', {session: false}), api.featurePost);
 		// feed - retrieve route
 		app.get('/retrieve', passport.authenticate('basic', {session: false}), api.retrieve);
-};
+		// featured - retrieve route
+	};

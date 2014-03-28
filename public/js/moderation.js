@@ -242,7 +242,7 @@ var Feed = function () {
 			})
 		};
 
-		//Show New POsts
+		//Show New Posts
 		feed.showNew = function () {
 			$('.loading').show();
 			// console.log("XHR Status: Requesting...");
@@ -267,6 +267,55 @@ var Feed = function () {
 				$('.loading').hide();
 			})
 		};
+		//Feature Post
+		feed.featurePost = function (idList) {
+			$('.loading').show();
+			// console.log("XHR Status: Requesting...");
+			$.ajax({
+				type: "GET", 
+				url: "/featurePost",
+				data: {"idList": idList}
+			}).done(function (response) {
+				// console.log("XHR Status: Success");
+				var data = response;
+					feed.pages([]);
+					for(var i = 0; i < data.length; i++) {
+						if (data[i].featured === true) {
+							feed.pages.push(data[i]);
+						}
+					}
+					$('.storyTile').css('display', 'inline-block');
+					feed.idList = [];
+			}).fail(function () {
+				// console.log("XHR Status: Failed");
+			}).always(function () {
+				// console.log("XHR Status: Resolved");
+				$('.loading').hide();
+			})
+		};
+		//Show Featured
+		feed.showFeatured = function () {
+			$.ajax({
+				type: "GET", 
+				url: "/showFeatured"
+			}).done(function (response) {
+				// console.log("XHR Status: Success");
+				var data = response;
+					feed.pages([]);
+					for(var i = 0; i < data.length; i++) {
+						if (data[i].featured === true) {
+							feed.pages.push(data[i]);
+						}
+					}
+					$('.storyTile').css('display', 'inline-block');
+					feed.idList = [];
+			}).fail(function () {
+				// console.log("XHR Status: Failed");
+			}).always(function () {
+				// console.log("XHR Status: Resolved");
+				$('.loading').hide();
+			})
+		}
 };
 
 /**
@@ -285,7 +334,7 @@ var Feed = function () {
 	$('.ui').on('mouseout', function (e) {
 		if (!$('.storyTile').hasClass('selected')) {
 			feed.closeUI(e);
-		}
+		};
 	});
 	// UI - Approve Selected Posts
 	$('.approvePosts').on('click', function () {
@@ -306,19 +355,28 @@ var Feed = function () {
 	// UI - Select All Posts
 	$('.selectAll').on('touchend click', function () {
 		feed.selectAll();
-	})
+	});
 	// UI - Deselect All Posts
 	$('.deselectAll').on('touchend click', function () {
 		feed.deselectAll();
-	})
+	});
 	// UI - Show New Posts
 	$('.showNew').on('touchend click', function () {
 		feed.showNew();
-	})
+	});
 	// UI - Delete Selected Posts
 	$('.deleteSelected').on('touchend click', function () {
 		feed.deletePosts(feed.idList);
-	})
+	});
+	// UI - Feature Post
+	$('.featurePost').on('touchend click', function () {
+		feed.featurePost(feed.idList);
+	});
+	// UI - Show Featured
+	$('.showFeatured').on('touchend click', function () {
+		feed.showFeatured();
+	});
+
 
 	$(window).scroll(function () {   
 		if ($(window).scrollTop() <= 118 && !feed.idList.length) {
@@ -327,7 +385,7 @@ var Feed = function () {
 		} else {
 			$('.ui').fadeIn(600);
 			feed.uiOpen = true;
-		}
+		};
 	});
 
 

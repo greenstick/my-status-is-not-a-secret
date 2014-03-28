@@ -22,6 +22,7 @@ var SubmissionSchema = new Schema ({
 		facebook: String
 	},
 	cloudfrontURL: String,
+	featured: Boolean,
 	createdAt: Date,
 	updatedAt: Date
 });
