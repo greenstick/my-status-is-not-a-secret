@@ -91,7 +91,7 @@
 							<!-- ko if: location.country == "" && location .state == "" -->
 							<!-- /ko -->
 						</div>
-						<div class="snippet" data-bind="text: formatStory(story, 256)">
+						<div class="snippet" data-bind="text: formatStory(story, 176)">
 						</div>
 						<div class="readmore"><a href="shared">Read more >></a></div>
 					</div>
@@ -258,10 +258,14 @@
 <script>
 	//Used to set a max length for a string, cut it at the closest whitespace, then render ellipses
 	formatStory = function (string, max) {
-		var cut = string.substr(0, max - 3),
-			trimIndex = cut.lastIndexOf(" "),
+		var cut, trimIndex, formatted;
+		if (max < string.length - 3) {
+			cut = string.substr(0, max - 3);
+			trimIndex = cut.lastIndexOf(" ");
 			formatted = cut.substr(0, trimIndex) + '...';
-		return formatted;
+			string = formatted;
+		}
+		return string;
 	};
 </script>
 </body>
