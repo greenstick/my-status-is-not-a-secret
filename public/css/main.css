@@ -989,12 +989,12 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  	top: 0px;
  	left: 0px;
  	width: 260px;
- 	height: 40px;
+ 	height: 48px;
  	margin: 20px 20px 0 20px;
  }
  .whyknow .r1 .col2 .content {
  	position: absolute;
- 	top: 60px;
+ 	top: 68px;
  	left: 0px;
  	width: 260px;
  	height: 200px;
@@ -1002,11 +1002,11 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
  }
  .whyknow .r1 .col2 .info {
  	position: absolute;
- 	top: 260px;
+ 	top: 268px;
  	left: 0px;
  	width: 260px;
  	height: 130px;
- 	margin: 20px 20px 20px 20px;
+ 	margin: 12px 20px 20px 20px;
  	font-size: 14px;
  }	
  .whyknow .r1 .col2 .button {
