@@ -5,25 +5,29 @@ module.exports = function (app) {
 		api = require('../app/controllers/api'),
 		passport = require('passport');
 		// index route
-		app.get('/', passport.authenticate('basic', {session: false}), controller.index);
+		app.get('/', controller.index);
 		// home route
-		app.get('/home', passport.authenticate('basic', {session: false}), controller.home);
+		app.get('/home', controller.home);
 		// about route
-		app.get('/about', passport.authenticate('basic', {session: false}), controller.about);
+		app.get('/about', controller.about);
 		// whyknow route
-		app.get('/whyknow', passport.authenticate('basic', {session: false}), controller.whyknow);
+		app.get('/whyknow', controller.whyknow);
 		// give route
-		app.get('/give', passport.authenticate('basic', {session: false}), controller.give);
+		app.get('/give', controller.give);
 		// resources route
-		app.get('/resources', passport.authenticate('basic', {session: false}), controller.resources);
+		app.get('/resources', controller.resources);
 		// shared route
-		app.get('/shared', passport.authenticate('basic', {session: false}), controller.shared);
+		app.get('/shared', controller.shared);
 		// interviews route
-		app.get('/interviews', passport.authenticate('basic', {session: false}), controller.interviews);
+		app.get('/interviews', controller.interviews);
 		// modal route
-		app.get('/modal', passport.authenticate('basic', {session: false}), controller.modal);
+		app.get('/modal', controller.modal);
 		// modal submit
-		app.post('/submit', passport.authenticate('basic', {session: false}), api.submit);
+		app.post('/submit', api.submit);
+		// showFeatured
+		app.get('/showFeatured', api.showFeatured);
+		// feed - retrieve route
+		app.get('/retrieve', api.retrieve);
 		// moderation route
 		app.get('/moderation', passport.authenticate('basic', {session: false}), controller.moderation);
 		// moderation - retrieve route
@@ -38,11 +42,6 @@ module.exports = function (app) {
 		app.get('/showApproved', passport.authenticate('basic', {session: false}), api.showApproved);
 		// moderation - showHidden
 		app.get('/showHidden', passport.authenticate('basic', {session: false}), api.showHidden);
-		// moderation - showFeatured
-		app.get('/showFeatured', passport.authenticate('basic', {session: false}), api.showFeatured);
 		// moderation - featurePost
 		app.get('/featurePost', passport.authenticate('basic', {session: false}), api.featurePost);
-		// feed - retrieve route
-		app.get('/retrieve', passport.authenticate('basic', {session: false}), api.retrieve);
-		// featured - retrieve route
 	};

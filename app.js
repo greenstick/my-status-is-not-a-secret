@@ -26,12 +26,12 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 //Remove Development User/Pass on Deployment
 passport.use(new BasicStrategy(
 	function (username, password, done) {
-		if (username.valueOf() === process.env.MOD_USERNAME || username.valueOf() == 'test' && password.valueOf() === process.env.MOD_PASSWORD || password.valueOf() == 'testpass12345')
+		if (username.valueOf() === process.env.MOD_USERNAME && password.valueOf() === process.env.MOD_PASSWORD)
 			return done(null, true);
 		else
 			return done(null, false);
 	})
-)
+);
 
 var app = express();
 
