@@ -1289,9 +1289,10 @@ input:focus, select:focus, textarea:focus, [contenteditable="true"]:focus {
 	top: 0px;
 	left: 0px;
 	width: 900px;
-	height: 1080px;
+	height: 1180px;
 	padding: 20px 20px 20px 20px;
 	background-color: rgba(51, 51, 51, 1);
+	line-height: 20px;
 }
 .about .r2 .video {
 	position: relative;
