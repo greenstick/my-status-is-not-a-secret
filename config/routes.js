@@ -28,6 +28,10 @@ module.exports = function (app) {
 		app.get('/showFeatured', api.showFeatured);
 		// feed - retrieve route
 		app.get('/retrieve', api.retrieve);
+		// sitemap.xml
+		app.get('/sitemap.xml', controller.sitemap);
+		// robots.txt
+		app.get('/robots.txt', controller.robots);
 		// moderation route
 		app.get('/moderation', passport.authenticate('basic', {session: false}), controller.moderation);
 		// moderation - retrieve route

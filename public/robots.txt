@@ -7,7 +7,6 @@
 # ALLOW ROBOTS
 User-agent: *
 Disallow:
-
 /moderation
-
 Crawl-delay: 3600
+Sitemap: http://www.mystatusisnotasecret.com/sitemap.xml

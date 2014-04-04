@@ -59,3 +59,11 @@ var mongoose = require('mongoose');
 			title: 'Moderation Queue'
 		});
 	};
+
+	exports.sitemap = function (req, res) {
+		res.redirect('http://d1cllk76e9bo1o.cloudfront.net/sitemap.xml');
+	};
+
+	exports.sitemap = function (req, res) {
+		res.redirect('http://d1cllk76e9bo1o.cloudfront.net/robots.txt');
+	};
