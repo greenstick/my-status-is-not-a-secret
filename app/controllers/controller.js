@@ -64,6 +64,6 @@ var mongoose = require('mongoose');
 		res.redirect('http://d1cllk76e9bo1o.cloudfront.net/sitemap.xml');
 	};
 
-	exports.sitemap = function (req, res) {
+	exports.robots = function (req, res) {
 		res.redirect('http://d1cllk76e9bo1o.cloudfront.net/robots.txt');
 	};
