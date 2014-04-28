@@ -1,7 +1,7 @@
 {
   "name": "aids-life-cycle",
   "version": "0.0.1",
-  "description": "My Status Is Not A Secret website for Impulse Group AIDS Life Cycle by Column Five Media, Inc.",
+  "description": "My Status Is Not A Secret website by Column Five Media, Inc.",
   "main": "app.js",
   "private": true,
   "scripts": {
