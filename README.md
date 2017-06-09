@@ -4,7 +4,7 @@
 
 ## Overview
 
-This website was developed as a pro bono project at Column Five Media in collaboration with Parker Trewin to raise funds for the AIDS/LifeCycle organization and encourage awareness and social understanding of HIV/AIDS through the knowing of ones diagnostic status. The project is a multipage full-stack web application, featuring a custom image editor with filters, a custom CMS built in Node.js, a MongoDB database, and the storage of image data with Amazon Web Services (AWS) S3. 
+This website was developed as a pro bono project at [Column Five Media](https://www.columnfivemedia.com) in collaboration with Parker Trewin to raise funds for the AIDS/LifeCycle organization and encourage awareness and social understanding of HIV/AIDS through the knowing of ones diagnostic status. The project is a multipage full-stack web application, featuring a custom image editor with filters, a custom CMS built in Node.js, a MongoDB database, and the storage of image data with Amazon Web Services (AWS) S3. 
 
 ## Libraries Used
 
